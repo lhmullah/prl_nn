@@ -1,0 +1,64 @@
+﻿@model PayrollWeb.ViewModels.EmployeeSearch
+@{
+    ViewBag.Title = "SearchEmployee";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Search An Employee
+}
+
+@using (Html.BeginForm("SearchEmployee", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Search employee")
+            </td>
+            <td style="width: 15px"></td>
+            <td colspan="3">
+                <input type="text" class="typeahead input-medium search-query" autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="EmpNo">Or put employee no.</label>
+            </td>
+            <td></td>
+            <td style="padding-left:5px">
+                <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                <input type="hidden" name="empid" id="empid"/>
+            </td>
+        </tr>
+    </table>
+}
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        var map = {};
+        $("#aa").typeahead({
+            source: function (query, process) {
+                var objects = [];
+                $.getJSON('@Url.Action("GetEmployeeSeach","Employee")', { query: query }, function (data) {
+                    $.each(data, function (i, object) {
+                        map[object.name+' '+object.id] = object;
+                        objects.push(object.name+' '+object.id);
+                    });
+                    process(objects);
+                });
+            },
+            updater: function(item) {
+                $('#empid').val(map[item].id);
+                return item;
+            }
+        });
+
+    </script>
+}

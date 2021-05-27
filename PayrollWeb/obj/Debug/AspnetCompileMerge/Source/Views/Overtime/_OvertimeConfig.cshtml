@@ -1,0 +1,36 @@
+﻿@model PayrollWeb.ViewModels.OTConfiguration
+
+@using (Html.BeginForm("","",FormMethod.Post,new{@class="form-inline"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>OT Configuration</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.over_time_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.over_time_id, new SelectList(@ViewBag.Overtimes,"id","name","---Select---")) 
+            @Html.ValidationMessageFor(model => model.over_time_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.formula)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.formula)
+            @Html.ValidationMessageFor(model => model.formula)
+        </div>
+
+        
+    </fieldset>
+}

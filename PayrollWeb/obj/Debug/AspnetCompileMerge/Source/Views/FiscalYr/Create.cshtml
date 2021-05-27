@@ -1,0 +1,38 @@
+﻿@model PayrollWeb.ViewModels.FiscalYr
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Create Fiscal Year
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.fiscal_year)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.fiscal_year)
+        @Html.ValidationMessageFor(model => model.fiscal_year)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.assesment_year)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.assesment_year)
+        @Html.ValidationMessageFor(model => model.assesment_year)
+    </div>
+    <p>
+        <input type="submit" class="btn btn-success" value="Create" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

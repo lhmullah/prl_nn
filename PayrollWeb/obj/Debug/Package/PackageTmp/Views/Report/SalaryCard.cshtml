@@ -1,0 +1,113 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportTaxCard
+
+@{
+    ViewBag.Title = "Salary Card";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Salary Card
+}
+
+@using (Html.BeginForm("TaxCard", "Report", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee Search</legend>
+        <table>
+            <tr>
+                <td style="width: 50%"></td>
+                <td>
+                    <table style="border-collapse: separate; border-spacing: 3px; width: 100%">
+                        <tr>
+                            <td>
+                                @Html.Label("Search employee", new { style = "width:120px" })
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <label for="EmpNo" style="width: 150px">Or put employee no.</label>
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Year")
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td colspan="5">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:120px" })
+                                        </td>
+                                        <td style="width: 30px"></td>
+                                        <td>
+                                            @Html.Label("Month")
+                                        </td>
+                                        <td style="width: 30px"></td>
+                                        <td>
+                                            @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:120px" })
+                                        </td>
+                                        <td style="width: 120px"></td>
+                                        <td>
+                                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                                            <input type="hidden" name="empid" id="empid" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 50%"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+}
+
+
+@section PageSpecificJs
+{
+    
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+
+    @* <script type="text/javascript">
+        var empNo = $('#empNo').val();
+        if (typeof (empNo) === 'undefined') {
+            $('#ps').hide();
+        }
+        else{
+            $('#ps').show();
+        }
+    </script>*@
+}

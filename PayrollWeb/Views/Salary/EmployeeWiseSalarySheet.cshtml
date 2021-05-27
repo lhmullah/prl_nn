@@ -1,0 +1,250 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportSalarySheet
+
+@{
+    ViewBag.Title = "EmployeeWiseSalarySheet";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageSpecificJsHeader
+{
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css" />
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css" />
+}
+
+<fieldset id="bd">
+    @using (Html.BeginForm("EmployeeWiseSalarySheet", "Salary", FormMethod.Post, new { target = "_blank" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <table style="border-collapse: separate; border-spacing: 3px">
+            @*<tr>
+                <td style="width: 125px">
+                    @Html.Label("Search employee")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    <input type="text" placeholder="Write Employee No or Name and then Select" autocomplete="off" data-provide="typeahead" id="src" style="width: 190px" />
+                </td>
+                <td style="width: 10px"></td>
+                <td>
+                    @Html.Label("Or")
+                </td>
+                <td colspan="2">
+                    <div style="padding-left: 15px">
+                        <input type="checkbox" id="checkBox" style="margin-bottom: 10px">
+                        Select All Employees                  
+                    </div>
+                </td>
+            </tr>*@
+
+            <tr>
+                <td>
+                    @Html.Label("From ")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(m => m.frm_month_no, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:205px" })
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.Label("To")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(m => m.to_month_no, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:205px" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Year")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(model => model.Year, new SelectList(@ViewBag.Years), "---Select Year---", new { style = "width:205px" })
+                    @Html.ValidationMessageFor(model => model.Year)
+                </td>
+                <td style="width: 15px"></td>
+
+                <td>
+                    @Html.Label("Employee")
+                </td>
+                <td style="width: 15px"></td>
+                <td style="width: 205px">
+                    <table>
+                        <tr>
+                            <td>
+                                <label class="radio">
+                                    @Html.RadioButton("empGroup", "all", true)
+                                    All
+                                </label>
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <label class="radio">
+                                    @Html.RadioButton("empGroup", "selected")
+                                    Selected Only
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                            <td>
+                                <button id="btnDownload" type="submit" style="width: 120px" class="btn btn-success">Download</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+
+            <tr class="row-fluid" style="margin-top: 10px;">
+                @Html.HiddenFor(model => model.SelectedEmployeesOnly)
+            </tr>
+        </table>
+    }
+</fieldset>
+
+<div id="mdlSelectEmp" class="modal hide fade">
+    <div class="modal-body">
+        <table id="empSearch" cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Name</th>
+                    <th>Official Contact No</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" class="close" data-dismiss="modal" aria-hidden="true">Complete</a>
+        @*<a href="#" class="btn btn-primary">Save changes</a>*@
+    </div>
+</div>
+
+<script>
+
+</script>
+
+@section PageSpecificJs
+{
+
+    <link href="~/Content/examples.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/dataTables.bootstrap.js"></script>
+
+    <style type="text/css">
+        .row_selected {
+            color: red;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch", "Employee")';
+        q = q + '?query=%QUERY';
+        $("#src").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+        var oTable;
+        var selected = new Array();
+        $(function () {
+            $('#empGroup[value^=selected]').on("click", function () {
+                $('#mdlSelectEmp').modal('show');
+                loadSearch();
+                $("#opts :input").attr("disabled", true);
+            });
+            $('#empGroup[value^=all]').on("click", function () {
+                selected = new Array();
+                $("#opts :input").attr("disabled", false);
+            });
+            oTable = $('#empSearch').dataTable({
+                "bProcessing": true,
+                "bServerSide": true,
+                "bLengthChange": false,
+                "iDisplayLength": 30,
+                "sServerMethod": "POST",
+                "sPaginationType": "full_numbers",
+                "sDom": 'T<"clear">lfrtip',
+                "oTableTools": { "sRowSelect": "multi" },
+                "sAjaxSource": '@Url.Action("GetEmployees")',
+                "aoColumns": [{ "sName": "Employee Id" }, { "sName": "Name" }, { "sName": "Mobile" }],
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    $.ajax({
+                        "dataType": 'json',
+                        "type": "POST",
+                        "url": '@Url.Action("GetEmployees")',
+                        "data": aoData,
+                        "success": fnCallback
+                    });
+                },
+                "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                    $('#empSearch tbody > tr').each(function () {
+                        if (jQuery.inArray(aData[0], selected) != -1) {
+                            $(this).addClass('row_selected');
+                        }
+                    });
+                    return nRow;
+                },
+                "fnDrawCallback": function (oSettings) {
+                    $('#empSearch tbody > tr').each(function () {
+                        var iPos = oTable.fnGetPosition(this);
+                        if (iPos != null) {
+                            var aData = oTable.fnGetData(iPos);
+                            if (jQuery.inArray(aData[0], selected) != -1)
+                                $(this).addClass('row_selected');
+                        }
+                        $(this).click(function () {
+                            iPos = oTable.fnGetPosition(this);
+                            aData = oTable.fnGetData(iPos);
+                            var iId = aData[0];
+                            var is_in_array = jQuery.inArray(iId, selected);
+                            if (is_in_array == -1) {
+                                selected[selected.length] = iId;
+                            } else {
+                                selected = jQuery.grep(selected, function (value) {
+                                    return value != iId;
+                                });
+                            }
+                            if ($(this).hasClass('row_selected')) {
+                                $(this).removeClass('row_selected');
+                            } else {
+                                $(this).addClass('row_selected');
+                            }
+                        });
+                    });
+                }
+            });
+            $('#btnDownload').on('click', function (e) {
+                //e.preventDefault();
+
+                $('#SelectedEmployeesOnly').val(selected);
+            });
+        });
+        function loadSearch() {
+            oTable.fnDraw();
+        }
+
+
+    </script>
+}

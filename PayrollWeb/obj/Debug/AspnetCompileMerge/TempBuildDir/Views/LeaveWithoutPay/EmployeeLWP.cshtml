@@ -1,0 +1,107 @@
+﻿@using PagedList.Mvc;
+@using PayrollWeb.ViewModels
+@model PagedList.IPagedList<PayrollWeb.ViewModels.EmployeeLeaveWithoutPay>
+@{
+    ViewBag.Title = "EmployeeLWP";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Leave Without Pay
+}
+
+<div class="" style="float:right;margin-bottom: 10px;">
+    <a class="btn btn-primary" href="@Url.Action("AssignEmployeeLWP")"><i class="icon-plus"></i> Assign </a>
+</div>
+
+<br style="clear: both;"/>
+    
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser2" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Employee Name
+            </th>
+            <th>
+                Start Date
+            </th>
+            <th>
+                End date
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach ( var lwp in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(fc=> lwp.prl_employee.name)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(fc=> lwp.strat_date)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(fc=> lwp.end_date)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit", "ModifyEmployeeLWP", "LeaveWithoutPay", new { id = lwp.id }, null)
+                      @Html.ActionLink("Delete", "LWPDelete", "LeaveWithoutPay", new { id = lwp.id }, new { onclick = "DeleteLeaveWithoutPay(this);return false;" })
+                  </td>
+              </tr>
+           }
+    </table>
+
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Paging","LeaveWithoutPay", new { page }))
+</div>
+
+<div id="dltlwp" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this employee's leave without pay?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltlwp" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteLeaveWithoutPay(el)
+        {
+            $('#dltlwp').modal('show');
+
+            $('#btnDltlwp').click(function () {
+                $('#dltlwp').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}

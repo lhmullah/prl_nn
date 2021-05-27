@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "IndividualAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Individual Allowance Configuration
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (PayrollWeb.ViewModels.OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+            <div id="notifyUser" class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("GetEmployeeAllowances", "Allowance", FormMethod.Post, new { id = "searchForm", @class = "form-inline" }))
+{
+    <input type="text" autocomplete="off" placeholder="Write Employee ID or Name and then Select" style="width: 290px" data-provide="typeahead" id="aa"/>
+    <input class="btn btn-success" type="submit" style="margin-top:7px" value="Search"/>
+    <input type="hidden" name="empid" id="empid" value="0"/> //Default value pass 0 for Post validation
+}
+
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch","Allowance")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q}
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+        //Stop Enter key when id is empty
+        $('#searchForm').on('keyup keypress', function (e) {
+            var keyCode = e.keyCode || e.which;
+            if (keyCode === 13) {
+                var emp_id = $('#empid').val();
+                console.log(emp_id);
+                if (emp_id == NaN || emp_id == "" || emp_id == 0 || emp_id == null) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        });
+
+    </script>
+}
+
+

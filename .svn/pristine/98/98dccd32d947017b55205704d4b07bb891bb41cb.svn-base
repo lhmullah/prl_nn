@@ -1,0 +1,46 @@
+﻿@model PagedList.IPagedList<PayrollWeb.ViewModels.AllowanceUploadData>
+
+@using PagedList.Mvc;
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <th colspan="3" style="text-align: center;">
+            Displaying data from uploaded file
+        </th>
+        <th></th>
+    </tr>
+    <tr>
+        <th>
+            Employee ID
+        </th>
+        <th>
+            Amount 
+        </th>
+        <th>
+           Allowance Name
+        </th>
+        
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmployeeID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AllowanceNameString)
+            </td>
+            
+        </tr>
+    }
+
+</table>
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("LoadUploadedData","Allowance", new { page }))
+</div>

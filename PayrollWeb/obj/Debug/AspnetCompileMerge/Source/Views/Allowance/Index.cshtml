@@ -1,0 +1,96 @@
+﻿@using PayrollWeb.ViewModels
+@model List<PayrollWeb.ViewModels.AllowanceHead>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Allowance Head
+}
+
+
+<div class="" style="float:right;">
+    <a class="btn btn-primary" href="@Url.Action("Create")">
+        <i class="icon-plus"></i> Create New </a>
+</div>
+<br style="clear: both;"/>
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+<fieldset>
+    <legend>List of Allowance Head</legend>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Allowance Head Name</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        @foreach ( var allowHead in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(detp=> allowHead.id)
+
+                  </td>
+                  <td>
+                      @Html.DisplayFor(detp=> allowHead.name)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit","Edit","Allowance",new{id = allowHead.id},null)
+                      @Html.ActionLink("Delete","Delete","Allowance",new{id = allowHead.id}, new { onclick = "DeleteAllowanceHead(this);return false;" })
+                  </td>
+              </tr>
+           }
+    </table>
+</fieldset>
+
+<div id="dltAllw" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this allowance head?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltAllw" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteAllowanceHead(el)
+        {
+            $('#dltAllw').modal('show');
+
+            $('#btnDltAllw').click(function () {
+                $('#dltAllw').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}
+
+
+ 

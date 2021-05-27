@@ -1,0 +1,77 @@
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\App.config
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\App.config
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+D:\Rakib\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\App.config
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\App.config
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\App.config
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+G:\Imran\Project-bProperty-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\App.config
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\App.config
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll.config
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.linde.DataContext.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\MySql.Data.Entity.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.DataContext\obj\Debug\EntityFramework.xml

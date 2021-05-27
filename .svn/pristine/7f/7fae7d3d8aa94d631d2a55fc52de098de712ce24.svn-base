@@ -1,0 +1,121 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.LeaveWithoutPaySetting
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Leave Without Pay Setting
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("Create","LeaveWithoutPay",FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+       <br />
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.Lwp_type)
+            </td>
+            <td>
+                @Html.DropDownListFor(model=>model.Lwp_type,new SelectList(PayrollWeb.Models.EnumToSelectItemList.GetEnumSelectList<LeaveType>(),"Text","Text"))
+                @Html.ValidationMessageFor(model => model.Lwp_type)
+            </td>
+        </tr>
+        <tr id="BasicPercentage">
+            <td>
+                @Html.LabelFor(model => model.percentage_of_basic)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.percentage_of_basic)
+                @Html.ValidationMessageFor(model => model.percentage_of_basic)
+            </td>
+        </tr>
+        <tr id="AllowanceName" hidden="hidden">
+            <td>
+                @Html.EditorFor(model => model.allowance_id)
+                @*<label> Allowances </label><br />
+                @Html.ValidationMessageFor(model => model.Allowances)*@
+            </td>
+            <td>
+                @Html.DropDownListFor(x => x.allowance_id, new SelectList(@ViewBag.AllowanceNames, "id", "allowance_name"), "---Select---")
+                @*<ul style="margin-left: 0;">
+                
+                    @foreach (var a in Model.Allowances)
+                    {
+                        <li style="display: inline;">
+                            @Html.Hidden("Allowances.Index", a.id)
+                            @Html.Hidden(string.Format("Allowances[{0}].id", @a.id), @a.id)
+                            @Html.Hidden(string.Format("Allowances[{0}].allowance_name", @a.id), @a.allowance_name)
+                            @Html.Hidden(string.Format("Allowances[{0}].IsSelected", @a.IsSelected), @a.allowance_name)
+                            @Html.CheckBox(string.Format("Allowances[{0}].IsSelected", @a.id),@a.IsSelected ,new { @style = "padding-right:5px;"})  @Html.Label(@a.allowance_name, new { @style = "padding-right:20px;" }) 
+                        </li>
+                    }
+                </ul>  *@  
+            </td>
+        </tr>
+        <tr id="AllowancePercentage" hidden="hidden">
+            <td>
+                @Html.LabelFor(model => model.percentage_of_allowance)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.percentage_of_allowance)
+            </td>
+        </tr>
+    </table>
+        
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" name="sButton" />
+        <input type="hidden" name="empid" id="eid"/>
+    </p>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        $('#Lwp_type').change(function () {
+            if ($(this).val() == 'Gross') {
+                $('#AllowanceName').show();
+                $('#AllowancePercentage').show();
+                $('#BasicPercentage').hide();
+            }
+            else {
+                $('#AllowanceName').hide();
+                $('#AllowancePercentage').hide();
+                $('#BasicPercentage').show();
+            }
+
+        });
+    </script>
+
+}

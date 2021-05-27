@@ -1,0 +1,106 @@
+﻿@model PayrollWeb.ViewModels.LoanEntry
+@{
+    ViewBag.Title = "EditLoanEntry";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Edit Loan Entry
+}
+
+@using (Html.BeginForm())
+{
+ @Html.AntiForgeryToken()
+ @Html.ValidationSummary(true)
+ @Html.HiddenFor(model => model.id)
+
+    <fieldset>
+        <legend>Entry for Individual Loan</legend>
+        <table style="border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <td style="width: 110px">
+                    @Html.Label("Employee ID")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.TextBoxFor(model => model.emp_Id, new { @readonly = "readonly" })
+                    @*<input type="text" placeholder="Write Employee ID or Name and then Select" autocomplete="off" data-provide="typeahead" id="aa" style="width: 280px" />*@
+                </td>
+            </tr>
+            <tr>
+                <td style="">
+                    @Html.LabelFor(model => model.deduction_name_id)
+                </td>
+                <td style="width: 15px"></td>
+                <td style="">
+                    @Html.DropDownListFor(model => model.deduction_name_id, new SelectList(@ViewBag.loanTypes, "id", "deduction_name"), "-- Please select --", new { style = "width:220px" })
+                    @Html.ValidationMessageFor(model => model.deduction_name_id)
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.loan_start_date)
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.EditorFor(model => model.loan_start_date)<br />
+                    @Html.ValidationMessageFor(model => model.loan_start_date)
+                </td>
+                <td style="width: 80px">
+                    @Html.LabelFor(model => model.loan_end_date)
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.EditorFor(model => model.loan_end_date)<br />
+                    @Html.ValidationMessageFor(model => model.loan_end_date)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.principal_amount)
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.TextBoxFor(model => model.principal_amount)
+                    @Html.ValidationMessageFor(model => model.principal_amount)
+                </td>
+                <td style="width: 80px"></td>
+                <td style="width: 15px"></td>
+                <td>
+                    <input class="btn btn-success" style="width: 150px" type="submit" name="sButton" value="Update" />
+                    <input type="hidden" name="empid" id="empid" />
+                </td>
+            </tr>
+
+        </table>
+    </fieldset>
+    }
+
+<div>
+    @Html.ActionLink("Back to List", "LoanEntryGrid")
+</div>
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch", "Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+}

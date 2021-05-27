@@ -1,0 +1,56 @@
+﻿@model PayrollWeb.ViewModels.ReportModel
+@{
+    ViewBag.Title = "SalaryChange";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Salary Change
+}
+
+@using (@Html.BeginForm("SalaryChange", "Report", FormMethod.Post, new { target = "_blank" }))
+{
+    <br />
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td style="width: 30%"></td>
+            <td>
+                @Html.Label("Year")
+            </td>
+            <td style="width: 5%"></td>
+            <td>
+                @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years),new { style = "width:120px" })
+            </td>
+            <td style="width: 5%"></td>
+            <td>
+                @Html.Label("Month")
+            </td>
+            <td style="width: 5%"></td>
+            <td>
+                @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"),new { style = "width:120px" })
+            </td>
+            <td style="width: 30%"></td>
+        </tr>
+        <tr>
+            <td colspan="3"></td>
+            <td colspan="6" style="ruby-align:right">
+                <table>
+                    <tr>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnPreview" name="sButton" value="Preview" style="width:80px"/>
+                        </td>
+                        <td style="width: 10px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="To Excel" style="width:80px"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+
+

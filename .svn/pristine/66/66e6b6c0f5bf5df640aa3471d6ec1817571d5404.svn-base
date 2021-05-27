@@ -1,0 +1,47 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<PayrollWeb.ViewModels.DeductionUploadData>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <th colspan="3" style="text-align: center;">
+           
+        </th>
+        
+    </tr>
+    <tr>
+        <th>
+            Employee ID
+        </th>
+        <th>
+            Amount 
+        </th>
+        <th>
+            Deduction Name
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.prl_employee.emp_no)
+            </td>
+            <td>
+                <a href="#" id="DeductionUploadData.@item.id" data-name="amount" data-type="text"  data-pk="@item.id" data-url="@Url.Action("UpdateRecord","Deduction")" data-title="Enter Amount">@item.amount</a>
+                @Html.Hidden("DeductionUploadData.amount",item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prl_deduction_name.deduction_name)
+                @Html.Hidden("DeductionUploadData.deduction_name_id",item.prl_deduction_name.id)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("EditDataPaging","Deduction", new {did=@ViewBag.did,dt=@ViewBag.dt,page }))
+</div>
+

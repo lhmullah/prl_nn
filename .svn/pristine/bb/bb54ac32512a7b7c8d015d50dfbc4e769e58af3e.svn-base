@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\com.gpit.DataContext\packages.config" />
+  <repository path="..\PayrollWeb\packages.config" />
+</repositories>

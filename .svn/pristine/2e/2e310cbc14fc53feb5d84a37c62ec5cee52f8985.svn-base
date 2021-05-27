@@ -1,0 +1,125 @@
+﻿@model PayrollWeb.ViewModels.RegisterModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    User Creation
+}
+<p>
+    New passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length and alphanewmeric with a special character.
+</p>
+@using (Html.BeginForm("Register", "Authentication", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table style="border-collapse: separate; border-spacing: 7px;">
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.UserName)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.UserName)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.UserName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Email)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.Email)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.Password)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.PasswordFor(m => m.Password)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.Password)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.ConfirmPassword)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.PasswordQuestion)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.DropDownListFor(model => model.PasswordQuestion, new List<SelectListItem>
+                                        {
+                                        new SelectListItem{ Text="Mothers First Name", Value = "Mothers First Name" }, 
+                                        new SelectListItem{ Text="Home District", Value = "Home District" },
+                                        })
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.PasswordQuestion)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.PasswordAnswer)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.PasswordAnswer)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.PasswordAnswer)
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="border-collapse: separate; border-spacing: 3px; text-align: right">
+        <tr>
+            <td style="width: 167px"></td>
+            <td>
+                @Html.ActionLink("Back to List", "Index")
+            </td>
+            <td style="width: 26px"></td>
+            <td>
+                <input class="btn btn-success" type="submit" value="Create" />
+            </td>
+            <td style="width: 2px"></td>
+        </tr>
+    </table>
+}
+

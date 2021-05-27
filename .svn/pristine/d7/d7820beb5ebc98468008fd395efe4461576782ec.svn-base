@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using com.gpit.DataContext;
+using com.gpit.Model;
+
+namespace PayrollWeb.Controllers
+{
+    public class HomeController : Controller
+    {
+
+        private readonly payroll_systemContext dataContext;
+
+        public HomeController(payroll_systemContext cont)
+        {
+            this.dataContext = cont;
+        }
+
+        public ActionResult Index()
+        {
+            //ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            //string s = User.Identity.Name;
+
+            return View();
+        }
+
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your app description page.";
+
+            return View();
+        }
+
+        public ActionResult Contact()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult TotalEmployeeStatusSummary()
+        {
+            try
+            {
+                var currentMonthYear = DateTime.Now.Date;
+                var srCount = 0;
+
+                var totalActive = dataContext.prl_employee.AsEnumerable().Count(x => x.is_active.Value == Convert.ToSByte(true));
+                var totalNew = dataContext.prl_employee.AsEnumerable().Count(x => x.joining_date.ToString("yyyy-MM") == currentMonthYear.ToString("yyyy-MM"));
+                var totalSalaryReview =dataContext.prl_salary_review.AsEnumerable().Where(x => x.is_arrear_calculated == "No");
+                if (totalSalaryReview != null)
+                {
+                    srCount = totalSalaryReview.Count();
+                }
+
+
+                return Json(new { totalActive = totalActive, totalNew = totalNew, totalReview = srCount }, JsonRequestBehavior.AllowGet);
+            }
+            catch (Exception exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public ActionResult OverallPayrollStatus()
+        {
+
+            var salaryProcessedEmp = 0;
+            decimal totalTaxAmount = 0;
+
+            var lastProcess = "No salary processed";
+            var processMonth = dataContext.prl_salary_process.AsEnumerable().Max(x => x.process_date);
+            if (processMonth != null)
+            {
+                lastProcess = processMonth.Value.ToString("yyyy-MM");
+                salaryProcessedEmp = dataContext.prl_salary_process_detail.AsEnumerable().Where(x => x.salary_month.ToString("yyyy-MM") == lastProcess).Distinct().Count();
+                totalTaxAmount = dataContext.prl_employee_tax_process.AsEnumerable().Where(x => x.salary_month.ToString("yyyy-MM") == lastProcess).Sum(x => x.monthly_tax);
+                totalTaxAmount = decimal.Round(totalTaxAmount, MidpointRounding.AwayFromZero);
+            }
+
+            return Json(new {processMonth = lastProcess, totalEmployee = salaryProcessedEmp, totalTax = totalTaxAmount},JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult MiscellaneousInfo()
+        {
+            var curDate = DateTime.Now.Date;
+            var startDate = new DateTime(curDate.Year, curDate.Month, 1);
+            var endDate = new DateTime(curDate.Year, curDate.Month, DateTime.DaysInMonth(curDate.Year, curDate.Month));
+
+            var noLWP = dataContext.prl_employee_leave_without_pay.AsEnumerable().Count(x => (x.strat_date.Value.Date <= startDate && x.end_date.Value.Date <= endDate) || (x.strat_date.Value > x.strat_date.Value && x.end_date.Value >= endDate));
+            var noDiscontinue = dataContext.prl_employee_discontinue.AsEnumerable().Count(x => x.discontinue_date != null && x.discontinue_date.Value.Date.ToString("yyyy-MM") == curDate.ToString("yyyy-MM"));
+            var childAlw =dataContext.prl_employee_children_allowance.AsEnumerable().Count(x => x.is_active != null && x.is_active.Value == Convert.ToSByte(true));
+                    
+
+            return Json(new {lwpCount = noLWP, discontinueCount=noDiscontinue,childAlwCount=childAlw}, JsonRequestBehavior.AllowGet);
+
+        }
+    }
+}

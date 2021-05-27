@@ -1,0 +1,180 @@
+﻿@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.Employee
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Create Employee
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+    <div id="notifyUser" class="alert alert-success">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <div>@res.Message </div>
+    </div>    
+        }
+        else
+        {
+    <div id="notifyUser2" class="alert alert-error">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <div>@res.Message </div>
+    </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("Create", "Employee", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table style="border-collapse: separate; border-spacing: 3px; padding-top: 15px;">
+        <tr>
+            <td style="font-weight: bolder; width:20%">
+                @Html.LabelFor(model => model.emp_no)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.emp_no)
+                <br />
+                @Html.ValidationMessageFor(model => model.emp_no)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.LabelFor(model => model.name)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.name)
+                <br />
+                @Html.ValidationMessageFor(model => model.name)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.joining_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.joining_date)
+                <br />
+                @Html.ValidationMessageFor(model => model.joining_date)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.LabelFor(model => model.dob)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.dob)
+                 <br />
+                @Html.ValidationMessageFor(model => model.dob)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder"></td>
+        </tr>
+        <tr>
+            <td style="font-weight: bolder; width:20%">
+                @Html.LabelFor(model => model.official_contact_no)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.official_contact_no)
+            </td>
+            <td colspan="2"></td>
+            <td style="font-weight: bolder; width:20%">
+                @Html.LabelFor(model => model.personal_contact_no)
+            </td>
+            <td colspan="2">
+                @Html.EditorFor(model => model.personal_contact_no)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.email)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.email)
+                <br />
+                @Html.ValidationMessageFor(model => model.email)
+            </td>
+            <td colspan="2"></td>
+            <td>
+               @Html.LabelFor(model => model.personal_email)
+            </td>
+            <td colspan="2">
+               @Html.EditorFor(model => model.personal_email)
+                <br />
+                @Html.ValidationMessageFor(model => model.personal_email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.gender)
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.gender, new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(), "Text", "Text"), new { style = "width:220px" })
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.religion_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(x => x.religion_id, new SelectList(@ViewBag.Religions, "id", "name"), new { style = "width:220px" })
+                <br />
+                @Html.ValidationMessageFor(model => model.religion_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder"></td>
+        </tr>
+
+        <tr>
+            <td>
+               @Html.LabelFor(model => model.tin)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.tin)
+            </td>
+            <td></td>
+            <td>
+                
+            </td>
+            <td colspan="2">
+               
+                <br />
+                
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="border-collapse: separate; border-spacing: 3px; text-align: right">
+        <tr>
+            <td style="width: 600px"></td>
+            <td>
+                @Html.ActionLink("Back to List", "Index")
+            </td>
+            <td style="width: 26px"></td>
+            <td>
+                <input class="btn btn-success" type="submit" value="Next" style="width: 110px" />
+            </td>
+            <td style="width: 2px"></td>
+        </tr>
+    </table>
+}
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        $('#joining_date').datepicker({ dateFormat: 'yy-mm-dd' });
+        $('#dob').datepicker({ dateFormat: 'yy-mm-dd' });
+        //$("#joining_date,#dob").datepicker("option", "dateFormat", "yy-mm-dd");
+    </script>
+}
+

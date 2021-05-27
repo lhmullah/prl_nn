@@ -1,0 +1,189 @@
+﻿@model PayrollWeb.ViewModels.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Employee Details
+}
+
+<table class="table-striped table-condensed" style="margin:20px 30px;">
+    <tr>
+        <th style="width: 18%">
+            @Html.DisplayNameFor(model => model.emp_no)
+        </th>
+        <td style="width: 32%">
+            @Html.DisplayFor(model => model.emp_no)
+        </td>
+       <th style="width: 20%">
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <td style="width: 30%">
+            @Html.DisplayFor(model => model.name)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].designation_id)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x=>x.id).First().prl_designation.name)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].department_id)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x=>x.id).First().prl_Department.name)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].division_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x=>x.id).First().prl_division.name)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.company_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_company.name)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].grade_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x=>x.id).First().prl_grade.grade)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].basic_salary)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x=>x.id).First().basic_salary)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].emp_status)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.prl_employee_details[0].emp_status)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.joining_date)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.joining_date)
+        </td>
+    </tr>
+   
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.phone)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.email)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.present_address)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.present_address)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.permanent_address)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.permanent_address)
+        </td>
+    </tr>
+   
+    <tr>
+        <th>Bank</th> 
+         <td>
+            @Html.DisplayFor(model => model.prl_bank.bank_name)
+        </td>
+        <th>Bank Branch</th>
+         <td>
+            @Html.DisplayFor(model => model.prl_bank_branch.branch_name)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            Account No
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.account_no)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.tin)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.tin)
+        </td>
+    </tr>
+
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.dob)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.dob)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.religion_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_religion.name)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.gender)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.marital_status)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.marital_status)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.father_name)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.father_name)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.mother_name)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.mother_name)
+        </td>
+    </tr>
+  
+    <tr>
+        <td colspan="4" style="text-align: right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+                @Html.ActionLink("Back to List", "Index")
+        </td>
+    </tr>
+</table>
+<div class="clearfix"></div>

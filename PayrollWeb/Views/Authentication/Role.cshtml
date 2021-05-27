@@ -1,0 +1,110 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.RoleModel
+
+@{
+    ViewBag.Title = "Role";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Role Management
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+            <div id="notifyUser" class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div>    
+        }
+        else
+        {
+            <div id="notifyUser2" class="alert alert-error">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div> 
+        }
+    }
+}
+@using (Html.BeginForm("Role", "Authentication", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td style="vertical-align:middle">
+                <br />
+                <div class="editor-label">
+                    @Html.LabelFor(model=>model.RoleName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model=>model.RoleName)
+                </div>
+                <div class="editor-field">
+                    @Html.ValidationMessageFor(model => model.RoleName)
+                </div>
+                <p>
+                    <input class="btn btn-success" type="submit" value="Create" />
+                </p>
+            </td>
+            <td style="width:100px"></td>
+            <td style="vertical-align:top">
+                <br />
+                <table>
+                    <tr>
+                        <th>Role Name</th>
+                        <th></th>
+                        <th>Action</th>
+                    </tr>
+
+                    @foreach (var item in Roles.GetAllRoles())
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item)
+                            </td>
+                            <td style="width:20px"></td>
+                            <td>
+                                @Html.ActionLink("Delete", "DeleteRole", new {rol=item},new { onclick = "DeleteFunc(this);return false;" })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+
+<div id="dlt" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this role?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDlt" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteFunc(el)
+        {
+            $('#dlt').modal('show');
+
+            $('#btnDlt').click(function () {
+                $('#dlt').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}
+
+
+

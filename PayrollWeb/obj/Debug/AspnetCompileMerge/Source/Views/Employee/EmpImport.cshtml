@@ -1,0 +1,138 @@
+﻿@using PagedList.Mvc;
+@using PayrollWeb.ViewModels
+
+@model PagedList.IPagedList<PayrollWeb.ViewModels.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Employee Information
+}
+
+@*<div class="" style="float: right; margin-bottom: 10px;">
+    
+</div>
+<br style="clear: both;" />*@
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+        <div>
+                    @{ foreach (var item in @res.Messages)
+                        {
+                            @(res.Messages.IndexOf(item) + 1)<span> .</span> @item
+                            <br />
+                        }
+                }
+
+            </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@{ foreach (var item in @res.Messages)
+                    {
+                            @(res.Messages.IndexOf(item) + 1)<span> .</span> @item
+                            <br />
+                    }
+                } </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("EmpImport", "Employee", null, FormMethod.Post, new { enctype = "multipart/form-data", id = "fromEmpImport" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td style="padding-bottom:5px; width: 20%;">
+                @Html.Label("Import employee")
+            </td>
+            <td style="padding-left:5px; width: 100%;">
+                <input type="file" id="EmpImportFile" name="EmpImportFile" class="" />
+            </td>
+            <td style="padding-left:5px;">
+                <input type="submit" value="Upload" id="btnSubmitEmpImportFile" class="btn btn-primary" /> 
+            </td>
+        </tr>
+    </table>
+}
+
+<table class="table table-striped table-condensed">
+    <tr>
+        <th>Emp ID</th>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>&nbsp;&nbsp;&nbsp;Action</th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td style="font-size: 12px">
+                @Html.DisplayFor(modelItem => item.emp_no)
+            </td>
+            <td style="font-size: 12px">
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td style="font-size: 12px">
+                @Html.DisplayFor(modelItem => item.prl_employee_details.OrderByDescending(x => x.id).First().prl_designation.name)
+            </td>
+            <td style="font-size: 12px">
+                @Html.DisplayFor(modelItem => item.prl_employee_details.Where(x => x.emp_id == item.id).First().prl_department.name)
+                @Html.DisplayFor(modelItem => item.prl_employee_details.OrderByDescending(x => item.id).First().prl_sub_department.name)
+               @*@Html.DisplayFor(modelItem => item.prl_employee_details.OrderByDescending(x => item.id).First().prl_sub_sub_department.name)*@
+            </td>
+            <td style="font-size: 12px">
+                <a class="btn btn-primary" href="@Url.Action("Edit", "Employee", new { id = item.id })" ><i class="icon-pencil" style="padding-top: 2.5px" title="Edit"></i></a>
+               <a class="btn btn-success" href="@Url.Action("Details", "Employee", new { id = item.id })"><i class="icon-link" style="padding-top: 2.5px" title="Details"></i></a>
+            </td>
+        </tr>
+    }
+
+</table>
+<div id='Paging' style="text-align: center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Paging", "Employee", new { page }))
+</div>
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+    </script>
+}
+

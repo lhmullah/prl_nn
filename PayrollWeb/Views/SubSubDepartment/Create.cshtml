@@ -1,0 +1,173 @@
+﻿@model PayrollWeb.ViewModels.SubSubDepartment
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+
+    string Departments = string.IsNullOrEmpty(ViewBag.Departments.ToString()) ? "" : ViewBag.Departments.ToString();
+    string SubDepartments = string.IsNullOrEmpty(ViewBag.SubDepartments.ToString()) ? "" : ViewBag.SubDepartments.ToString();
+}
+
+
+@section PageBanner
+{
+    Add Sub Department
+}
+
+
+@using (Html.BeginForm("Create","SubSubDepartment",FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <form>
+         <div class="editor-label">
+            @Html.LabelFor(model => model.department_id)
+        </div>
+
+        <div class="editor-field">
+           <select id="Department" name="department_id" class="form-control ddlDept"></select>
+            <br />@Html.ValidationMessageFor(model => model.department_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.sub_department_id)
+        </div>
+
+        <div class="editor-field">
+             <select id="SubDepartment" name="sub_department_id" class="form-control ddlSubDept"></select>
+            <br />@Html.ValidationMessageFor(model => model.sub_department_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+    
+        <p>
+            <input class="btn btn-success" type="submit" value="Create" />
+        </p>
+
+       </form>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section PageSpecificJs
+{
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <script type="text/javascript">
+        // Loading dropdown using ajax..
+        // All the Parameters are required accept contextKey
+        var ddlDepartment = $("#Department");
+        var ddlSubDepartment = $("#SubDepartment");
+
+        var funcCallback = function (val) {
+            var opt = $("#Department > option").length > 0;
+            alert(opt);
+        }
+
+        function LoadDropDown(url, type, elementId, contextKey, defaultvalue) {
+            if (contextKey === undefined && $.trim(contextKey) == '') {
+                $.ajax({
+                    dataType: 'json',
+                    type: type,
+                    url: url,
+                    async: false,
+                    success: function (result) {
+                        console.log(result);
+                        $.each(result, function (index, item) {
+                            if (index == 0) {
+                                var opt1 = "<option value=''>Select One</option>";
+                                elementId.append(opt1);
+                            }
+                            var option = "<option value='" + item.Value + "'>" + item.Text + "</option>";
+                            elementId.append(option);
+                        });
+                        //func(null);
+                        if (defaultvalue != '')
+                        {
+                            elementId.val(defaultvalue);
+                            elementId.trigger('change');
+                        }
+                        
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+            else {
+                $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    type: type,
+                    url: url,
+                    data: contextKey,
+                    async: false,
+                    success: function (result) {
+                        console.log(result);
+                        $.each(result, function (index, item) {
+                            if (index == 0) {
+                                var opt1 = "<option value=''>Select One</option>";
+                                elementId.append(opt1);
+                            }
+                            var option = "<option value='" + item.Value + "'>" + item.Text + "</option>";
+                            elementId.append(option);
+                        });
+
+                        //func(null);
+
+                        if (defaultvalue != '') {
+                            elementId.val(defaultvalue);
+                            elementId.trigger('change');
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+        }
+
+        
+
+        $(document).ready(function () {
+
+            LoadDropDown('/SubSubDepartment/Department', 'POST', ddlDepartment, null, '@Departments')
+            
+            //alert(opt);
+
+           @* if ($("#Department > option").length > 0)
+            {
+                console.log('DDL 1');
+                 // Selected
+                ddlDepartment.val('@Departments'); // Dropdown change Event Fire
+            }*@
+           @* if ('@ViewBag.SubDepartments' != "") {
+                ddlSubDepartment.val('@ViewBag.SubDepartments'); // Seleted
+                ddlSubDepartment.trigger('change'); // Dropdown change Event Fire
+            }
+            if ('@ViewBag.SubSubDepartments' != "") {
+                ddlSubSubDepartment.val('@ViewBag.SubDepartments'); // Seleted
+            }*@
+        })
+       
+
+        $(function () {
+            $('#Department').val('@Departments');
+        });
+
+        ddlDepartment.change(function () {
+            ddlSubDepartment.empty();
+            if (ddlDepartment.val() != "") {
+                LoadDropDown('/SubSubDepartment/SubDepartment', 'POST', ddlSubDepartment, JSON.stringify({ deptId: ddlDepartment.val() }), '@SubDepartments')
+            }
+        })
+
+    </script>
+}

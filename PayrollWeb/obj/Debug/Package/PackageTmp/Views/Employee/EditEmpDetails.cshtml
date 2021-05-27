@@ -1,0 +1,273 @@
+﻿@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeDetails
+
+@{
+    ViewBag.Title = "EditEmpDetails";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+
+    //string Departments = string.IsNullOrEmpty(ViewBag.Departments) ? "" : ViewBag.Departments.ToString();
+    //string SubDepartments = string.IsNullOrEmpty(ViewBag.SubDepartments) ? "" : ViewBag.SubDepartments.ToString();
+    //string SubSubDepartments = string.IsNullOrEmpty(ViewBag.SubSubDepartments) ? "" :                ViewBag.SubSubDepartments.ToString();
+}
+
+@section PageBanner
+{
+Edit Employee Details
+}
+
+
+@using (Html.BeginForm("EditEmpDetails", "Employee", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.id)
+    @Html.HiddenFor(model => model.emp_id)
+
+    <form>
+        <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Employee")
+            </td>
+            <td style="padding-left: 5px">
+                @Html.TextBox("EmpNum", ViewData["EmpNum"], new { @readonly = "readonly" })
+            </td>
+            <td></td>
+            <td style="width: 70px"></td>
+            <td>
+                @Html.LabelFor(model => model.designation_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.designation_id, new SelectList(@ViewBag.Designations, "id", "name"), "------ Please select ------", new { style = "width:220px" })
+                <br /> @Html.ValidationMessageFor(model => model.designation_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+        </tr>
+
+        @*<tr>
+            <td>
+                @Html.LabelFor(model => model.sub_department_id)
+            </td>
+            <td style="padding-left: 5px">
+                <select id="SubDepartment" name="sub_department_id" class="form-control ddlSubDept"></select>
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;"></td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.sub_sub_department_id)
+            </td>
+            <td style="padding-left: 5px">
+               <select id="SubSubDepartment" name="sub_sub_department_id" class="form-control ddlSubSubDept"></select>
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;"></td>
+        </tr>*@
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.cost_centre_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.cost_centre_id, new SelectList(@ViewBag.CostCentre, "id", "cost_centre_name"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.cost_centre_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.basic_salary)
+            </td>
+            <td style="padding-left: 5px;">
+                @Html.TextBoxFor(model => model.basic_salary)
+                @*@Html.TextBoxFor(model => model.basic_salary, new { style = "text-align:right", @readonly = "readonly" })*@
+                <br />@Html.ValidationMessageFor(model => model.basic_salary)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.present_address)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.TextBoxFor(model => model.present_address, new { @class = "form-control"})
+                @*<br />@Html.ValidationMessageFor(model => model.present_address)*@
+            </td>
+            <td></td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.parmanent_address)
+                @*<br />@Html.ValidationMessageFor(model => model.parmanent_address)*@
+            </td>
+            <td style="padding-left: 5px;">
+                @Html.TextBoxFor(model => model.parmanent_address, new { @class = "form-control"})
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="7" style="height: 20px"></td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+            <td style="text-align: right">
+                <table style="border-collapse: separate; border-spacing: 3px; text-align: right; width: 100%">
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Back to List", "Index")
+                        </td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="submitButton" value="Previous" />
+                        </td>
+                        <td style="text-align: right">
+                            <input class="btn btn-success" type="submit" name="submitButton" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    </form>
+}
+
+
+@section PageSpecificJs
+{
+    <script src="~/Scripts/jquery-2.0.3.js"></script>
+    <script type="text/javascript">
+        $("#present_address, #parmanent_address").keypress(function (e) {
+            var restrictedValue = ['"', '%'];
+            var spc = 0, isReturn = false;
+
+            $.each(restrictedValue, function (i, item) {
+                if (event.key == item) {
+                    alert("This field does not support- " + item);
+                    spc = e.keyCode;
+                    isReturn = true;
+                }
+            })
+            if (isReturn) {
+                var k;
+                document.all ? k = e.keyCode : k = e.which;
+                return (k != spc);
+            }
+        })
+
+        // Loading dropdown using ajax..
+        // All the Parameters are required accept contextKey
+        var ddlDepartment = $("#Department");
+        var ddlSubDepartment = $("#SubDepartment");
+        var ddlSubSubDepartment = $("#SubSubDepartment");
+        var funcCallback = function (val) {
+            var opt = $("#Department > option").length > 0;
+            alert(opt);
+        }
+
+        function LoadDropDown(url, type, elementId, contextKey, defaultvalue) {
+            if (contextKey === undefined && $.trim(contextKey) == '') {
+                $.ajax({
+                    dataType: 'json',
+                    type: type,
+                    url: url,
+                    async: false,
+                    success: function (result) {
+                        console.log(result);
+                        $.each(result, function (index, item) {
+                            if (index == 0) {
+                                var opt1 = "<option value=''>Select One</option>";
+                                elementId.append(opt1);
+                            }
+                            var option = "<option value='" + item.Value + "'>" + item.Text + "</option>";
+                            elementId.append(option);
+                        });
+                        //func(null);
+                        if (defaultvalue != '')
+                        {
+                            elementId.val(defaultvalue);
+                            elementId.trigger('change');
+                        }
+                        
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+            else {
+                $.ajax({
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    type: type,
+                    url: url,
+                    data: contextKey,
+                    async: false,
+                    success: function (result) {
+                        console.log(result);
+                        $.each(result, function (index, item) {
+                            if (index == 0) {
+                                var opt1 = "<option value=''>Select One</option>";
+                                elementId.append(opt1);
+                            }
+                            var option = "<option value='" + item.Value + "'>" + item.Text + "</option>";
+                            elementId.append(option);
+                        });
+                        //func(null);
+                        if (defaultvalue != '') {
+                            elementId.val(defaultvalue);
+                            elementId.trigger('change');
+                        }
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                })
+            }
+        }
+
+        
+
+        $(document).ready(function () {
+
+           //LoadDropDown('/Employee/Department', 'POST', ddlDepartment, null, 'Departments')
+            
+
+            //alert(opt);
+
+           @* if ($("#Department > option").length > 0)
+            {
+                console.log('DDL 1');
+                 // Selected
+                ddlDepartment.val('@Departments'); // Dropdown change Event Fire
+            }*@
+           @* if ('@ViewBag.SubDepartments' != "") {
+                ddlSubDepartment.val('@ViewBag.SubDepartments'); // Seleted
+                ddlSubDepartment.trigger('change'); // Dropdown change Event Fire
+            }
+            if ('@ViewBag.SubSubDepartments' != "") {
+                ddlSubSubDepartment.val('@ViewBag.SubDepartments'); // Seleted
+            }*@
+        })
+       
+
+        $(function () {
+           // $('#Department').val('Departments');
+        });
+
+        ddlDepartment.change(function () {
+            ddlSubDepartment.empty();
+            ddlSubSubDepartment.empty();
+            if (ddlDepartment.val() != "") {
+               @* LoadDropDown('/Employee/SubDepartment', 'POST', ddlSubDepartment, JSON.stringify({ deptId: ddlDepartment.val() }),'@SubDepartments')*@
+            }
+        })
+
+        ddlSubDepartment.change(function () {
+            ddlSubSubDepartment.empty();
+            if (ddlDepartment.val() != "") {
+                @*LoadDropDown('/Employee/SubSubDepartment', 'POST', ddlSubSubDepartment, JSON.stringify({ subDeptId: ddlSubDepartment.val() }), '@SubSubDepartments')*@
+            }
+
+        })
+
+    </script>
+}

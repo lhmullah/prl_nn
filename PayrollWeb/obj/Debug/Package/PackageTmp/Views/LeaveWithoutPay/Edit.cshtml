@@ -1,0 +1,36 @@
+﻿@model PayrollWeb.ViewModels.LeaveWithoutPaySetting
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Division
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Leave Without Pay</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Lwp_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Lwp_type)
+            @Html.ValidationMessageFor(model => model.Lwp_type)
+        </div>
+        <p>
+            <input class="btn btn-success" type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

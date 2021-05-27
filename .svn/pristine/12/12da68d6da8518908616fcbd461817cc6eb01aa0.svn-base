@@ -1,0 +1,135 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.IncomeTaxParameter
+@{
+    ViewBag.Title = "IncomeTaxParameter";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Income Tax Paremeter Setting
+}
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+<div id="insertParamDet" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+        <p>Are you sure you want to submit income tax parameter setting?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="btninsertParamDet" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function SaveIncomeTaxParemeter(el)
+        {
+            $('#insertParamDet').modal('show');
+
+            $('#btninsertParamDet').click(function () {
+                $('#insertParamDet').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}
+
+@using (Html.BeginForm("IncomeTaxParameter","IncomeTax",FormMethod.Post,new{@class="form-inline"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.fiscal_year_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.fiscal_year_id, new SelectList(@ViewBag.AllFiscalYears, "id", "fiscal_year"), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.fiscal_year_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                 @Html.LabelFor(model => model.assessment_year)
+            </td>
+            <td>
+                @Html.EditorFor(model =>model.assessment_year)<br />
+                @Html.ValidationMessageFor(model => model.assessment_year)
+            </td>
+            
+        </tr>
+        <tr >
+            <td style="color:green">
+                Slab Depands on Type:
+            </td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td> 
+                @Html.LabelFor(model=>model.gender)
+            </td>
+            <td >
+                @Html.DropDownListFor(model=>model.gender,new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(),"Text","Text"))<br />
+                @Html.ValidationMessageFor(model => model.gender)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.slab_mininum_amount)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_mininum_amount)<br />
+                @Html.ValidationMessageFor(model => model.slab_mininum_amount)
+            </td>
+            <td style="width: 10px;"></td>
+            <td> @Html.LabelFor(model=>model.slab_maximum_amount)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_maximum_amount)<br />
+                @Html.ValidationMessageFor(model => model.slab_maximum_amount)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.slab_percentage)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_percentage)<br />
+                @Html.ValidationMessageFor(model => model.slab_percentage)
+            </td>
+        </tr>
+       
+    </table>
+     <p>
+        <input class="btn btn-success" type="submit" value="Submit"  />
+    </p>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "_TaxParameterResult")
+</div>
+

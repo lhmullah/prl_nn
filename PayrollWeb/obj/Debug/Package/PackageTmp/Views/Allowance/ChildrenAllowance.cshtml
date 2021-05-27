@@ -1,0 +1,119 @@
+﻿@using PagedList.Mvc;
+@using PayrollWeb.ViewModels
+@model PagedList.IPagedList<PayrollWeb.ViewModels.ChildrenAllowance>
+@{
+    ViewBag.Title = "ChildrenAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Children Allowance
+}
+
+<div class="" style="float:right;margin-bottom: 10px;">
+    <a class="btn btn-primary" href="@Url.Action("SubmitChildrenAllowance")"><i class="icon-plus"></i> Create </a>
+</div>
+
+<br style="clear: both;"/>
+
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser2" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                Employee Name
+            </th>
+            <th>
+                No. of Children
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                active
+            </th>
+            <th>
+                Effective From
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach (var childrenAllowance in Model)
+        {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(c => childrenAllowance.prl_employee.name)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(c => childrenAllowance.no_of_children)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(c => childrenAllowance.amount)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(c => childrenAllowance.is_active)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(c => childrenAllowance.effective_from)
+                  </td>
+                  <td>
+                      @*@Html.ActionLink("Edit","Edit","Allowance",new{id = childrenAllowance.id},null)*@
+                      @Html.ActionLink("Delete", "DeleteChildrenAllowance", "Allowance", new { id = childrenAllowance.id }, new { onclick = "DeleteChildAllowance(this);return false;" })
+                  </td>
+              </tr>
+        }
+    </table>
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Paging", "Allowance", new { page }))
+</div>
+
+<div id="dltfc" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this children allowance?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltfc" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteChildAllowance(el)
+        {
+            $('#dltfc').modal('show');
+
+            $('#btnDltfc').click(function () {
+                $('#dltfc').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}
+

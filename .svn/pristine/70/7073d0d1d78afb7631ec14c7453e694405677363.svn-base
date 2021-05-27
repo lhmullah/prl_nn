@@ -1,0 +1,51 @@
+﻿@model PayrollWeb.ViewModels.DeductionName
+
+@{
+    ViewBag.Title = "Edit Deduction Name";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Deduction Name
+}
+
+
+@using (Html.BeginForm("EditDeductionName","Deduction")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.deduction_head_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x=>x.deduction_head_id,new SelectList(@ViewBag.DeductionHeads,"id","name",@Model.deduction_head_id))
+             @Html.ValidationMessageFor(model => model.deduction_head_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gl_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gl_code)
+            @Html.ValidationMessageFor(model => model.gl_code)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.deduction_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.deduction_name)
+            @Html.ValidationMessageFor(model => model.deduction_name)
+        </div>
+
+        <p>
+            <input class="btn btn-success" type="submit" value="Edit" />
+        </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "DeductionNames")
+</div>

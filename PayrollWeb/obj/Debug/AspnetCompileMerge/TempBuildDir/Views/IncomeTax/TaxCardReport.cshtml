@@ -1,0 +1,95 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportTaxCard
+
+
+@{
+    ViewBag.Title = "TaxCardReport";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Tax Card Report
+}
+<div id="empdata" style="width: 100%">
+    @using (Html.BeginForm("TaxCardReport", "IncomeTax", FormMethod.Post, new { target = "_blank" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <table style="border-collapse: separate; border-spacing: 3px">
+            <tr>
+                <td style="width: 125px">
+                    @Html.Label("Select Year")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:185px" })
+                </td>
+                <td style="width: 15px"></td>
+                <td style="width: 125px">
+                    @Html.Label("Select Month")
+                </td>
+                <td>
+                    @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:185px" })
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 125px">
+                    @Html.Label("Search employee")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    <input type="text" placeholder="Write Employee ID or Name and then Select" autocomplete="off" data-provide="typeahead" id="aa" style="width: 290px" />
+                </td>
+                <td style="width: 15px"></td>
+                <td style="width: 125px">
+                    
+                </td>
+                <td style="width: 185px">
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="5">
+                    <table>
+                        <tr>
+                            <td>
+                                <input class="btn btn-success" style="width: 120px" type="submit" name="sButton" value="Download" />
+                                <input type="hidden" name="empid" id="empid" />
+                            </td>
+                            <td style="width: 30px"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </td>
+                <td colspan="2"></td>
+            </tr>
+        </table>
+    }
+</div>
+
+@section PageSpecificJs
+{
+
+    <link href="~/Content/examples.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch", "Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+}
+

@@ -1,0 +1,177 @@
+﻿@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeDetails
+
+@{
+    ViewBag.Title = "EditEmpDetails";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Edit Employee Details
+}
+
+
+@using (Html.BeginForm("EditEmpDetails", "Employee", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+   
+    @Html.HiddenFor(model => model.id)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Employee")
+            </td>
+            <td style="padding-left: 5px">
+                @Html.TextBox("EmpNum", ViewData["EmpNum"], new { @readonly = "readonly" })
+            </td>
+            <td></td>
+            <td style="width: 70px"></td>
+            <td>
+                @Html.LabelFor(model => model.designation_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.designation_id, new SelectList(@ViewBag.Designations, "id", "name"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.designation_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.department_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.department_id, new SelectList(@ViewBag.Departments, "id", "name"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.department_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.division_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.division_id, new SelectList(@ViewBag.Divitions, "id", "name"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.division_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+        </tr>
+        <tr>
+            <td colspan="7" style="height: 17px"></td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.emp_status)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(model => model.emp_status, new SelectList(EnumToSelectItemList.GetEnumSelectList<EmployeeStatus>(), "Text", "Text"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.emp_status)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.contract_start_date)
+            </td>
+            <td style="padding-left: 5px" colspan="2">
+                @Html.TextBoxFor(model => model.contract_start_date, "{0:MMMM dd, yyyy}")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4"></td>
+            <td>
+                @Html.LabelFor(model => model.contract_end_date)
+            </td>
+            <td style="padding-left: 5px" colspan="2">
+                @Html.TextBoxFor(model => model.contract_end_date, "{0:MMMM dd, yyyy}")
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" style="height: 17px"></td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.grade_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.grade_id, new SelectList(@ViewBag.Grades, "id", "grade"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.grade_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.basic_salary)
+            </td>
+            <td style="padding-left: 5px;">
+                @Html.TextBoxFor(model => model.basic_salary, new { style = "text-align:right" })
+                <br />@Html.ValidationMessageFor(model => model.basic_salary)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.posting_location_id)
+            </td>
+            <td style="padding-left: 5px">
+                @Html.DropDownListFor(x => x.posting_location_id, new SelectList(@ViewBag.PostingLocations, "id", "location_name"), "------ Please select ------", new { style = "width:220px" })
+                <br />@Html.ValidationMessageFor(model => model.posting_location_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder;">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.posting_date)
+            </td>
+            <td style="padding-left: 5px" colspan="2">
+                @Html.TextBoxFor(model => model.posting_date)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" style="height: 20px"></td>
+        </tr>
+        <tr>
+            <td colspan="5"></td>
+            <td style="text-align: right">
+                <table style="border-collapse: separate; border-spacing: 3px; text-align: right; width: 100%">
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Back to List", "Index")
+                        </td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="submitButton" value="Previous" />
+                        </td>
+                        <td style="text-align: right">
+                            <input class="btn btn-success" type="submit" name="submitButton" value="Save" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        $('#posting_date,#contract_start_date,#contract_end_date').datepicker();
+
+        if ($('#emp_status').val() == 'Regular') {
+            $('#contract_start_date').prop('disabled', true);
+            $('#contract_end_date').prop('disabled', true);
+        }
+
+        $('#emp_status').change(function () {
+            var stts = $('#emp_status').val();
+            if (stts == 'Regular') {
+                $('#contract_start_date').prop('disabled', true);
+                $('#contract_end_date').prop('disabled', true);
+            }
+            else {
+                $('#contract_start_date').prop('disabled', false);
+                $('#contract_end_date').prop('disabled', false);
+            }
+        });
+    </script>
+}

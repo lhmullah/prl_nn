@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+
+@section PageBanner
+{
+    Import Employee Data and Sync
+}
+@section PageSpecificJsHeader
+{   
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css"/>
+}
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        $(function() {
+            $('#btnSync').on("click", function (e) {
+                e.preventDefault();
+                $('#prel').show();
+                $('#btnSync').text('Processing. Please wait...');
+                $('#btnSync').attr("disabled", "disabled");
+                
+                $.get('@Url.Action("SyncData","DataSync")', function (rdata) {
+                    $('#prel').hide();
+                    $('#btnSync').text('Sync Data Now');
+                    $('#btnSync').removeAttr("disabled");
+                    if (rdata.ProcessResult.HasError == true) {
+                        var lst = $('<ul>');
+                        var msgFail = $('<p>', { text: "Following employee data could not be processed." }).append('<br/>');
+                        $('#dvProcessResult').append(msgFail);
+                        for (var i = 0; i < rdata.ProcessResult.Messages.length; i++) {
+                            var el = $('<li>', { text: rdata.ProcessResult.Messages[i] });
+                            lst.append(el);
+                        }
+                        $('#dvProcessResult').append(lst);
+                    } else {
+                        var msgSuc = $('<p>', { text: "Data import and sync process completed successfully." }).append('<br/>');
+                        $('#dvProcessResult').append(msgSuc);
+                    }
+
+                });
+            });
+        });
+        
+    </script>
+}
+<div class="row-fluid">
+    <div class="form-actions"><i id="prel" style="display: none;"><img src="~/Content/pleasewait.gif"/></i>
+        <button  id="btnSync" type="@*submit*@" class="btn btn-primary">Sync Data Now</button>
+    </div>
+    <div id="dvProcessResult"></div>
+</div>
+

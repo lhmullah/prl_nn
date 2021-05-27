@@ -1,0 +1,187 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.DeductionConfiguration
+
+@{
+    ViewBag.Title = "ConfigureDeduction";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Deduction Configuration
+}
+
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+@using (Html.BeginForm("ConfigureDeduction", "Deduction", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+    <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.deduction_name_id)
+               
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.deduction_name_id, new SelectList(@ViewBag.DeductionNames, "id", "deduction_name"), "Select Deduction Name")<br />
+               @Html.ValidationMessageFor(model => model.deduction_name_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.activation_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.activation_date)<br />
+                @Html.ValidationMessageFor(model => model.activation_date)
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <label id="periodically"> Periodicatlly </label>
+            </td>
+            <td >
+                @Html.CheckBoxFor(model => model.is_monthly) @Html.LabelFor(model => model.is_monthly)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.deactivation_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.deactivation_date)<br />
+                @Html.ValidationMessageFor(model => model.deactivation_date)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label> Grades </label><br />
+                @Html.ValidationMessageFor(model => model.Grades)
+            </td>
+            <td colspan="4">
+                <ul style="margin-left: 0;">
+                    @foreach (var g in Model.Grades)
+                    {
+                        <li style="display: inline;">
+                            @Html.Hidden("Grades.Index", g.id)
+                            @Html.Hidden(string.Format("Grades[{0}].id", @g.id), @g.id)
+                            @Html.Hidden(string.Format("Grades[{0}].grade", @g.id), @g.grade)
+                            @Html.Hidden(string.Format("Grades[{0}].IsSelected", @g.IsSelected), @g.grade)
+                            @Html.CheckBox(string.Format("Grades[{0}].IsSelected", @g.id),@g.IsSelected ,new { @style = "padding-right:5px;"})  @Html.Label(@g.grade, new { @style = "padding-right:20px;" }) 
+                            
+                        </li>
+                    }
+               </ul>
+            </td>
+        </tr>
+         
+        <tr>
+            <td> &nbsp;</td>
+            <td colspan="3">
+                @Html.CheckBoxFor(x => x.is_confirmation_required) @Html.LabelFor(model => model.is_confirmation_required)<br/>
+                @Html.CheckBoxFor(x => x.is_taxable) @Html.LabelFor(model => model.is_taxable) <br/>
+                @Html.CheckBoxFor(x => x.project_rest_year) @Html.LabelFor(model => model.project_rest_year)<br/>
+            </td>
+            
+            <td >
+                @Html.CheckBoxFor(x=>x.depends_on_working_hour) @Html.LabelFor(model=>model.depends_on_working_hour)<br/>
+                @Html.CheckBoxFor(x=>x.is_active) @Html.LabelFor(model=>model.is_active) <br/>
+            </td>
+            <td > 
+
+            </td>
+        </tr>
+        
+        <tr>
+            <td> @Html.LabelFor(model => model.gender)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model => model.gender, new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(), "Text", "Text"))
+            </td>
+        </tr>
+        
+        <tr >
+            <td >
+                Applied As
+            </td>
+            <td colspan="4"></td>
+        </tr>
+        
+
+        <tr>
+            <td style="border-top: 0;">&nbsp;</td>
+            <td style="border-top: 0;" colspan="2">
+                @Html.LabelFor(model => model.flat_amount)
+                @Html.TextBoxFor(model => model.flat_amount)<br/>
+                @Html.ValidationMessageFor(model => model.flat_amount)
+            </td>
+            <td colspan="2" style="border-top: 0;">
+                @Html.LabelFor(model => model.percent_amount)
+                @Html.TextBoxFor(model => model.percent_amount)<br/>
+                @Html.ValidationMessageFor(model => model.percent_amount)
+            </td>
+        </tr>
+        
+    </table>
+
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section PageSpecificJs
+{
+   
+    <script type="text/javascript">
+        $('#activation_date,#deactivation_date').datepicker();
+
+
+        $('#percent_amount').on("click", function() {
+            $('#flat_amount').val('');
+        });
+            
+        $('#flat_amount').on("click", function () {
+            $('#percent_amount').val('');
+        });
+       
+        $('#deduction_name_id').change(function () {
+            var ks = $('#deduction_name_id option:selected').val();
+            var test = '@Url.Action("ConfigureDeduction", "Deduction", new { dnid = "PLACEHOLDER" })';
+            var myUrl = test.replace('PLACEHOLDER', ks);
+            document.location.href = myUrl;
+        });
+        
+    </script>
+}
+
+

@@ -1,0 +1,1008 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1CF55953-3E79-4459-A1E4-8D8B360F02DE}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PayrollWeb</RootNamespace>
+    <AssemblyName>PayrollWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper.Net4">
+      <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.Net4.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus">
+      <HintPath>..\packages\EPPlus.3.1.3.3\lib\net35\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Jace, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Jace.0.8.4\lib\net40\Jace.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.1\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="MvcSiteMapProvider">
+      <HintPath>..\packages\MvcSiteMapProvider.MVC4.Core.4.4.6\lib\net45\MvcSiteMapProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySQL.Data.Entities.6.7.4.1\lib\net45\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>..\packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Common">
+      <HintPath>..\packages\Ninject.Web.Common.3.0.0.7\lib\net45-full\Ninject.Web.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>..\packages\Ninject.MVC3.3.0.0.6\lib\net45-full\Ninject.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.DataAccess">
+      <HintPath>..\packages\odp.net.x86.112.3.20\lib\net40\Oracle.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.16.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.3.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.2\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.4.0.0\lib\net40\System.Web.Http.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.Edm, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.Edm.5.2.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Data.OData.5.2.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Spatial, Version=5.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\System.Spatial.5.2.0\lib\net40\System.Spatial.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivator">
+      <HintPath>..\packages\WebActivator.1.5.3\lib\net40\WebActivator.dll</HintPath>
+    </Reference>
+    <Reference Include="WebActivatorEx">
+      <HintPath>..\packages\WebActivatorEx.2.0.3\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\AutoMapperConfiguration.cs" />
+    <Compile Include="App_Start\BootstrapBundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\NinjectWebCommon.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\TypeaheadBundleConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AllowanceController.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BankBranchController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\AllowanceNameController.cs" />
+    <Compile Include="Controllers\BankController.cs" />
+    <Compile Include="Controllers\BonusController.cs" />
+    <Compile Include="Controllers\DataSyncController.cs" />
+    <Compile Include="Controllers\DeductionController.cs" />
+    <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\DesignationController.cs" />
+    <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
+    <Compile Include="Controllers\EmployeeSearchController.cs" />
+    <Compile Include="Controllers\FiscalYrController.cs" />
+    <Compile Include="Controllers\FreeCarController.cs" />
+    <Compile Include="Controllers\GradesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IncomeTaxController.cs" />
+    <Compile Include="Controllers\LeaveWithoutPayController.cs" />
+    <Compile Include="Controllers\OvertimeController.cs" />
+    <Compile Include="Controllers\PayrollApiController.cs" />
+    <Compile Include="Controllers\ReportController.cs" />
+    <Compile Include="Controllers\SalaryController.cs" />
+    <Compile Include="Controllers\SettlementController.cs" />
+    <Compile Include="Controllers\SetupController.cs" />
+    <Compile Include="CustomSecurity\PayrollAuthorizeAttribute.cs" />
+    <Compile Include="CustomSecurity\UserActionChecker.cs" />
+    <Compile Include="Models\AllowanceProcessResult.cs" />
+    <Compile Include="Models\DataImportModel.cs" />
+    <Compile Include="Models\DeductionProcessResult.cs" />
+    <Compile Include="Models\EnumToSelectItemList.cs" />
+    <Compile Include="Models\IProcessResult.cs" />
+    <Compile Include="Models\ISalaryProcess.cs" />
+    <Compile Include="Models\NVisibility.cs" />
+    <Compile Include="Models\OracleDataImportManger.cs" />
+    <Compile Include="Models\PayrollMenuProvider.cs" />
+    <Compile Include="Models\SalaryAllowanceProcess.cs" />
+    <Compile Include="Models\SalaryCalculationHelper.cs" />
+    <Compile Include="Models\SalaryDeductionProcess.cs" />
+    <Compile Include="Models\SalaryProcessResult.cs" />
+    <Compile Include="ReportDataSet\ReportDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Service\AllowanceService.cs" />
+    <Compile Include="Service\BonusService.cs" />
+    <Compile Include="Service\DeductionService.cs" />
+    <Compile Include="Service\IncomeTaxService.cs" />
+    <Compile Include="Service\ProvidentFundService.cs" />
+    <Compile Include="Service\SalaryService.cs" />
+    <Compile Include="Service\SettlementService.cs" />
+    <Compile Include="Utility\BatchNumberGenerator.cs" />
+    <Compile Include="Utility\CommonDateClass.cs" />
+    <Compile Include="Utility\DateGreaterThanAttribute.cs" />
+    <Compile Include="Utility\DateLessThanAttribute.cs" />
+    <Compile Include="Utility\DateUtility.cs" />
+    <Compile Include="Utility\InputBoxBinaryChoiceAttribute.cs" />
+    <Compile Include="Utility\ModelClientValidationDateGreaterThanRule.cs" />
+    <Compile Include="Utility\ModelClientValidationDateLessThanRule.cs" />
+    <Compile Include="Utility\ModelClientValidationInputBoxBinaryChoice.cs" />
+    <Compile Include="Utility\ModelClientValidationNumericGreaterThan.cs" />
+    <Compile Include="Utility\ModelClientValidationNumericLessThanRule.cs" />
+    <Compile Include="Utility\NumericGreaterThanAttribute.cs" />
+    <Compile Include="Utility\NumericLessThanAttribute.cs" />
+    <Compile Include="Utility\SubMenuGenerator.cs" />
+    <Compile Include="ViewModels\Authentication.cs" />
+    <Compile Include="ViewModels\AllowanceConfiguration.cs" />
+    <Compile Include="ViewModels\AllowanceHead.cs" />
+    <Compile Include="ViewModels\AllowanceName.cs" />
+    <Compile Include="ViewModels\AllowanceUploadData.cs" />
+    <Compile Include="ViewModels\AllowanceUploadView.cs" />
+    <Compile Include="ViewModels\BankBranch.cs" />
+    <Compile Include="ViewModels\BonusConfiguration.cs" />
+    <Compile Include="ViewModels\BonusHold.cs" />
+    <Compile Include="ViewModels\BonusName.cs" />
+    <Compile Include="ViewModels\BonusProcess.cs" />
+    <Compile Include="ViewModels\BonusProcessDetail.cs" />
+    <Compile Include="ViewModels\BonusUploadData.cs" />
+    <Compile Include="ViewModels\BonusUploadView.cs" />
+    <Compile Include="ViewModels\ChildrenAllowance.cs" />
+    <Compile Include="ViewModels\DeductionConfiguration.cs" />
+    <Compile Include="ViewModels\DeductionHead.cs" />
+    <Compile Include="ViewModels\DeductionName.cs" />
+    <Compile Include="ViewModels\DeductionUploadData.cs" />
+    <Compile Include="ViewModels\DeductionUploadView.cs" />
+    <Compile Include="ViewModels\Department.cs" />
+    <Compile Include="ViewModels\Designation.cs" />
+    <Compile Include="ViewModels\Division.cs" />
+    <Compile Include="ViewModels\Employee.cs" />
+    <Compile Include="ViewModels\EmployeeDetails.cs" />
+    <Compile Include="ViewModels\EmployeeDiscontinue.cs" />
+    <Compile Include="ViewModels\EmployeeEntitlement.cs" />
+    <Compile Include="ViewModels\EmployeeFreeCar.cs" />
+    <Compile Include="ViewModels\EmployeeIndividualAllowance.cs" />
+    <Compile Include="ViewModels\EmployeeIndividualDeduction.cs" />
+    <Compile Include="ViewModels\EmployeeSalaryAllowance.cs" />
+    <Compile Include="ViewModels\EmployeeLeaveWithoutPay.cs" />
+    <Compile Include="ViewModels\EmployeeSearch.cs" />
+    <Compile Include="ViewModels\EmployeeTaxProcess.cs" />
+    <Compile Include="ViewModels\EmployeeTaxProcessDetail.cs" />
+    <Compile Include="ViewModels\EmployeeTaxSlab.cs" />
+    <Compile Include="ViewModels\Enums.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ActionMode.cs" />
+    <Compile Include="ViewModels\BanckAccount.cs" />
+    <Compile Include="ViewModels\Bank.cs" />
+    <Compile Include="ViewModels\Company.cs" />
+    <Compile Include="ViewModels\EmployeeView.cs" />
+    <Compile Include="ViewModels\FiscalYr.cs" />
+    <Compile Include="ViewModels\Grade.cs" />
+    <Compile Include="ViewModels\IncomeTaxParameter.cs" />
+    <Compile Include="ViewModels\IncomeTaxParameterDetail.cs" />
+    <Compile Include="ViewModels\IncomeTaxRefund.cs" />
+    <Compile Include="ViewModels\LeaveWithoutPaySetting.cs" />
+    <Compile Include="ViewModels\Menu.cs" />
+    <Compile Include="ViewModels\OperationResult.cs" />
+    <Compile Include="ViewModels\OTConfiguration.cs" />
+    <Compile Include="ViewModels\Overtime.cs" />
+    <Compile Include="ViewModels\PostingLocation.cs" />
+    <Compile Include="ViewModels\Religion.cs" />
+    <Compile Include="ViewModels\ReportBankAdvice.cs" />
+    <Compile Include="ViewModels\ReportBonus.cs" />
+    <Compile Include="ViewModels\ReportModel.cs" />
+    <Compile Include="ViewModels\ReportPayslip.cs" />
+    <Compile Include="ViewModels\ReportSalaryChange.cs" />
+    <Compile Include="ViewModels\ReportSalarySheet.cs" />
+    <Compile Include="ViewModels\RolePrivilege.cs" />
+    <Compile Include="ViewModels\SalaryProcessModel.cs" />
+    <Compile Include="ViewModels\SalaryReview.cs" />
+    <Compile Include="ViewModels\SearchEmployeeData.cs" />
+    <Compile Include="ViewModels\SubMenu.cs" />
+    <Compile Include="ViewModels\TaxAdjustmentUpload.cs" />
+    <Compile Include="ViewModels\TaxAdjustmentUploadView.cs" />
+    <Compile Include="ViewModels\TaxChallanUpload.cs" />
+    <Compile Include="ViewModels\TaxChallanUploadView.cs" />
+    <Compile Include="ViewModels\TaxRefundUploadView.cs" />
+    <Compile Include="ViewModels\TimeCard.cs" />
+    <Compile Include="ViewModels\TimeCardRawView.cs" />
+    <Compile Include="ViewModels\TimeCardUploadModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap3-editable\css\bootstrap-editable.css" />
+    <Content Include="Content\bootstrap3-editable\img\clear.png" />
+    <Content Include="Content\bootstrap3-editable\img\loading.gif" />
+    <Content Include="Content\bootstrap3-editable\js\bootstrap-editable.js" />
+    <Content Include="Content\bootstrap3-editable\js\bootstrap-editable.min.js" />
+    <Content Include="Content\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\glyphicons-halflings.png" />
+    <Content Include="Content\colored-running.gif" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\css\AutoFill.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\AutoFill\media\images\filler.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\css\ColReorder.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColReorder\media\images\insert.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVis.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\css\ColVisAlt.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\ColVis\media\images\button.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\FixedColumns\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\css\dataTables.scroller.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\doc.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shCore.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\css\shThemeDataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.jpg" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\arrow.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\docs\media\images\extended.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\Scroller\media\images\loading-background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\css\TableTools_JUI.css" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\background.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\collection_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\copy_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\csv_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\pdf_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\print_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\xls_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls.swf" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_page.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\demo_table_jui.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables-1.9.4\media\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\back_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\favicon.ico" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\forward_enabled_hover.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_both.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc.png" />
+    <Content Include="Content\DataTables-1.9.4\media\images\sort_desc_disabled.png" />
+    <Content Include="Content\datepicker.css" />
+    <Content Include="Content\examples.css" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fu\jquery.fileupload-jquery-ui.js" />
+    <Content Include="Content\fu\jquery.fileupload-ui.js" />
+    <Content Include="Content\fu\jquery.fileupload.js" />
+    <Content Include="Content\fu\jquery.iframe-transport.js" />
+    <Content Include="Content\fu\jquery.ui.widget.js" />
+    <Content Include="Images\CompanyLogo\GpLOGO.jpg" />
+    <Content Include="Images\v_grad.png" />
+    <Content Include="Scripts\bootstrap-collapse.js" />
+    <Content Include="Scripts\hogan-2.0.0.min.js" />
+    <Content Include="Content\loading_aqua.gif" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\pleasewait.gif" />
+    <Content Include="Content\themes\base\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\gpit_logo.png" />
+    <Content Include="Scripts\bootstrap-datepicker.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\doc.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\jquery.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shBrushJScript.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\docs\media\js\shCore.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\ZeroClipboard.js" />
+    <Content Include="Scripts\DataTables-1.9.4\jquery.dataTables.bootstrap.css" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\media\js\jquery.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\TableTools\media\js\TableTools.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\Scroller\media\js\dataTables.scroller.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\FixedColumns\media\js\FixedColumns.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColVis\media\js\ColVis.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\ColReorder\media\js\ColReorder.min.js.gz" />
+    <Content Include="Scripts\DataTables-1.9.4\extras\AutoFill\media\js\AutoFill.min.js.gz" />
+    <Content Include="Content\DataTables-1.9.4\media\images\Sorting icons.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\printer.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\file_types.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\copy document.psd" />
+    <Content Include="Content\DataTables-1.9.4\extras\TableTools\media\images\psd\collection.psd" />
+    <Content Include="Mvc.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="MvcSiteMapSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\testPayroll.pubxml" />
+    <Content Include="ReportDataSet\ReportDataSet.xsc">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="ReportDataSet\ReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="ReportDataSet\ReportDataSet.xss">
+      <DependentUpon>ReportDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Content\jquery.fileupload-ui.css" />
+    <Content Include="Scripts\jquery-ui-1.10.3.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.7.1.js" />
+    <Content Include="Scripts\typeahead.js" />
+    <Content Include="Scripts\typeahead.min.js" />
+    <Content Include="Scripts\widgets.js" />
+    <Content Include="themes\amelia\bootstrap.css" />
+    <Content Include="themes\amelia\bootstrap.min.css" />
+    <Content Include="themes\cerulean\bootstrap.min.css" />
+    <Content Include="themes\css\base.css" />
+    <Content Include="themes\css\bootstrap-responsive.min.css" />
+    <Content Include="themes\css\bootstrap.min.css" />
+    <Content Include="themes\css\font-awesome-ie7.css" />
+    <Content Include="themes\css\font-awesome.css" />
+    <Content Include="themes\current\bootstrap.min.css" />
+    <Content Include="themes\cyborg\bootstrap.min.css" />
+    <Content Include="themes\font\fontawesome-webfont.svg" />
+    <Content Include="themes\glyphicons-halflings.png" />
+    <Content Include="themes\images\1.jpg" />
+    <Content Include="themes\images\2.jpg" />
+    <Content Include="themes\images\3.jpg" />
+    <Content Include="themes\images\7.jpg" />
+    <Content Include="themes\images\banner\aboutus.png" />
+    <Content Include="themes\images\banner\blog.png" />
+    <Content Include="themes\images\banner\contact.png" />
+    <Content Include="themes\images\banner\details.png" />
+    <Content Include="themes\images\banner\portfolio.png" />
+    <Content Include="themes\images\banner\services.png" />
+    <Content Include="themes\images\blockRepeat.png" />
+    <Content Include="themes\images\blog\1.jpg" />
+    <Content Include="themes\images\blog\2.jpg" />
+    <Content Include="themes\images\blog\3.jpg" />
+    <Content Include="themes\images\blog\4.jpg" />
+    <Content Include="themes\images\blog\5.jpg" />
+    <Content Include="themes\images\blog\6.jpg" />
+    <Content Include="themes\images\bodyBg.png" />
+    <Content Include="themes\images\carousel\business_website_templates_1.jpg" />
+    <Content Include="themes\images\carousel\business_website_templates_2.jpg" />
+    <Content Include="themes\images\carousel\business_website_templates_3.jpg" />
+    <Content Include="themes\images\carousel\business_website_templates_4.jpg" />
+    <Content Include="themes\images\carousel\business_website_templates_5.jpg" />
+    <Content Include="themes\images\carousel\services_dtl.jpg" />
+    <Content Include="themes\images\clients\facebookLogo.jpg" />
+    <Content Include="themes\images\clients\googleLogo.jpg" />
+    <Content Include="themes\images\clients\my_web_solution.jpg" />
+    <Content Include="themes\images\clients\twitterLogo.jpg" />
+    <Content Include="themes\images\facebook.png" />
+    <Content Include="themes\images\footerbg.png" />
+    <Content Include="themes\images\footerRepeat.png" />
+    <Content Include="themes\images\glyphicons-halflings.png" />
+    <Content Include="themes\images\headerbg.png" />
+    <Content Include="themes\images\headerRepeat.png" />
+    <Content Include="themes\images\img180x120.png" />
+    <Content Include="themes\images\img185x165.png" />
+    <Content Include="themes\images\img64x64.png" />
+    <Content Include="themes\images\onepx.png" />
+    <Content Include="themes\images\portfolio\1.jpg" />
+    <Content Include="themes\images\portfolio\10.jpg" />
+    <Content Include="themes\images\portfolio\11.jpg" />
+    <Content Include="themes\images\portfolio\12.jpg" />
+    <Content Include="themes\images\portfolio\13.jpg" />
+    <Content Include="themes\images\portfolio\2.jpg" />
+    <Content Include="themes\images\portfolio\3.jpg" />
+    <Content Include="themes\images\portfolio\4.jpg" />
+    <Content Include="themes\images\portfolio\5.jpg" />
+    <Content Include="themes\images\portfolio\6.jpg" />
+    <Content Include="themes\images\portfolio\7.jpg" />
+    <Content Include="themes\images\portfolio\8.jpg" />
+    <Content Include="themes\images\portfolio\9.jpg" />
+    <Content Include="themes\images\portfolio\coming_soon.jpg" />
+    <Content Include="themes\images\portfolio\mywebsolution.jpg" />
+    <Content Include="themes\images\prlchange_password.png" />
+    <Content Include="themes\images\prllogout.png" />
+    <Content Include="themes\images\prluser.png" />
+    <Content Include="themes\images\rss.png" />
+    <Content Include="themes\images\rv.png" />
+    <Content Include="themes\images\shadow.png" />
+    <Content Include="themes\images\shadows.png" />
+    <Content Include="themes\images\shadowsReverse.png" />
+    <Content Include="themes\images\smallShadows.png" />
+    <Content Include="themes\images\tabrepeat.png" />
+    <Content Include="themes\images\tabRepeatInactive.png" />
+    <Content Include="themes\images\twitter.png" />
+    <Content Include="themes\images\youtube.png" />
+    <Content Include="themes\journal\bootstrap.min.css" />
+    <Content Include="themes\js\bootstrap-popover.js" />
+    <Content Include="themes\js\bootstrap-tooltip.js" />
+    <Content Include="themes\js\bootstrap.min.js" />
+    <Content Include="themes\js\business_ltd_1.0.js" />
+    <Content Include="themes\js\jquery-1.8.3.min.js" />
+    <Content Include="themes\js\jquery.gmap.js" />
+    <Content Include="themes\readable\bootstrap.min.css" />
+    <Content Include="themes\simplex\bootstrap.min.css" />
+    <Content Include="themes\slate\bootstrap.min.css" />
+    <Content Include="themes\spacelab\bootstrap.min.css" />
+    <Content Include="themes\spruce\bootstrap.css" />
+    <Content Include="themes\spruce\bootstrap.min.css" />
+    <Content Include="themes\superhero\bootstrap.min.css" />
+    <Content Include="themes\switch\images\clr\amelia.png" />
+    <Content Include="themes\switch\images\clr\cerulean.png" />
+    <Content Include="themes\switch\images\clr\current.png" />
+    <Content Include="themes\switch\images\clr\cyborg.png" />
+    <Content Include="themes\switch\images\clr\journal.png" />
+    <Content Include="themes\switch\images\clr\readable.png" />
+    <Content Include="themes\switch\images\clr\simplex.png" />
+    <Content Include="themes\switch\images\clr\slate.png" />
+    <Content Include="themes\switch\images\clr\spacelab.png" />
+    <Content Include="themes\switch\images\clr\spruce.png" />
+    <Content Include="themes\switch\images\clr\superhero.png" />
+    <Content Include="themes\switch\images\clr\united.png" />
+    <Content Include="themes\switch\images\hideme.png" />
+    <Content Include="themes\switch\images\pattern\pattern1.png" />
+    <Content Include="themes\switch\images\pattern\pattern10.png" />
+    <Content Include="themes\switch\images\pattern\pattern11.png" />
+    <Content Include="themes\switch\images\pattern\pattern12.png" />
+    <Content Include="themes\switch\images\pattern\pattern13.png" />
+    <Content Include="themes\switch\images\pattern\pattern14.png" />
+    <Content Include="themes\switch\images\pattern\pattern15.png" />
+    <Content Include="themes\switch\images\pattern\pattern16.png" />
+    <Content Include="themes\switch\images\pattern\pattern16~.png" />
+    <Content Include="themes\switch\images\pattern\pattern17.png" />
+    <Content Include="themes\switch\images\pattern\pattern17~.png" />
+    <Content Include="themes\switch\images\pattern\pattern18.png" />
+    <Content Include="themes\switch\images\pattern\pattern19.png" />
+    <Content Include="themes\switch\images\pattern\pattern19~.png" />
+    <Content Include="themes\switch\images\pattern\pattern2.png" />
+    <Content Include="themes\switch\images\pattern\pattern20.png" />
+    <Content Include="themes\switch\images\pattern\pattern20~.png" />
+    <Content Include="themes\switch\images\pattern\pattern3.png" />
+    <Content Include="themes\switch\images\pattern\pattern4.png" />
+    <Content Include="themes\switch\images\pattern\pattern5.png" />
+    <Content Include="themes\switch\images\pattern\pattern6.png" />
+    <Content Include="themes\switch\images\pattern\pattern7.png" />
+    <Content Include="themes\switch\images\pattern\pattern8.png" />
+    <Content Include="themes\switch\images\pattern\pattern9.png" />
+    <Content Include="themes\switch\images\styleTgl.png" />
+    <Content Include="themes\switch\theamswitcher.js" />
+    <Content Include="themes\switch\themeswitch.css" />
+    <Content Include="themes\united\bootstrap.min.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="packages.config" />
+    <Content Include="themes\font\fontawesome-webfont.eot" />
+    <Content Include="themes\font\fontawesome-webfont.ttf" />
+    <Content Include="themes\font\fontawesome-webfont.woff" />
+    <Content Include="Views\Shared\_LayoutDetailsPage.cshtml" />
+    <Content Include="Views\Setup\CreateEmployee.cshtml" />
+    <Content Include="Views\Setup\CreateDivision.cshtml" />
+    <Content Include="Views\Setup\CreateDepartment.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Departments\Create.cshtml" />
+    <Content Include="Views\Departments\Edit.cshtml" />
+    <Content Include="Views\Bank\Index.cshtml" />
+    <Content Include="Views\Bank\Create.cshtml" />
+    <Content Include="Views\Bank\Edit.cshtml" />
+    <Content Include="Views\Allowance\Index.cshtml" />
+    <Content Include="Views\Allowance\Edit.cshtml" />
+    <Content Include="Views\Allowance\Create.cshtml" />
+    <Content Include="Views\Designation\CreateDesignation.cshtml" />
+    <Content Include="Views\Designation\Edit.cshtml" />
+    <Content Include="Views\Designation\Index.cshtml" />
+    <Content Include="Views\Deduction\Create.cshtml" />
+    <Content Include="Views\Deduction\Index.cshtml" />
+    <Content Include="Views\Deduction\Edit.cshtml" />
+    <Content Include="Views\Bonus\Index.cshtml" />
+    <Content Include="Views\Bonus\Create.cshtml" />
+    <Content Include="Views\Bonus\Edit.cshtml" />
+    <Content Include="Views\Deduction\CreateDeductionName.cshtml" />
+    <Content Include="Views\Deduction\DeductionNames.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\FiscalYr\Create.cshtml" />
+    <Content Include="Views\FiscalYr\Edit.cshtml" />
+    <Content Include="Views\FiscalYr\Index.cshtml" />
+    <Content Include="Views\Grades\Create.cshtml" />
+    <Content Include="Views\Grades\Edit.cshtml" />
+    <Content Include="Views\Grades\Index.cshtml" />
+    <Content Include="Views\AllowanceName\Index.cshtml" />
+    <Content Include="Views\AllowanceName\Create.cshtml" />
+    <Content Include="Views\BankBranch\Index.cshtml" />
+    <Content Include="Views\BankBranch\Create.cshtml" />
+    <Content Include="Views\Deduction\EditDeductionName.cshtml" />
+    <Content Include="Views\AllowanceName\Edit.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Setup\Index.cshtml" />
+    <Content Include="Views\Shared\_InnerMenu.cshtml" />
+    <Content Include="Views\Division\Index.cshtml" />
+    <Content Include="Views\Division\Create.cshtml" />
+    <Content Include="Views\Division\Edit.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
+    <Content Include="Views\Deduction\ConfigureDeduction.cshtml" />
+    <Content Include="Views\Allowance\ConfigureAllowance.cshtml" />
+    <Content Include="Views\Employee\CreateEmpDetails.cshtml" />
+    <Content Include="Views\Deduction\IndividualDeduction.cshtml" />
+    <Content Include="Views\Allowance\AllowanceMain.cshtml" />
+    <Content Include="Views\Bonus\ConfigureBonus.cshtml" />
+    <Content Include="Views\Employee\EditEmpDetails.cshtml" />
+    <Content Include="Views\Deduction\EmpDedcution.cshtml" />
+    <Content Include="Views\Deduction\IndvDeduction.cshtml" />
+    <Content Include="Views\Shared\_EmployeeInfoMinView.cshtml" />
+    <Content Include="Views\Bonus\HoldBonus.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Allowance\IndividualAllowance.cshtml" />
+    <Content Include="Views\Allowance\IndvAllowance.cshtml" />
+    <Content Include="Views\Allowance\EmpAllowance.cshtml" />
+    <Content Include="Views\Deduction\UploadDeduction.cshtml" />
+    <Content Include="Views\Bonus\BonusProcess.cshtml" />
+    <Content Include="Views\Deduction\_DeductionUploadedData.cshtml" />
+    <Content Include="Views\Deduction\_DeductionUploadForm.cshtml" />
+    <Content Include="Views\Deduction\DeductionMain.cshtml" />
+    <Content Include="Views\Bonus\BonusMain.cshtml" />
+    <Content Include="Views\Bonus\DisburseBonus.cshtml" />
+    <Content Include="Views\Bonus\UndoBonusProcess.cshtml" />
+    <Content Include="Views\IncomeTax\Index.cshtml" />
+    <Content Include="Views\IncomeTax\IncomeTaxParameter.cshtml" />
+    <Content Include="Views\IncomeTax\IncomeTaxParameterDetail.cshtml" />
+    <Content Include="Views\Deduction\EditUploadedDeduction.cshtml" />
+    <Content Include="Views\Deduction\_GetDeductionDataSelection.cshtml" />
+    <Content Include="Views\Deduction\_UploadedDeductions.cshtml" />
+    <Content Include="Views\Allowance\UploadAllowance.cshtml" />
+    <Content Include="Views\Allowance\EditUploadedAllowance.cshtml" />
+    <Content Include="Views\Allowance\_GetAllowanceDataSelection.cshtml" />
+    <Content Include="Views\Allowance\_AllowanceUploadedData.cshtml" />
+    <Content Include="Views\Allowance\_AllowanceUploadForm.cshtml" />
+    <Content Include="Views\Allowance\_UploadedAllowances.cshtml" />
+    <Content Include="Views\IncomeTax\Edit.cshtml" />
+    <Content Include="Views\IncomeTax\_SearchTaxParameter.cshtml" />
+    <Content Include="Views\Overtime\Index.cshtml" />
+    <Content Include="Views\Overtime\UploadTimeCard.cshtml" />
+    <Content Include="Views\Overtime\_OvertimeConfig.cshtml" />
+    <Content Include="Views\Overtime\_TimeCardList.cshtml" />
+    <Content Include="Views\Overtime\_UploadResult.cshtml" />
+    <Content Include="Views\Employee\AddEmpDetails.cshtml" />
+    <Content Include="Views\Employee\Details.cshtml" />
+    <Content Include="Views\Employee\EmpBankInfo.cshtml" />
+    <Content Include="Views\Employee\EmpConfirmation.cshtml" />
+    <Content Include="Views\Employee\SearchEmployee.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxParameterResult.cshtml" />
+    <Content Include="Views\Salary\Index.cshtml" />
+    <Content Include="Views\Shared\_EditBank.cshtml" />
+    <Content Include="Views\Setup\_EditBank.cshtml" />
+    <Content Include="Views\Setup\CreateBank.cshtml" />
+    <Content Include="Views\Employee\_EmpInfoForSalaryReview.cshtml" />
+    <Content Include="Views\Employee\_SalaryReviewList.cshtml" />
+    <Content Include="Views\Employee\AddSalaryReview.cshtml" />
+    <Content Include="Views\Employee\EditSalaryReview.cshtml" />
+    <Content Include="Views\FreeCar\Index.cshtml" />
+    <Content Include="Views\FreeCar\Create.cshtml" />
+    <Content Include="Views\FreeCar\Edit.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
+    <Content Include="Views\Authentication\Index.cshtml" />
+    <Content Include="Views\Authentication\Role.cshtml" />
+    <Content Include="Views\Authentication\UserRole.cshtml" />
+    <Content Include="Views\Authentication\LogOn.cshtml" />
+    <Content Include="Views\Authentication\RoleMenu.cshtml" />
+    <Content Include="Views\Allowance\ChildrenAllowance.cshtml" />
+    <Content Include="Views\Allowance\SubmitChildrenAllowance.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\Index.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\Create.cshtml" />
+    <Content Include="Views\Authentication\ChangePassword.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\EmployeeLWP.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\AssignEmployeeLWP.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\ModifyEmployeeLWP.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Authentication\ForgotPassword.cshtml" />
+    <Content Include="Views\Bonus\UploadBonus.cshtml" />
+    <Content Include="Views\Bonus\_GetBonusDataSelection.cshtml" />
+    <Content Include="Views\Bonus\_BonusUploadedData.cshtml" />
+    <Content Include="Views\Bonus\_UploadedBonuses.cshtml" />
+    <Content Include="Views\Bonus\_BonusUploadForm.cshtml" />
+    <Content Include="Views\IncomeTax\UploadTaxRefund.cshtml" />
+    <Content Include="Views\IncomeTax\_UploadTaxRefund.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxRefundUploadedData.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxRefundUploadForm.cshtml" />
+    <Content Include="Views\IncomeTax\_GetTaxRefundDataSelection.cshtml" />
+    <Content Include="Views\Employee\EmployeeDiscontinue.cshtml" />
+    <Content Include="Views\Employee\UndoEmployeeDiscontinue.cshtml" />
+    <Content Include="Views\IncomeTax\UploadTaxAdjustment.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxAdjustmentUploadForm.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxAdjustmentUploadedData.cshtml" />
+    <Content Include="Views\IncomeTax\_UploadedTaxAdjustment.cshtml" />
+    <Content Include="Views\IncomeTax\_GetTaxAdjustmentDataSelection.cshtml" />
+    <Content Include="Views\IncomeTax\UploadTaxChallan.cshtml" />
+    <Content Include="Views\IncomeTax\_GetTaxChallanDataSelection.cshtml" />
+    <Content Include="Views\IncomeTax\_UploadedTaxChallan.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxChallanUploadedData.cshtml" />
+    <Content Include="Views\IncomeTax\_TaxChallanUploadForm.cshtml" />
+    <Content Include="Views\DataSync\Index.cshtml" />
+    <Content Include="Views\Shared\_LoginLayout.cshtml" />
+    <Content Include="Views\Salary\UndoSalaryProcess.cshtml" />
+    <Content Include="Views\Report\BankAdvice.cshtml" />
+    <Content Include="Views\Report\PaySlip.cshtml" />
+    <Content Include="Views\Report\_PaySlipAllowance.cshtml" />
+    <Content Include="Views\Report\_PaySlipDeduction.cshtml" />
+    <Content Include="Views\Shared\_LandingLayout.cshtml" />
+    <Content Include="Views\Salary\DisburseSalary.cshtml" />
+    <Content Include="Views\LeaveWithoutPay\Edit.cshtml" />
+    <Content Include="Views\Company\Details.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\BankBranch\Edit.cshtml" />
+    <Content Include="Views\Report\SalarySheet.cshtml" />
+    <Content Include="Views\Settlement\Index.cshtml" />
+    <Content Include="Views\Report\SalaryChange.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapTitleHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapPathHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModelList.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapNodeModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SiteMapHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
+    <Content Include="Views\Report\Bonus.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.gpit.DataContext\com.gpit.DataContext.csproj">
+      <Project>{377e69ab-be8e-424a-83d2-6c10dddf096b}</Project>
+      <Name>com.gpit.DataContext</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\com.gpit.Model\com.gpit.Model.csproj">
+      <Project>{522f9637-541f-4776-baea-ca4caf0a65fc}</Project>
+      <Name>com.gpit.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Report\RDLC\BankAdvice.rdlc" />
+    <EmbeddedResource Include="Views\Report\RDLC\Bonus.rdlc" />
+    <EmbeddedResource Include="Views\Report\RDLC\PaySlip.rdlc" />
+    <EmbeddedResource Include="Views\Report\RDLC\PaySlipChildAllowance.rdlc" />
+    <EmbeddedResource Include="Views\Report\RDLC\PaySlipChildDeduction.rdlc" />
+    <EmbeddedResource Include="Views\Report\RDLC\SalaryChange.rdlc" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">12.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11428</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/PW</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,75 @@
+﻿
+@using PayrollWeb.ViewModels;
+@model PayrollWeb.ViewModels.PfDividendUploadView
+
+@{
+    ViewBag.Title = "UploadPfDividendYearly";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Upload Yearly PF Dividend
+}
+
+<br style="clear: both;"/>
+ @{
+     if (TempData.ContainsKey("msg"))
+     {
+         var res = (OperationResult)TempData["msg"];
+         if (res.IsSuccessful)
+         {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+         }
+         else
+         {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+         }
+     }
+}
+
+@using (Html.BeginForm("UploadPfDividendYearly", "Salary", null, FormMethod.Post, new { enctype = "multipart/form-data", id = "fileupload" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+  <fieldset>
+   <legend>PF Dividend Upload View</legend>
+    <table style="border-collapse: separate; border-spacing: 3px;">
+      <tr>
+            <td style="">
+                @Html.Label("Dividend Paid Year")
+            </td>
+            <td style="width: 15px"></td>
+            <td style="">
+                @Html.DropDownListFor(model=>model.Year, new SelectList(@ViewBag.Years), "---Select Year---")
+                @Html.ValidationMessageFor(model=>model.Year)  
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Upload File")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                <input type="file" id="PfDividendFile" name="PfDividendFile" class="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+               
+            </td>
+            <td style="width: 15px"></td>
+            <td >
+                <input style="margin-top:10px" type="submit" value="Upload" id="btnSubmitPfDividendFile" class="btn btn-primary" /> 
+            </td>
+        </tr>
+    </table>
+    </fieldset>
+}
+

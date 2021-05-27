@@ -1,0 +1,109 @@
+﻿@using PayrollWeb.ViewModels
+@{
+    ViewBag.Title = "EditUploadedDeduction";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Uploaded Deduction Edit
+}
+@{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+}
+@section PageSpecificJsHeader
+{
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap3-editable/css/bootstrap-editable.css"/>
+   
+}
+
+<div id="dynCont1">
+    
+</div>
+<div id="dynCont">
+    
+</div>
+
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            defaultLoad();
+        });
+
+        function defaultLoad() {
+            $.get('@Url.Action("GetDeductionDataSelection", "Deduction")', function(rdata) {
+                $("#dynCont1").html(rdata);
+                prepareForm('#dynCont1');
+                $('#btnSearch').click(function(e) {
+                    e.preventDefault();
+                    uploadDeductionSearch();
+
+                });
+            });
+        }
+
+        function uploadDeductionSearch() {
+            if ($('#dynCont1').find('form').valid()) {
+                $.post('@Url.Action("GgetDeductionDataSelection", "Deduction")', $('#dynCont1').find('form').serialize(), function (rdata) {
+                    $("#dynCont").html(rdata);
+                    prepareForm("#dynCont");
+                    $('a[id^=DeductionUploadData]').editable({
+                        success: function (response, newValue) {
+                            if (response.status == 'error')
+                                return response.msg;
+                        }
+                    });
+                    $("#Paging ul a").click(function (e) {
+                        e.preventDefault();
+                        pageLoadData(this);
+                        return false;
+                    });
+                });
+            }
+        }
+        
+        function pageLoadData(el) {
+            var atr = $(el).attr('href');
+            if (atr != null && atr != 'undefined')
+                $.get(atr, function (rdata) {
+                    $("#dynCont").html(rdata);
+                    prepareForm("#dynCont");
+                    $("#Paging ul a").click(function (e) {
+                        e.preventDefault();
+                        pageLoadData(this);
+                        return false;
+                    });
+                });
+        }
+
+        function prepareForm(nam) {
+            var $frm = $(nam).find('form');
+            if ($frm != null && $frm != "undefined") {
+                $frm.unbind();
+                $frm.data('validator', null);
+                $.validator.unobtrusive.parse(document);
+            }
+        }
+    </script>
+}

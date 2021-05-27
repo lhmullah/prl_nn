@@ -1,0 +1,187 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.BonusProcess
+
+@{
+    ViewBag.Title = "BonusProcess";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Bonus Process
+}
+
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+@using (Html.BeginForm("BonusProcess","Bonus",FormMethod.Post,new{@class="form-inline"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table" style="border:none;">
+        <tr style="border:none;">
+            <td>
+                @Html.LabelFor(model => model.bonus_name_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.bonus_name_id, new SelectList(@ViewBag.BonusNames, "id", "name"), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.bonus_name_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                
+            </td>
+            <td>
+                
+                
+            </td>
+            
+        </tr>
+        <tr style="border:none;">
+            <td>
+                @Html.LabelFor(model => model.religion_id)
+            </td>
+            <td >
+                @Html.DropDownListFor(model => model.religion_id, new SelectList(@ViewBag.Religions, "id", "name"), "---- ALL ----")<br />
+            </td>
+            
+        </tr>
+        <tr style="border:none;">
+            <td> @Html.LabelFor(model=>model.process_date)</td>
+            <td colspan="4">
+                @Html.EditorFor(model => model.process_date)<br />
+                @Html.ValidationMessageFor(model => model.process_date)
+            </td>
+        </tr>
+        <tr style="border:none;">
+            <td> @Html.LabelFor(model=>model.festival_date)</td>
+            <td colspan="4">
+                @Html.EditorFor(model => model.festival_date)<br />
+                @Html.ValidationMessageFor(model => model.festival_date)
+            </td>
+        </tr>
+        <tr style="border:none;">
+            <td> @Html.LabelFor(model=>model.is_pay_with_salary)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model=>model.is_pay_with_salary,new SelectList(EnumToSelectItemList.GetEnumSelectList<IsPayWithSalary>(),"Text","Text"))
+            </td>
+        </tr>
+        <tr style="border:none;">
+            <td>
+
+            </td>
+            <td style="float:right; border:none;">
+                 @*<p>
+                    <input class="btn btn-primary" type="submit" value="Process" onclick = "BonusProcess(this); return false;" />
+                   </p>*@
+                <i id="prel" style="display: none;"><img src="~/Content/pleasewait.gif"/></i>
+                <button id="btnProcess" type="button" class="btn btn-primary" onclick = "BonusProcess(this); return false;">Process</button>
+            </td>
+        </tr>
+        <tr >
+            <td style="color:gray; font-size:22px;">
+                Non mandatory options
+            </td>
+            <td colspan="4"></td>
+        </tr>
+        <tr style="border:none;">
+            <td>
+                @Html.LabelFor(model => model.division_id) 
+            </td>
+            <td >
+                @Html.DropDownListFor(model => model.division_id, new SelectList(@ViewBag.DivisionNames, "id", "name"), "---- ALL ----")<br />
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.department_id)
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.department_id, new SelectList(@ViewBag.DeptNames, "id", "name"), "---- ALL ----")<br />
+            </td>
+        </tr>
+        <tr style="border:none;">
+            <td>
+                @Html.LabelFor(model => model.grade_id)
+            </td>
+            <td>
+                @Html.DropDownListFor(model => model.grade_id, new SelectList(@ViewBag.Grades, "id", "grade"), "---- ALL ----")<br />
+            </td>
+            <td style="width: 10px;"></td>
+            <td> @Html.LabelFor(model=>model.gender)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model=>model.gender,new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(),"Text","Text"))
+            </td>
+        </tr>
+    </table>
+    
+    
+   
+}
+
+<div id="prcsBonus" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to process bonus?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnPrcsBonus" class="btn btn-primary">Process</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#process_date,#festival_date').datepicker({format: 'mm/dd/yyyy'});
+    </script>
+
+    <script type="text/javascript">
+        function BonusProcess(el) {
+            $('#prcsBonus').modal('show');
+
+            $('#btnPrcsBonus').click(function () {
+                $('#prcsBonus').modal('hide');
+                var test = $(el).attr('href');
+                document.forms[0].submit();
+            });
+        }
+
+        function ShowBusy() {
+            $('#prel').show();
+            $('#btnProcess').text('Processing. Please wait...');
+            $('#btnProcess').attr("disabled", "disabled");
+        }
+        function HideBusy() {
+            $('#prel').hide();
+            $('#btnProcess').text('Process');
+            $('#btnProcess').removeAttr("disabled");
+        }
+    </script>
+
+}
+
+

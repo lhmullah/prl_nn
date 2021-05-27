@@ -1,0 +1,171 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeLeaveWithoutPay
+
+@{
+    ViewBag.Title = "AssignEmployeeLWP";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Leave Without Pay
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("AssignEmployeeLWP", "LeaveWithoutPay", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td style="width: 40%"></td>
+            <td>
+                <table style="border-collapse: separate; border-spacing: 3px; width:100%">
+                    <tr>
+                        <td>
+                            @Html.Label("Search employee")
+                        </td>
+                        <td style="width: 15px"></td>
+                        <td colspan="3">
+                            <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 300px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <label for="EmpNo" style="width: 140px">Or put employee no.</label>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                        </td>
+                        <td style="width: 115px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                            <input type="hidden" name="empid" id="empid" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 60%"></td>
+        </tr>
+    </table>
+}
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+@using (Html.BeginForm("AssignEmployeeLWP", "LeaveWithoutPay", FormMethod.Post))
+{
+    @Html.HiddenFor(model => model.emp_id)
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Leave Type")
+            </td>
+            <td>
+                @Html.DropDownListFor(model =>model.setting_id, new SelectList(@ViewBag.Settings, "id", "Lwp_type"), "--- Select Leave Type ---")
+            </td>
+        </tr>
+        <tr id="NoOfDays">
+            <td>
+                @Html.LabelFor(model => model.no_of_days)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.no_of_days)
+                @*@Html.ValidationMessageFor(model => model.no_of_days)*@
+            </td>
+        </tr>
+        <tr id="StartDate">
+            <td>
+                @Html.LabelFor(model => model.strat_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.strat_date)
+               @* @Html.ValidationMessageFor(model => model.strat_date)*@
+            </td>
+        </tr>
+        <tr id="EndDate">
+            <td>
+                @Html.LabelFor(model => model.end_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.end_date)
+                @*@Html.ValidationMessageFor(model => model.end_date)*@
+            </td>
+        </tr>
+    </table>
+        
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" name="sButton" />
+        <input type="hidden" name="empid" id="eid"/>
+    </p>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "EmployeeLWP")
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+
+        var q = '@Url.Action("GetEmployeeSeach","EmployeeLWP")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+        //$('#setting_id').change(function () {
+        //    if ($(this).val() == 'Gross') {
+        //        $('#StartDate').show();
+        //        $('#EndDate').show();
+        //        $('#NoOfDays').hide();
+        //    }
+        //    else {
+        //        $('#StartDate').hide();
+        //        $('#EndDate').hide();
+        //        $('#NoOfDays').show();
+        //    }
+
+        //});
+
+    </script>
+    <script type="text/javascript">
+        $('#strat_date,#end_date').datepicker();
+    </script>
+
+}
+

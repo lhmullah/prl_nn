@@ -1,0 +1,13 @@
+﻿@using System.Web.Mvc.Html
+@using System.Web.UI.WebControls
+@using PayrollWeb.ViewModels
+
+
+@{
+    ViewBag.Title = "CreateBank";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@Html.Partial("_EditBank",(Bank)ViewBag.bank)
+
+

@@ -1,0 +1,70 @@
+﻿@model PayrollWeb.ViewModels.EmployeeIndividualAllowance
+@using PayrollWeb.ViewModels
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+@using (Html.BeginForm("ChangeEmployeeAllowance", "Allowance", FormMethod.Post, new { @class="form-inline" }))
+{
+    
+  
+@Html.HiddenFor(model => model.emp_id)
+@Html.HiddenFor(model => model.id)
+
+    <fieldset>
+        <legend>Allowance Details</legend>
+
+         <div class="row-fluid">
+            <div class="span4">
+               @Html.LabelFor(model => model.allowance_name_id)
+               @Html.DropDownListFor(model => model.allowance_name_id, new SelectList(@ViewBag.AllowanceNames, "id", "allowance_name"), "--Select Allowance Name--")<br />
+               @Html.ValidationMessageFor(model => model.allowance_name_id) 
+            </div>
+            <div class="span4" style="margin-left:20px;"></div>
+        </div>
+        <div class="row-fluid">
+            <div class="span4">
+               @Html.LabelFor(model => model.flat_amount)
+               @Html.EditorFor(model => model.flat_amount) <br />
+               @Html.ValidationMessageFor(model => model.flat_amount) 
+            </div>
+            <div class="span4" style="margin-left:20px;">
+               @Html.LabelFor(model => model.percentage)
+               @Html.EditorFor(model => model.percentage) <br />
+               @Html.ValidationMessageFor(model => model.percentage) 
+           </div>
+        </div>
+        
+        <div class="row-fluid">
+            <div class="span4">
+               @Html.LabelFor(model => model.effective_from)
+               @Html.EditorFor(model => model.effective_from) <br />
+               @Html.ValidationMessageFor(model => model.effective_from) 
+            </div>
+            <div class="span4" style="margin-left:20px;">
+                @Html.LabelFor(model => model.effective_to)
+                @Html.EditorFor(model => model.effective_to) <br />
+                @Html.ValidationMessageFor(model => model.effective_to) 
+           </div>
+        </div>
+         <div class="row-fluid">
+            <div class="span4">
+                <br />
+                 <input class="btn" type="submit" value="Save" /><br /><br /><br />
+                 @Html.ActionLink("Back To Allowances", "GetEmployeeAllowances", new { empid = @Model.emp_id })
+            </div>
+            <div class="span4" style="margin-left:20px;"></div>
+        </div>
+    </fieldset>   
+    
+}
+
+<script type="text/javascript">
+    $('#effective_from,#effective_to').datepicker();
+</script>
+

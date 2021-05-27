@@ -1,0 +1,136 @@
+﻿@using PayrollWeb.ViewModels
+@{
+    ViewBag.Title = "UploadTimeCard";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Time Card Entry
+}
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+            <div id="notifyUser" class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div>
+        }
+        else
+        {
+            <div id="notifyUser" class="alert alert-error">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div>
+        }
+
+    }
+}
+
+
+@using (@Html.BeginForm("", "", FormMethod.Post, new { @class = "form-inline" }))
+{
+
+
+    <div class="row-fluid" style="margin: 12px;">
+        <div class="span2">
+            @Html.Label("Year", "Year")
+        </div>
+        <div class="span8" style="float: left;">
+            @Html.DropDownList("Year", new SelectList(@ViewBag.Years), "---Select Year---")
+            <br />
+        </div>
+    </div>
+
+    <div class="row-fluid" style="margin: 12px;">
+        <div class="span2">
+            @Html.Label("Month", "Month")
+        </div>
+        <div class="span8" style="float: left;">
+            @Html.DropDownList("Month", new SelectList(@ViewBag.Months, "Value", "Key"), "---Select Month---")
+        </div>
+    </div>
+
+    <div class="row-fluid" style="margin: 12px;">
+        <div class="span2">
+        </div>
+        <div class="span8">
+
+            <span class="btn btn-success fileinput-button">
+                <i class="icon-plus"></i>
+                <span>Select file</span>
+                <input type="file" id="fileupload" name="fileupload" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            </span>
+            <button id="btnUploadAll" class="btn btn-primary" type="button">Upload File</button>
+            <div class="clearfix"><br /></div>
+
+            <div class="span8" style="margin: 0;">
+                <div class="hide" id="filelistholder"></div>
+            </div>
+        </div>
+    </div>
+}
+<div id="dynCont"></div>
+@section PageSpecificJs
+{
+    @Scripts.Render("~/bundles/fileuploadjs")
+    <script type="text/javascript">
+
+        $(function () {
+
+        $('#fileupload').fileupload({
+            dataType: "json",
+            maxNumberOfFiles :1,
+            url: '@Url.Action("UploadTimeCardEntryFile","Overtime")',
+            limitConcurrentUploads: 1,
+            singleFileUploads: true,
+            //sequentialUploads: true,
+            progressInterval: 100,
+            maxChunkSize: 10000,
+            add: function (e, data) {
+                $('#filelistholder').removeClass('hide');
+                data.context = $('<div />').text(data.files[0].name).appendTo('#filelistholder');
+                $('</div><div class="progress"><div class="bar" style="width:0%"></div></div>').appendTo(data.context);
+
+                $('#btnUploadAll').click(function () {
+                        data.submit();
+                });
+            },
+            done: function (e, data) {
+                data.context.text(data.files[0].name + '... Completed');
+                $('</div><div class="progress"><div class="bar" style="width:100%"></div></div>').appendTo(data.context);
+               $.get('@Url.Action("GetUnsavedUploadedDataResult","Overtime" )', {year : $('#Year').val(),month: $('#Month').val()},function (rdata) {
+                   $('#dynCont').html(rdata);
+                       $('#btnSaveUpload').click(function () {
+                           e.preventDefault();
+                           $.get('@Url.Action("SaveTimeCardEntry","Overtime" )', { year: $('#Year').val(), month: $('#Month').val() }, function (rd) {
+                               document.location.href = '@Url.Action("UploadTimeCard","Overtime")';
+                           });
+                    });
+               });
+
+            },
+            progress: function (e, data) {
+                var progress = parseInt(data.loaded / data.total * 100, 10);
+                data.context.find('.bar').css('width', progress + '%');
+            }
+        });
+
+            function prepareForm() {
+                var $frm = $('#dynCont').find('form');
+                if ($frm != null && $frm != "undefined") {
+                    $frm.unbind();
+                    $frm.data('validator', null);
+                    $.validator.unobtrusive.parse(document);
+                }
+            }
+
+        });
+
+    </script>
+
+
+}

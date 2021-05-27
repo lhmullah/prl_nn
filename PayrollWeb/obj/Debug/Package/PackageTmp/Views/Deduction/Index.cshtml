@@ -1,0 +1,95 @@
+﻿@using PayrollWeb.ViewModels
+@model List<PayrollWeb.ViewModels.DeductionHead>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Deduction Head
+}
+
+
+<div class="" style="float:right;">
+    <a class="btn btn-primary" href="@Url.Action("Create")">
+        <i class="icon-plus"></i> Create New </a>
+</div>
+<br style="clear: both;"/>
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+<fieldset>
+    <legend>List of Deduction Head</legend>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Deduction Head Name</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        @foreach ( var deductHead in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(detp=> deductHead.id)
+
+                  </td>
+                  <td>
+                      @Html.DisplayFor(detp=> deductHead.name)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit","Edit","Deduction",new{id = deductHead.id},null)
+                      @Html.ActionLink("Delete","Delete","Deduction",new{id = deductHead.id}, new { onclick = "DeleteDeductionHead(this);return false;" })
+                  </td>
+              </tr>
+           }
+    </table>
+</fieldset>
+
+<div id="dltDeduct" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this deduction head?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltDeduct" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteDeductionHead(el)
+        {
+            $('#dltDeduct').modal('show');
+
+            $('#btnDltDeduct').click(function () {
+                $('#dltDeduct').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}

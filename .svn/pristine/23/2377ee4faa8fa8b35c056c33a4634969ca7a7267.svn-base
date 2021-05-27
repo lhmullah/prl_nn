@@ -1,0 +1,252 @@
+﻿@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.IncomeTaxParameterDetail
+
+@{
+    ViewBag.Title = "IncomeTaxParameterDetail";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@*<h2>IncomeTaxParameterDetail</h2>*@
+
+@section PageBanner
+{
+    Income Tax Paremeter Detail Setting
+}
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+<div id="insertParamDet" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+        <p>Are you sure you want to submit income tax parameter detail?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="btninsertParamDet" class="btn btn-primary">Submit</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function SaveIncomeTaxParemeter(el)
+        {
+            $('#insertParamDet').modal('show');
+
+            $('#btninsertParamDet').click(function () {
+                $('#insertParamDet').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+
+        function searchParameterDetail() {
+            var fs = $('#fiscal_year_id').val();
+            var gen = $('#gender').val();
+            var _val = fs + "-" + gen;
+            var test = '@Url.Action("IncomeTaxParameterDetail","IncomeTax",new{_val="PLACEHOLDER"})';
+            var myUrl = test.replace('PLACEHOLDER', _val);
+            document.location.href = myUrl;
+        }
+    </script>
+}
+
+@using (Html.BeginForm("IncomeTaxParameterDetail","IncomeTax",FormMethod.Post,new{@class="form-inline"})) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.fiscal_year_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.fiscal_year_id, new SelectList(@ViewBag.AllFiscalYears, "id", "fiscal_year"), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.fiscal_year_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                 @Html.LabelFor(model => model.assesment_year)
+            </td>
+            <td>
+                @Html.EditorFor(model =>model.assesment_year)<br />
+                @Html.ValidationMessageFor(model => model.assesment_year)
+            </td>
+        </tr>
+        
+        <tr>
+            <td> 
+                @Html.LabelFor(model=>model.gender)
+            </td>
+            <td >
+                @Html.DropDownListFor(model=>model.gender,new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(),"Text","Text"))<br />
+                @Html.ValidationMessageFor(model => model.gender)
+            </td>
+            <td>
+                
+            </td>
+            <td ></td>
+            <td >
+                <input class="btn btn-success" type="button" value="Search" onclick = "searchParameterDetail(); return false;" />
+            </td>
+        </tr>
+    </table>
+    <table style="border-collapse: separate; border-spacing:3px;">
+        <tr >
+            <td style="color:green;" >
+                Tax Parameter Settings: 
+            </td>
+            <td>
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr >
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_investment_percentage)
+            </td>
+            
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_investment_percentage)<br />
+                @Html.ValidationMessageFor(model => model.max_investment_percentage)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_investment_amount)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_investment_amount)<br />
+                @Html.ValidationMessageFor(model => model.max_investment_amount)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_inv_exempted_percentage)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_inv_exempted_percentage)<br />
+                @Html.ValidationMessageFor(model => model.max_inv_exempted_percentage)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.min_tax_amount)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.min_tax_amount)<br />
+                @Html.ValidationMessageFor(model => model.min_tax_amount)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_tax_age)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_tax_age)<br />
+                @Html.ValidationMessageFor(model => model.max_tax_age)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_house_rent_percentage)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_house_rent_percentage)<br />
+                @Html.ValidationMessageFor(model => model.max_house_rent_percentage)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.house_rent_not_exceding)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.house_rent_not_exceding)<br />
+                @Html.ValidationMessageFor(model => model.house_rent_not_exceding)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.max_conveyance_allowance_monthly)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.max_conveyance_allowance_monthly)<br />
+                @Html.ValidationMessageFor(model => model.max_conveyance_allowance_monthly)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.medical_exemtion_percentage)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.medical_exemtion_percentage)<br />
+                @Html.ValidationMessageFor(model => model.medical_exemtion_percentage)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.lfa_exemtion_percentage)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.lfa_exemtion_percentage)<br />
+                @Html.ValidationMessageFor(model => model.lfa_exemtion_percentage)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td style="padding-left:112px">
+                @Html.LabelFor(model=>model.free_car)
+            </td>
+            <td style="text-align:right">
+                @Html.EditorFor(model =>model.free_car)<br />
+                @Html.ValidationMessageFor(model => model.free_car)
+            </td>
+            <td ></td>
+            <td ></td>
+        </tr>
+    </table>
+     <p>
+        <input class="btn btn-success" type="submit" value="Submit"  />
+    </p>
+   
+}

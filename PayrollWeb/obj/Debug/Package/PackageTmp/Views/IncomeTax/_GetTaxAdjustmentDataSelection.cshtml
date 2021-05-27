@@ -1,0 +1,54 @@
+﻿@model PayrollWeb.ViewModels.TaxAdjustmentUploadView
+
+@using (Html.BeginForm("GgetTaxAdjustmentDataSelection", "IncomeTax", FormMethod.Post, new { @class = "form-inline" })) 
+{
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>Choose Search Criteria</legend>
+    
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                @Html.LabelFor(model => model.Year)
+            </div>
+            <div class="span8" style="float: left;">
+                @Html.DropDownListFor(model => model.Year, new SelectList(@Model.GetYears()), "---Select Year---") @Html.ValidationMessageFor(model => model.Year)
+             <br />
+            </div>
+        </div>
+    
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                @Html.LabelFor(model => model.Month)
+            </div>
+            <div class="span8" style="float: left;">
+                @Html.DropDownListFor(model => model.Month, new SelectList(@Model.GetMonths(),"Value","Key"), "---Select Month---") @Html.ValidationMessageFor(model => model.Month)<br />
+            </div>
+        </div>
+
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                @Html.LabelFor(model => model.FiscalYear)
+            </div>
+            <div class="span8" style="float: left;">
+                @Html.DropDownListFor(model => model.FiscalYear, new SelectList(@Model.FiscalYears, "id", "fiscal_year"), "Select Fiscal Year")
+                @Html.ValidationMessageFor(model => model.FiscalYear)
+                <br />
+            </div>
+                
+        </div>
+        
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                
+            </div>
+            <div class="span8" style="float: left;">
+                <input class="btn btn-success" id="btnSearch" type="submit" value="Search"/>
+                <br />
+            </div>
+                
+        </div>
+       
+    </fieldset>
+}
+

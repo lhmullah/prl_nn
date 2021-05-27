@@ -1,0 +1,44 @@
+﻿@model PayrollWeb.ViewModels.Employee
+
+<style type="text/css">
+    .table-borderless td,
+.table-borderless th 
+    {
+    border: 0;
+}
+</style>
+
+
+<fieldset>
+    <legend>Employee Basic Info</legend>
+
+    <table class="table .table-condensed table-borderless table-borderless table-stripped">
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.emp_no) : @Html.DisplayFor(model => model.emp_no)
+            </td>
+            <td>
+                 @Html.DisplayNameFor(model => model.name) :  @Html.DisplayFor(model => model.name)
+            </td>
+           
+        </tr>
+        <tr>
+             <td>
+                @Html.DisplayNameFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_Department.name) :  @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_Department.name)
+            </td>
+            <td>
+                 @Html.DisplayNameFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_designation.name) : @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_designation.name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayNameFor(model => model.phone) :  @Html.DisplayFor(model => model.phone)
+            </td>
+            <td>
+                 @Html.DisplayNameFor(model => model.email) : @Html.DisplayFor(model => model.email)
+            </td>
+        </tr>
+
+    </table>
+
+</fieldset>

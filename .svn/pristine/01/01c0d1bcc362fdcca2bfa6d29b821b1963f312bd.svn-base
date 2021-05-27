@@ -1,0 +1,158 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.Employee
+
+@{
+    ViewBag.Title = "EmpBankInfo";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+Add Bank Information
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+    <div id="notifyUser" class="alert alert-success">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <div>@res.Message </div>
+    </div>    
+        }
+        else
+        {
+    <div id="notifyUser2" class="alert alert-error">
+        <button data-dismiss="alert" class="close" type="button">×</button>
+        <div>@res.Message </div>
+    </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("EmpBankInfo", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td style="width: 40%"></td>
+            <td>
+                <table style="border-collapse: separate; border-spacing: 3px; width: 100%">
+                    <tr>
+                        <td>
+                            @Html.Label("Search employee")
+                        </td>
+                        <td style="width: 15px"></td>
+                        <td colspan="3">
+                            <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 300px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="EmpNo" style="width: 140px">Or put employee no.</label>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                        </td>
+                        <td style="width: 115px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                            <input type="hidden" name="empid" id="empid" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 60%"></td>
+        </tr>
+    </table>
+}
+
+@Html.Partial("_EmployeeInfoMinView", (Employee)@ViewBag.Employee)
+
+@using (Html.BeginForm("EmpBankInfo", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    <fieldset>
+        <legend>Employee Bank Account Information</legend>
+        @Html.HiddenFor(model => model.id)
+        <table style="border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <td>
+                    @Html.Label("Bank")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(x => x.bank_id, new SelectList(@ViewBag.Banks, "id", "bank_name"), "--- Select Bank ---")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.Label("Bank Branch")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.DropDownListFor(x => x.bank_branch_id, new SelectList(@ViewBag.Branches, "id", "branch_name"), "--- Select Branch ---")
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.Label("Account No")
+                </td>
+                <td style="width: 15px"></td>
+                <td>
+                    @Html.EditorFor(model => model.account_no)
+                </td>
+                <td style="width: 15px"></td>
+                <td colspan="3" style="text-align: right">
+                    <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="Save" style="width: 80px" />
+                </td>
+            </tr>
+        </table>
+        <br />
+    </fieldset>
+    <fieldset>
+        <legend></legend>
+    </fieldset>
+}
+
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+    <script type="text/javascript">
+        $('#confirmation_date').datepicker();
+
+        $('#btnSave').on('click', function () {
+            return confirm('Are you sure you want to update account information?');
+        });
+
+        $('#bank_id').change(function () {
+            var ks = $('#bank_id option:selected').val();
+            var eId = $('#id').val();
+            var test = '@Url.Action("EmpBankInfo", "Employee", new { empIdbankId = "PLACEHOLDER" })';
+            var myUrl = test.replace('PLACEHOLDER', eId + "," + ks);
+            document.location.href = myUrl;
+        });
+
+    </script>
+}

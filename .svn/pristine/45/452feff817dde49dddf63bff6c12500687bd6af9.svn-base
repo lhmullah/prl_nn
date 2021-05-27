@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "IndividualAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Individual Allowance Configuration
+}
+@using (Html.BeginForm("GetEmployeeAllowances", "Allowance", FormMethod.Post, new { @class="form-inline" }))
+{
+ 
+    <input type="text" autocomplete="off"  data-provide="typeahead" id="aa"/>
+    <input type="hidden" name="empid" id="empid"/>
+    <input class="btn btn-success" type="submit" value="Search"/>
+}
+
+
+@section PageSpecificJs
+{
+    
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Allowance")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q}
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+            
+
+    </script>
+}
+
+

@@ -1,0 +1,33 @@
+﻿@model PayrollWeb.ViewModels.Department
+
+@{
+    ViewBag.Title = "CreateDepartment";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@using (Html.BeginForm("CreateDepartment", "Setup", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Department info</legend>
+        
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    @Html.ValidationSummary(false)
+                </td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.name)</td>
+                <td>@Html.EditorFor(x => x.name)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn btn-success" type="submit" value="Save"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}

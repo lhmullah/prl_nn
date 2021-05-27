@@ -1,0 +1,131 @@
+﻿@using PagedList.Mvc;
+@using PayrollWeb.ViewModels
+
+@model PagedList.IPagedList<PayrollWeb.ViewModels.Employee>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Employee Information
+}
+
+@*<div class="" style="float: right; margin-bottom: 10px;">
+    
+</div>
+<br style="clear: both;" />*@
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("Index", "Employee", new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td style="padding-bottom:5px">
+                @Html.Label("Search employee")
+            </td>
+            <td style="padding-left:5px">
+                <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+            </td>
+            <td style="padding-bottom:5px">
+                <label for="EmpNo">Or put employee Id.</label>
+            </td>
+            <td style="padding-left:5px">
+                <input type="text" id="Emp_No" name="Emp_No" style="width: 90px" />
+            </td>
+            <td style="padding-left:10px; padding-bottom:12px">
+                <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                <input type="hidden" name="empid" id="empid"/>
+            </td>
+            <td style="padding-left:15px; padding-bottom:12px">
+                <a class="btn btn-primary" href="@Url.Action("Create")"><i class="icon-plus"></i>Create New </a>
+            </td>
+        </tr>
+    </table>
+}
+
+<table class="table table-striped table-condensed">
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Designation</th>
+        <th>Department</th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="font-size:12px">
+            @Html.DisplayFor(modelItem => item.emp_no)
+        </td>
+        <td style="font-size:12px">
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td style="font-size:12px">
+            @Html.DisplayFor(modelItem => item.prl_employee_details.OrderByDescending(x=>x.id).First().prl_designation.name)
+        </td>
+        <td style="font-size:12px">
+            @Html.DisplayFor(modelItem => item.prl_employee_details.OrderByDescending(x=>x.id).First().prl_Department.name)
+        </td>
+        <td style="font-size:12px">
+            @Html.ActionLink("Edit", "Edit","Employee", new { id=item.id },null) 
+            @Html.ActionLink("Details", "Details", new { id=item.id }) 
+        </td>
+    </tr>
+}
+
+</table>
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("Paging","Employee", new { page }))
+</div>
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+    </script>
+}
+

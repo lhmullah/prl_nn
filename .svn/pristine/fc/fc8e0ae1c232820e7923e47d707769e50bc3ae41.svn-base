@@ -1,0 +1,48 @@
+﻿@model PayrollWeb.ViewModels.EmployeeView
+
+@{
+    ViewBag.Title = "CreateEmployee";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    
+    <fieldset>
+        <legend>Employee info</legend>
+        <table>
+            <tr>
+                <td>@Html.LabelFor(x=>x.name)</td>
+                <td>@Html.EditorFor(x => x.name)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.present_address)</td>
+                <td>@Html.EditorFor(x => x.present_address)   </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.permanent_address)</td>
+                <td>@Html.EditorFor(x => x.permanent_address)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.phone)</td>
+                <td>@Html.EditorFor(x => x.phone)</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(x=>x.email)</td>
+                <td>@Html.EditorFor(x => x.email)</td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    @foreach (var g in Model.Genders)
+                    {
+                        @Html.RadioButtonFor(x=>x.gender,@g) @g.Text
+                    }
+                </td>
+            </tr>
+           
+        </table>
+    </fieldset>
+    
+}
+

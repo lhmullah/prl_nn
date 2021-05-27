@@ -1,0 +1,95 @@
+﻿@using PayrollWeb.ViewModels
+@model List<PayrollWeb.ViewModels.BonusName>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Bonus Name
+}
+
+
+<div class="" style="float:right;">
+    <a class="btn btn-primary" href="@Url.Action("Create")">
+        <i class="icon-plus"></i> Create New </a>
+</div>
+<br style="clear: both;"/>
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+<fieldset>
+    <legend>List of Bonuses</legend>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> Id </th>
+                <th> Bonus Name</th>
+                <th> Action</th>
+            </tr>
+        </thead>
+        @foreach ( var bonusName in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(detp=> bonusName.id)
+
+                  </td>
+                  <td>
+                      @Html.DisplayFor(detp=> bonusName.name)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit","Edit","Bonus",new{id = bonusName.id},null)
+                      @Html.ActionLink("Delete","Delete","Bonus",new{id = bonusName.id}, new { onclick = "DeleteBonus(this);return false;" })
+                  </td>
+              </tr>
+           }
+    </table>
+</fieldset>
+
+<div id="dltBonus" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Do you want to delete this bonus?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltBonus" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteBonus(el)
+        {
+            $('#dltBonus').modal('show');
+
+            $('#btnDltBonus').click(function () {
+                $('#dltBonus').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+ }
+

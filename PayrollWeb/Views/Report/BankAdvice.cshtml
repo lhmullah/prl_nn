@@ -1,0 +1,201 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportBankAdvice
+@{
+    ViewBag.Title = "BankAdvice";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+Bank Advice
+}
+@section PageSpecificJsHeader
+{
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css" />
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css" />
+}
+
+@using (@Html.BeginForm("BankAdvice", "Report", FormMethod.Post, new {target="_blank"}))
+{
+    <br />
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Year")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years),new { style = "width:120px" })
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.Label("Month")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"),new { style = "width:120px" })
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.Label("Select Bank")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.DropDownListFor(x => x.bankId, new SelectList(@ViewBag.Banks, "id", "bank_name"))
+            </td>
+        </tr>
+        <tr><td colspan="11" style="height:5px"></td></tr>
+        <tr>
+            <td style="vertical-align:bottom">
+                @Html.Label("For")
+            </td>
+            <td style="width: 15px"></td>
+            <td colspan="2">
+                <label class="radio">
+                    @Html.RadioButton("empGroup","all",true)
+                    All Employees
+                </label>
+            </td>
+            <td colspan="3">
+                <label class="radio">
+                    @Html.RadioButton("empGroup","selected")
+                    Selected Employees
+                </label>
+            </td>
+            <td style="width: 15px">@Html.HiddenFor(m=>m.SelectedEmployees)</td>
+            <td colspan="3">
+                <table>
+                    <tr>
+                        <td style="width: 40px"></td>
+                        <td style="width: 40px">
+                            @*<input class="btn btn-success" type="submit" id="btnPrint" name="sButton" value="Print" style="width:80px"/>*@
+                        </td>
+                        <td style="width: 15px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnPreview" name="sButton" value="Preview" style="width:80px"/>
+                        </td>
+                        <td style="width: 50px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="To Excel" style="width:80px"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+}
+<div id="mdlSelectEmp" class="modal hide fade">
+    <div class="modal-body" >
+        <table id="empSearch" cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Employee Id</th><th>Name</th><th>Department</th><th>Mobile</th>
+                </tr>
+            </thead>
+        </table>   
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" class="close" data-dismiss="modal" aria-hidden="true">Complete</a>
+        @*<a href="#" class="btn btn-primary">Save changes</a>*@
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/TableTools.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/dataTables.bootstrap.js"></script>
+    <style type="text/css">
+        .row_selected { color: red; }
+    </style>
+
+    <script type="text/javascript">
+        var oTable;
+        var selected = new Array();
+
+        $('#empGroup[value^=selected]').on("click", function () {
+            $('#mdlSelectEmp').modal('show');
+            loadSearch();
+            $("#opts :input").attr("disabled", true);
+        });
+
+        $('#empGroup[value^=all]').on("click", function() {
+            selected = new Array();
+            $("#opts :input").attr("disabled", false);
+        });
+        
+            oTable = $('#empSearch').dataTable({
+                "bProcessing": true,
+                "bServerSide": true,
+                "bLengthChange": false,
+                "iDisplayLength": 30,
+                "sServerMethod": "POST",
+                "sPaginationType": "full_numbers",
+                "sDom": 'T<"clear">lfrtip',
+                "oTableTools": { "sRowSelect": "multi"},
+                "sAjaxSource": '@Url.Action("GetEmployees")',
+                "aoColumns": [{ "sName": "Employee Id" }, { "sName": "Name" }, { "sName": "Department" }, { "sName": "Mobile" }],
+                "fnServerData": function (sSource, aoData, fnCallback) {
+                    aoData.push({ name: 'bnkId', value: $('#bankId').val() }, { name: 'mnth', value: $('#Month').val() }, { name: 'yr', value: $('#Year').val() });
+                    $.ajax({
+                        "dataType": 'json',
+                        "type": "POST",
+                        "url": '@Url.Action("GetEmployees")',
+                        "data": aoData,
+                        "success": fnCallback
+                    });
+                },
+                "fnRowCallback": function(nRow, aData, iDisplayIndex) {
+                    $('#empSearch tbody > tr').each(function() {
+                        if (jQuery.inArray(aData[0], selected) != -1) {
+                            $(this).addClass('row_selected');
+                        }
+                    });
+                    return nRow;
+                },
+                "fnDrawCallback": function(oSettings) {
+                    $('#empSearch tbody > tr').each(function() {
+                        var iPos = oTable.fnGetPosition(this);
+                        if (iPos != null) {
+                            var aData = oTable.fnGetData(iPos);
+                            if (jQuery.inArray(aData[0], selected) != -1)
+                                $(this).addClass('row_selected');
+                        }
+                        $(this).click(function() {
+                            iPos = oTable.fnGetPosition(this);
+                            aData = oTable.fnGetData(iPos);
+                            var iId = aData[0];
+                            var is_in_array = jQuery.inArray(iId, selected);
+                            if (is_in_array == -1) {
+                                selected[selected.length] = iId;
+                            } else {
+                                selected = jQuery.grep(selected, function(value) {
+                                    return value != iId;
+                                });
+                            }
+                            if ($(this).hasClass('row_selected')) {
+                                $(this).removeClass('row_selected');
+                            } else {
+                                $(this).addClass('row_selected');
+                            }
+                        });
+                    });
+                }
+            });
+
+        $('#btnPreview').on('click', function (e) {
+
+            $('#SelectedEmployees').val(selected);
+        });
+
+        function loadSearch() {
+            oTable.fnDraw();
+        }
+    </script>
+}

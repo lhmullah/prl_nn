@@ -1,0 +1,123 @@
+﻿@model IEnumerable<PayrollWeb.ViewModels.TimeCard>
+
+
+<table class="table table-condensed table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.emp_no)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.submission_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.double_rate_hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.triple_rate_hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.four_times_rate_hour)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_ot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.holiday)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.normal_days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.evening_shift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.night_shift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.weekend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total_shift)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.on_call_days)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approver_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.approve_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.one_way)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.two_way)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.emp_no)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.submission_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.double_rate_hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.triple_rate_hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.four_times_rate_hour)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_ot)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.holiday)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.normal_days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.evening_shift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.night_shift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.weekend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total_shift)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.on_call_days)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approver_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.approve_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.one_way)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.two_way)
+        </td>
+       
+    </tr>
+}
+
+</table>

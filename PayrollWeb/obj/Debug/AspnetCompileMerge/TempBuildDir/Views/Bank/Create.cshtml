@@ -1,0 +1,38 @@
+﻿@model PayrollWeb.ViewModels.Bank
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Bank Create
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.bank_name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.bank_name)
+        @Html.ValidationMessageFor(model => model.bank_name)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.bank_code)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.bank_code)
+        @Html.ValidationMessageFor(model => model.bank_code)
+    </div>
+    <p>
+        <input type="submit" class="btn btn-success" value="Create" />
+    </p>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

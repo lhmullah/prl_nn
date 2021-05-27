@@ -1,0 +1,39 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<PayrollWeb.ViewModels.TaxAdjustmentUpload>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <th colspan="3" style="text-align: center;">
+           
+        </th>
+    </tr>
+    <tr>
+        <th>
+            Employee ID
+        </th>
+        <th>
+            Refund Amount 
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_id)
+                @Html.Hidden("TaxAdjustmentUploadData.emp_id",item.emp_id)
+            </td>
+            <td>
+                <a href="#" id="IncomeTaxRefund.@item.id" data-name="refund_amount" data-type="text"  data-pk="@item.id" data-url="@Url.Action("UpdateRecord","IncomeTax")" data-title="Enter Amount">@item.adjustment_amount</a>
+                @Html.Hidden("TaxAdjustmentUploadData.adjustment_amount",item.adjustment_amount)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("EditDataPagingTaxAdjustment","IncomeTax", new {did=@ViewBag.did,dt=@ViewBag.dt,page }))
+</div>

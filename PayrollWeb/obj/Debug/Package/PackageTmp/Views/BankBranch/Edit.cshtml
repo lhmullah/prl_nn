@@ -1,0 +1,74 @@
+﻿@model PayrollWeb.ViewModels.BankBranch
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Edit Bank Branch
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.id)
+
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.bank_id)
+        </div>
+        <div class="span3">
+            @Html.DropDownListFor(model=>model.bank_id,new SelectList(@ViewBag.Banks,"id","bank_name"))
+        </div>
+        <div class="span4 offset1">
+            @Html.ValidationMessageFor(model => model.bank_id)
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.branch_name)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.branch_name)
+        </div>
+        <div class="span4 offset1">
+            @Html.ValidationMessageFor(model => model.branch_name)
+        </div>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.branch_code)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.branch_code)
+        </div>
+        <div class="span3 offset1">
+            @Html.ValidationMessageFor(model => model.branch_code)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+        </div>
+        <div class="span3">
+            <table>
+                <tr>
+                    <td>
+                        <input class="btn btn-success" type="submit" value="Update" />
+                    </td>
+                    <td style="width: 20px"></td>
+                    <td>
+                        @Html.ActionLink("Back to List", "Index")
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}
+
+
+

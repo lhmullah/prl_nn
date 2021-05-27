@@ -1,0 +1,43 @@
+﻿@using PayrollWeb.ViewModels;
+@model PayrollWeb.ViewModels.ForgotPasswordModel
+@{
+    ViewBag.Title = "ForgotPassword";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div>
+            <div class="editor-label">
+                @Html.LabelFor(m => m.Email)
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+
+            <p>
+                <input class="btn btn-success" type="submit" value="Send Password" />
+            </p>
+    </div>
+}

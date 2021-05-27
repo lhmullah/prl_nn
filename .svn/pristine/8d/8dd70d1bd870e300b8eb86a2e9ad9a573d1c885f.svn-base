@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.gpit.DataContext", "com.gpit.DataContext\com.gpit.DataContext.csproj", "{377E69AB-BE8E-424A-83D2-6C10DDDF096B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "com.gpit.Model", "com.gpit.Model\com.gpit.Model.csproj", "{522F9637-541F-4776-BAEA-CA4CAF0A65FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PayrollWeb", "PayrollWeb\PayrollWeb.csproj", "{1CF55953-3E79-4459-A1E4-8D8B360F02DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{377E69AB-BE8E-424A-83D2-6C10DDDF096B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{377E69AB-BE8E-424A-83D2-6C10DDDF096B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{377E69AB-BE8E-424A-83D2-6C10DDDF096B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{377E69AB-BE8E-424A-83D2-6C10DDDF096B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522F9637-541F-4776-BAEA-CA4CAF0A65FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{522F9637-541F-4776-BAEA-CA4CAF0A65FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{522F9637-541F-4776-BAEA-CA4CAF0A65FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{522F9637-541F-4776-BAEA-CA4CAF0A65FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CF55953-3E79-4459-A1E4-8D8B360F02DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF55953-3E79-4459-A1E4-8D8B360F02DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF55953-3E79-4459-A1E4-8D8B360F02DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF55953-3E79-4459-A1E4-8D8B360F02DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

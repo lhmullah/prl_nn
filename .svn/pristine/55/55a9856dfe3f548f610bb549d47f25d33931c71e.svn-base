@@ -1,0 +1,33 @@
+﻿@model PayrollWeb.ViewModels.Employee
+
+<fieldset>
+    <legend>Salary Review</legend>
+</fieldset>
+
+<table style=" width:100%" >
+    <tr >
+        <td style="padding-left:6px; width:110px;">
+            <label for="EmpNo">Employee No.</label>
+        </td>
+        <td style="width:15px;"></td>
+        <td style="font-weight:bolder; width:60px;">
+            @Html.DisplayFor(model => model.emp_no)
+        </td>
+        <td style="width:30px"></td>
+        <td style="width:120px">
+            @Html.Label("Employee Name")
+        </td>
+        <td style="width:15px;"></td>
+        <td style="font-weight:bolder; width:260px">
+            @Html.DisplayFor(model => model.name)
+        </td>
+        <td style="width:30px"></td>
+        <td style="width:50px">
+            @Html.Label("Grade")
+        </td>
+        <td style="width:15px"></td>
+        <td style="font-weight:bolder">
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_grade.grade)
+        </td>
+    </tr>
+</table>

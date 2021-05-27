@@ -1,0 +1,127 @@
+﻿@using PayrollWeb.ViewModels;
+@model PayrollWeb.ViewModels.AllowanceUploadView
+
+@{
+    ViewBag.Title = "UploadAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Upload Allowance
+}
+
+<br style="clear: both;"/>
+ @{
+     if (TempData.ContainsKey("msg"))
+     {
+         var res = (OperationResult)TempData["msg"];
+         if (res.IsSuccessful)
+         {
+             <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@{ foreach (var item in @res.Messages)
+                    {
+                        @item
+                <br />
+                    } 
+                  }
+
+            </div>
+        </div>    
+         }
+         else
+         {
+            <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@{ foreach (var item in @res.Messages)
+                    {
+                        @item
+                <br />
+                    } 
+                  }
+
+            </div>
+        </div> 
+         }
+     }
+}
+
+@using (Html.BeginForm("UploadAllowance", "Allowance", null, FormMethod.Post, new {enctype = "multipart/form-data", id = "fileupload" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+  <fieldset>
+   <legend>Allowance Upload View</legend>
+    <table style="border-collapse: separate; border-spacing: 3px;">
+      <tr>
+            <td style="">
+                @Html.Label("Year")
+            </td>
+            <td style="width: 15px"></td>
+            <td style="">
+                @Html.DropDownListFor(model=>model.Year, new SelectList(@ViewBag.Years), "---Select Year---")
+                @Html.ValidationMessageFor(model=>model.Year)  
+            </td>
+        </tr>
+       <tr>
+            <td style="">
+                @Html.Label("Month")
+            </td>
+            <td style="width: 15px"></td>
+            <td style="">
+                @Html.DropDownListFor(model=>model.Month, new SelectList(@ViewBag.Months,"Value","Key"), "---Select Month---") 
+                @Html.ValidationMessageFor(model=>model.Month)   
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.AllowanceName)
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.DropDownListFor(model => model.AllowanceName, new SelectList(@Model.AllowanceNames, "id", "allowance_name"), "Select Allowance Name")
+                 @Html.ValidationMessageFor(model => model.AllowanceName)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Upload File")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                <input type="file" id="allowanceFile" name="allowancetFile" class="" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+               
+            </td>
+            <td style="width: 15px"></td>
+            <td >
+                <input style="margin-top:10px" type="submit" value="Upload" id="btnSubmitAllowanceFile" class="btn btn-primary" /> 
+                <input style="margin-top:10px;width:120px;" onclick="GetFormat()" value="Import Format" id="" class="btn btn-success "/> 
+            </td>
+        </tr>
+    </table>
+    </fieldset>   
+}
+
+
+@section PageSpecificJs
+{
+@*  <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>*@
+
+    <script type="text/javascript">
+
+        function GetFormat() {
+            window.open("/Allowance/GetAllowanceUploadSample", "_blank");
+        };
+
+    </script>
+}
+
+

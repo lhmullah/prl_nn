@@ -1,0 +1,34 @@
+﻿@model PayrollWeb.ViewModels.CostCentre
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Create Job CostCentre
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.cost_centre_name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.cost_centre_name)
+        @Html.ValidationMessageFor(model => model.cost_centre_name)
+    </div>
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

@@ -1,0 +1,34 @@
+﻿@model MvcSiteMapProvider.Web.Html.Models.SiteMapNodeModelList
+@using System.Web.Mvc.Html
+@using MvcSiteMapProvider.Web.Html.Models
+
+@*<ul id="inMenu" class="nav nav-tabs nav-stacked">*@
+    @foreach (var node in Model)
+    {
+
+        if (node.Parent.IsInCurrentPath)
+        {
+            if (node.IsCurrentNode)
+            {
+                <li class="active">
+                    @Html.DisplayFor(m => node) 
+                    @if (node.Children.Any())
+                    {
+                        @Html.DisplayFor(m => node.Children)
+                    }
+                </li>
+            }
+            else
+            {
+                <li>
+                    @Html.DisplayFor(m => node) 
+                    @if (node.Children.Any())
+                    {
+                        @Html.DisplayFor(m => node.Children)
+                    }
+                </li>
+            }
+            
+        }
+    }
+@*</ul>*@

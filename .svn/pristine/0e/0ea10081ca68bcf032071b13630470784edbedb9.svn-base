@@ -1,0 +1,104 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeLeaveWithoutPay
+@{
+    ViewBag.Title = "ModifyEmployeeLWP";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Leave Without Pay
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+<p> Edit Employee Leave Without Pay </p>
+@using (Html.BeginForm("ModifyEmployeeLWP", "LeaveWithoutPay", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.no_of_days)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.no_of_days)
+                @Html.ValidationMessageFor(model => model.no_of_days)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.strat_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.strat_date)
+                @Html.ValidationMessageFor(model => model.strat_date)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.end_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.end_date)
+            </td>
+        </tr>
+    </table>
+        
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" name="sButton" />
+        <input type="hidden" name="empid" id="eid"/>
+    </p>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "EmployeeLWP")
+</div>
+
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#start_date,#end_date').datepicker();
+
+    </script>
+
+}
+
+
+
+
+

@@ -1,0 +1,156 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportWorkerpay
+@{
+    ViewBag.Title = "WorkerPay";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Worker Payslip
+}
+
+@using (Html.BeginForm("WorkerPay", "Salary", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table style="border-collapse: separate; border-spacing: 15px;">
+        <tr>
+            <td style="width: 135px">
+                @Html.Label("Select Year")
+            </td>
+            <td>
+                @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:185px" })
+            </td>
+            <td style="width: 30px"></td>
+            <td style="width: 135px">
+                @Html.Label("Select Month")
+            </td>
+            
+            <td>
+                @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:185px" })
+            </td>
+        </tr>
+    </table>
+        
+        <div class="container-fluid" style="padding: 0;">
+         <div class="accordion" id="accordion2">
+                    <div class="accordion-group">
+                    <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                        <i class="icon-resize-vertical"></i><b>Individual Employee Wise</b>
+                    </a>
+                </div>
+                    <div id="collapseTwo" class="accordion-body collapse">
+                    <div class="accordion-inner">
+                        <table style="border-collapse: separate; border-spacing: 3px">
+                            <tr>
+                                <td style="width: 125px">
+                                    @Html.Label("Search employee")
+                                </td>
+                                <td style="width: 15px"></td>
+                                <td>
+                                    <input type="text" placeholder="Write Employee ID or Name and then Select" autocomplete="off" data-provide="typeahead" id="aa" style="width: 290px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="5">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input class="btn btn-success" style="width: 120px" type="submit" name="sButton" value="Download" />
+                                                <input type="hidden" name="empid" id="empid" />
+                                            </td>
+                                            <td style="width: 30px"></td>
+                                            <td></td>
+                                            @*       Don't Delete -- Temporary commented              
+                                                            <td style="width: 30px"></td>
+                                            <td>
+                                                <input id="btnView" style="width: 120px" class="btn btn-success" type="submit" name="sButton" value="View" />
+
+                                            </td>*@
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td colspan="2"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                                <i class="icon-resize-vertical"></i><b>Employee Category Wise</b>
+                            </a>
+                        </div>
+                        <div id="collapseOne" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <table style="border-collapse: separate; border-spacing: 3px;">
+                                    <tr>
+                                        <td style="width: 90px" >
+                                            @Html.Label("Select Category")
+                                        </td>
+                                        <td style="width: 185px">
+                                            @Html.DropDownListFor(x => x.category, new List<SelectListItem>
+                                            { 
+                                                               new SelectListItem {Text= "Part-Time", Value="Part-Time"},
+                                                               //new SelectListItem {Text= "Full-Time", Value="Full-Time"}
+                                            }, new { style = "width:185px;" })
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 90px"></td>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td style="width:550px">
+                                                        <input class="btn btn-success" type="submit" name="sButton" value="Download All" style="width: 120px" /> <span style="color:blue; font-style:italic; font-size:x-small">Almost 200 pages may take about 5 minutes. Don't close the download tab.</span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+         </div>
+   </div>
+}
+
+@section PageSpecificJs
+{
+    
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch", "Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+
+@*     <script type="text/javascript">
+        var empNo = $('#empNo').val();
+        if (typeof (empNo) === 'undefined') {
+            $('#ps').hide();
+        }
+        else{
+            $('#ps').show();
+        }
+    </script>*@
+}

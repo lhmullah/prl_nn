@@ -1,0 +1,177 @@
+﻿@model PayrollWeb.ViewModels.Employee
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Details
+}
+
+<table class="table-striped table-condensed" style="margin:20px 15px;">
+    <tr>
+        <th style="width: 18%">
+            @Html.DisplayNameFor(model => model.emp_no)
+        </th>
+        <td style="width: 32%">
+            @Html.DisplayFor(model => model.emp_no)
+        </td>
+       <th style="width: 20%">
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <td style="width: 30%">
+            @Html.DisplayFor(model => model.name)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].designation_id)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_designation.name)
+        </td>
+        <th>
+           @Html.DisplayNameFor(model => model.is_active)
+        </th>
+        <td>
+             @Html.DisplayFor(model => model.is_active, "YesNo")
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].cost_centre_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().prl_cost_centre.cost_centre_name)
+        </td>
+        <th>
+             @Html.DisplayNameFor(model => model.prl_employee_details[0].basic_salary)
+        </th>
+        <td>
+            BDT. @Html.DisplayFor(model => model.prl_employee_details.OrderByDescending(x => x.id).First().basic_salary)
+        </td>
+    </tr>
+
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.joining_date)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.joining_date, "{0:dd/MM/yyyy}")
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.official_contact_no)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.official_contact_no)
+        </td>
+    </tr>
+   
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <td>
+             @Html.DisplayFor(model => model.email)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.gender)
+        </td>
+    </tr>
+   
+    <tr>
+        <th>Bank</th> 
+         <td>
+            @Html.DisplayFor(model => model.prl_bank.bank_name)
+        </td>
+        <th>Bank Branch</th>
+         <td>
+            @Html.DisplayFor(model => model.prl_bank_branch.branch_name)
+        </td>
+    </tr>
+    <tr>
+         <th>
+            Account No
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.account_no)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.tin)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.tin)
+        </td>
+    </tr>
+
+    <tr>
+         <th>
+            @Html.DisplayNameFor(model => model.dob)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.dob, "{0:dd/MM/yyyy}")
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.religion_id)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_religion.name)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.personal_contact_no)
+        </th>
+        <td>
+             @Html.DisplayFor(model => model.personal_contact_no)
+        </td>
+         <th>
+            @Html.DisplayNameFor(model => model.personal_email)
+        </th>
+        <td>
+            @Html.DisplayFor(model => model.personal_email)
+        </td>
+    </tr>
+
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].marital_status)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details[0].marital_status)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].blood_group)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details[0].blood_group)
+        </td>
+    </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].present_address)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details[0].present_address)
+        </td>
+        <th>
+            @Html.DisplayNameFor(model => model.prl_employee_details[0].parmanent_address)
+        </th>
+         <td>
+            @Html.DisplayFor(model => model.prl_employee_details[0].parmanent_address)
+        </td>
+    </tr>
+
+    <tr>
+        <td colspan="4" style="text-align: right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </td>
+    </tr>
+</table>
+<div class="clearfix"></div>

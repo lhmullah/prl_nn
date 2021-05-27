@@ -1,0 +1,32 @@
+﻿@model PayrollWeb.ViewModels.Division
+
+@{
+    ViewBag.Title = "CreateDivision";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@using(Html.BeginForm("CreateDivision","Setup",FormMethod.Post)){
+    <fieldset>
+        <legend>Division info</legend>
+        
+        <table>
+            <tr>
+                <td></td>
+                <td>
+                    @Html.ValidationSummary(false)
+                </td>
+
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.name)</td>
+                <td>@Html.EditorFor(x => x.name)</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input class="btn btn-success" type="submit" value="Save"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}

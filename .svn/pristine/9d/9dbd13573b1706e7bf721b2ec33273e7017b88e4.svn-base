@@ -1,0 +1,182 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeDiscontinue
+
+@{
+    ViewBag.Title = "UndoEmployeeDiscontinue";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Undo discontinued employee
+}
+
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("UndoEmployeeDiscontinue", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td style="width: 40%"></td>
+            <td>
+                <table style="border-collapse: separate; border-spacing: 3px; width:100%">
+                    <tr>
+                        <td>
+                            @Html.Label("Search employee")
+                        </td>
+                        <td style="width: 15px"></td>
+                        <td colspan="3">
+                            <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 300px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <label for="EmpNo" style="width: 140px">Or put employee no.</label>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                        </td>
+                        <td style="width: 115px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                            <input type="hidden" name="empid" id="empid" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 60%"></td>
+        </tr>
+    </table>
+}
+@using (Html.BeginForm("UndoEmployeeDiscontinue", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.HiddenFor(model=>model.emp_id)
+    <fieldset>
+        <legend></legend>
+    </fieldset>
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            
+            <td>
+                @Html.Label("Employee")
+            </td>
+            <td style="width: 30px"></td>
+            <td style="font-weight:bolder; width:200px">
+                @Html.DisplayFor(model => model.empInfo)
+                @Html.HiddenFor(model=>model.empInfo)
+            </td>
+            <td style="width: 30px"></td>
+            <td>
+                @Html.Label("Status")
+            </td>
+            <td style="width: 15px"></td>
+            <td style="font-weight:bolder; color:red">
+                @Html.DisplayFor(model => model.status)
+                @Html.HiddenFor(model=>model.status)
+            </td>
+        </tr>
+        <tr><td colspan="5" style="height:5px"></td></tr>
+        <tr>
+            <td>
+                @Html.Label("Remarks")
+            </td>
+            <td ></td>
+            <td>
+                @Html.TextBoxFor(model => model.remarks, new {style = "width:200px"})
+            </td>
+            <td></td>
+            <td>
+                @Html.Label("Continuation Date")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.TextBoxFor(model => model.continution_date, new { style="width:122px"})
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td colspan="5">
+                <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="Continue" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+    <script type="text/javascript">
+        $('#continution_date').datepicker();
+
+        var stts = $("#status").val();
+        if (stts == 'Discontinuing') {
+            $('#btnSave').prop('disabled', false);
+        }
+        else {
+            $('#btnSave').prop('disabled', true);
+        }
+
+        $('#btnSave').on('click', function ()
+        {
+            var id = $("#emp_id").val();
+            var conD = $("#continution_date").val();
+            if (id =='') {
+                alert("No employee selected.");
+                return false;
+            }
+            else if (conD=='') {
+                alert("Please select continuation date.");
+                return false;
+            }
+           else
+                return confirm('Are you sure you want to save this discontinuation info?');
+        });
+
+    </script>
+}
+

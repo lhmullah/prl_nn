@@ -1,0 +1,124 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.RolePrivilege
+@{
+    ViewBag.Title = "RoleMenu";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Role-wise menu and submenu
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+
+@using (Html.BeginForm("RoleMenu", "Authentication", FormMethod.Post, new { @class = "form-search" }))
+{
+   
+    <table style="border-collapse: separate; border-spacing: 3px; width:100%">
+        <tr>
+            <td>
+                @Html.Label("Select Role")
+            </td>
+            <td style="width:15px"></td>
+            <td>
+                @Html.DropDownListFor(x=>x.role,new SelectList(@ViewBag.Roles),"--- Select Role ---")
+            </td>
+            <td style="width:30px"></td>
+            <td>
+                @Html.Label("Select Menu")
+            </td>
+            <td style="width:15px"></td>
+            <td>
+                @Html.DropDownListFor(x=>x.menu_id,new SelectList(@ViewBag.Menus,"id","menue_name"),"--- Select Menu ---")
+            </td>
+        </tr>
+    </table>
+    <fieldset>
+        <legend></legend>
+    </fieldset>
+    <div>
+        
+        @foreach (var o in ViewBag.sbMenus)
+        {
+            if ((ViewBag.sBIds as List<int>).Count > 0)
+            {
+                int flag = 0;
+                foreach (int sId in ViewBag.sBIds)
+                {
+                    if(sId==Convert.ToInt32(o.id))
+                    {
+                        flag = 1;
+                        break;
+                    }
+                }
+                if (flag == 1)
+                {
+                    <label class="checkbox" style="width:200px">
+                        <input type="checkbox" id="@o.id" name="SubMenus" value="@o.id" checked="@true" /> @o.sub_menu 
+                    </label>
+                }
+                else
+                {
+                    <label class="checkbox" style="width:200px">
+                        <input type="checkbox" id="@o.id" name="SubMenus" value="@o.id" checked="@false" /> @o.sub_menu 
+                    </label>
+                }
+            }
+            else
+            {
+                <label class="checkbox" style="width:200px">
+                    <input type="checkbox" id="@o.id" name="SubMenus" value="@o.id" checked="@false" /> @o.sub_menu 
+                </label>
+            }
+        }
+    </div>
+    <br />
+    <input class="btn btn-success" type="submit" name="sButton" value="Save" />
+}
+
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+
+        $('#role').change(function () {
+            var rol = $('#role option:selected').val();
+            var menu = $('#menu_id option:selected').val();
+            if (rol != "" && menu !== "") {
+                var test = '@Url.Action("RoleMenu", "Authentication", new { roleAndMenuId = "PLACEHOLDER" })';
+                var myUrl = test.replace('PLACEHOLDER', rol + "," + menu);
+                document.location.href = myUrl;
+            }
+        });
+
+        $('#menu_id').change(function () {
+            var rol = $('#role option:selected').val();
+            var menu = $('#menu_id option:selected').val();
+            if (rol != "" && menu !== "") {
+                var test = '@Url.Action("RoleMenu","Authentication",new{roleAndMenuId="PLACEHOLDER"})';
+            var myUrl = test.replace('PLACEHOLDER', rol + "," + menu);
+            document.location.href = myUrl;
+        }
+        });
+    </script>
+}

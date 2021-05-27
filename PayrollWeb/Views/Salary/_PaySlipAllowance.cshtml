@@ -1,0 +1,14 @@
+﻿@model List<PayrollWeb.ViewModels.AllowanceDeduction>
+
+<table class="table table-striped">
+@foreach (var item in Model) {
+    <tr>
+        <td style="text-align:left; width:180px">
+            @Html.DisplayFor(modelItem => item.head)
+        </td>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.value)
+        </td>
+    </tr>
+}
+</table>

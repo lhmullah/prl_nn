@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll">
+   <Modules>
+    <Module Name="payrollweb.dll">
+     <Namespaces>
+      <Namespace Name="PayrollWeb.Controllers">
+       <Types>
+        <Type Name="EmployeeController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AddBankInfoFile(System.Web.HttpPostedFileBase)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="1315">Object 'excelOledbConnection' can be disposed more than once in method 'EmployeeController.AddBankInfoFile(HttpPostedFileBase)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1315, 1318</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="1309">The query string passed to 'OleDbCommand.CommandText.set(string)' in 'EmployeeController.AddBankInfoFile(HttpPostedFileBase)' could contain the following variables 'excelSchema.Rows[0]["TABLE_NAME"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddEmpDiscontinueFile(System.Web.HttpPostedFileBase)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="2233">Object 'excelOledbConnection' can be disposed more than once in method 'EmployeeController.AddEmpDiscontinueFile(HttpPostedFileBase)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2233, 2236</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="2229">The query string passed to 'OleDbCommand.CommandText.set(string)' in 'EmployeeController.AddEmpDiscontinueFile(HttpPostedFileBase)' could contain the following variables 'excelSchema.Rows[0]["TABLE_NAME"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AddSalaryReviewFile(System.Web.HttpPostedFileBase)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="1640">Object 'excelOledbConnection' can be disposed more than once in method 'EmployeeController.AddSalaryReviewFile(HttpPostedFileBase)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1640, 1643</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="1634">The query string passed to 'OleDbCommand.CommandText.set(string)' in 'EmployeeController.AddSalaryReviewFile(HttpPostedFileBase)' could contain the following variables 'excelSchema.Rows[0]["TABLE_NAME"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#EmpImport(System.Web.HttpPostedFileBase)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="2739">Object 'excelOledbConnection' can be disposed more than once in method 'EmployeeController.EmpImport(HttpPostedFileBase)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 2739, 2742</Issue>
+            </Message>
+            <Message TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="EmployeeController.cs" Line="2735">The query string passed to 'OleDbCommand.CommandText.set(string)' in 'EmployeeController.EmpImport(HttpPostedFileBase)' could contain the following variables 'excelSchema.Rows[1]["TABLE_NAME"]'. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="ReportController" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AITDownload(System.Web.Mvc.FormCollection,PayrollWeb.ViewModels.Certificates,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="ReportController.cs" Line="1354">Object 'memoryStream' can be disposed more than once in method 'ReportController.AITDownload(FormCollection, Certificates, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1354</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#TRADownload(System.Web.Mvc.FormCollection,PayrollWeb.ViewModels.Certificates,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Controllers" File="ReportController.cs" Line="1591">Object 'memoryStream' can be disposed more than once in method 'ReportController.TRADownload(FormCollection, Certificates, string)'. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1591</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="PayrollWeb.ReportDataSet">
+       <Types>
+        <Type Name="ReportDataSet" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+CertificateInfoDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.CertificateInfoDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+ReportIncomeTax108DataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.ReportIncomeTax108DataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+rptIncomeTaxDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.rptIncomeTaxDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+rptMonthlySalaryTotalDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.rptMonthlySalaryTotalDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+rptMonthlyTaxStatementDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.rptMonthlyTaxStatementDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+rptSalarySheetDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.rptSalarySheetDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+rptYearlyInvestmentReportDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.rptYearlyInvestmentReportDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblBankAdviceDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblBankAdviceDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblCashSalaryReportDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblCashSalaryReportDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblLoanSummaryDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblLoanSummaryDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblMonthlyAllowanceDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblMonthlyAllowanceDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblMonthWiseTaxDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblMonthWiseTaxDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblPaySlipDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblPaySlipDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblSalarySheetDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblSalarySheetDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblTaxCardDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblTaxCardDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="ReportDataSet+tblTaxCardIncomeHeadDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">Add an implementation of GetObjectData to type 'ReportDataSet.tblTaxCardIncomeHeadDataTable'.</Issue>
+          </Message>
+         </Messages>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="PayrollWeb.Service">
+       <Types>
+        <Type Name="AllowanceService" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DeleteEmployeeChildAllowance(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="AllowanceService.cs" Line="575">'AllowanceService.DeleteEmployeeChildAllowance(int)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="SalaryService" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DeleteEmployeeTaxDetail(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="931">'SalaryService.DeleteEmployeeTaxDetail(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteEmployeeTaxDetail(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="788">'SalaryService.DeleteEmployeeTaxDetail(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteEmployeeTaxProcess(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="913">'SalaryService.DeleteEmployeeTaxProcess(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteEmployeeTaxProcess(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="769">'SalaryService.DeleteEmployeeTaxProcess(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteEmployeeTaxSlab(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="952">'SalaryService.DeleteEmployeeTaxSlab(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteEmployeeTaxSlab(System.Int32,System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="810">'SalaryService.DeleteEmployeeTaxSlab(int, int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryAllowance(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="970">'SalaryService.DeleteSalaryAllowance(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryAllowance(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="829">'SalaryService.DeleteSalaryAllowance(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryDeduction(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="988">'SalaryService.DeleteSalaryDeduction(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryDeduction(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="848">'SalaryService.DeleteSalaryDeduction(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryDetail(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="1006">'SalaryService.DeleteSalaryDetail(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryDetail(System.Int32,System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="867">'SalaryService.DeleteSalaryDetail(int, int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#DeleteSalaryMaster(System.Int32,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="1024">'SalaryService.DeleteSalaryMaster(int, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateEmpDetailsBasic(System.Decimal,System.Int32,System.String,System.DateTime,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="1048">'SalaryService.UpdateEmpDetailsBasic(decimal, int, string, DateTime, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateSalaryReview(System.Int32,System.Int32,System.Int32,System.String,System.DateTime,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="892">'SalaryService.UpdateSalaryReview(int, int, int, string, DateTime, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#UpdateSalaryReview(System.Int32,System.Int32,System.String,System.DateTime,MySql.Data.MySqlClient.MySqlCommand)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\Service" File="SalaryService.cs" Line="1073">'SalaryService.UpdateSalaryReview(int, int, string, DateTime, MySqlCommand)' rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+      <Namespace Name="PayrollWeb.ViewModels">
+       <Types>
+        <Type Name="BonusProcess" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_bonus_name(BonusName):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_company(Company):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_department(Department):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_division(Division):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_fiscal_year(FiscalYr):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_grade(Grade):Void</Issue>
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="BonusProcess.cs" Line="14">'BonusProcess.BonusProcess()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;BonusProcess..ctor()&#xD;&#xA;BonusProcess.set_prl_religion(Religion):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="LeaveWithoutPaySetting" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#.ctor()" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214" Status="Active" Created="2021-05-27 08:33:34Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="CriticalWarning" Path="d:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\ViewModels" File="LeaveWithoutPaySetting.cs" Line="13">'LeaveWithoutPaySetting.LeaveWithoutPaySetting()' contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: &#xD;&#xA;&#xD;&#xA;LeaveWithoutPaySetting..ctor()&#xD;&#xA;LeaveWithoutPaySetting.set_prl_employee_leave_without_pay(ICollection&lt;EmployeeLeaveWithoutPay&gt;):Void</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="Do not dispose objects multiple times" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>Do not dispose objects multiple times</Name>
+   <Description>A correctly implemented Dispose method can be called multiple times without throwing an exception. However, this is not guaranteed and to avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.</Description>
+   <Resolution Name="Default">Object {0} can be disposed more than once in method {1}. To avoid generating a System.ObjectDisposedException you should not call Dispose more than one time on an object.: Lines: 1591</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="DoNotCallOverridableMethodsInConstructors" Category="Microsoft.Usage" CheckId="CA2214">
+   <Name>Do not call overridable methods in constructors</Name>
+   <Description>Virtual methods defined on the class should not be called from constructors. If a derived class has overridden the method, the derived class version will be called (before the derived class constructor is called).</Description>
+   <Resolution Name="Default">{0} contains a call chain that results in a call to a virtual method defined by the class. Review the following call stack for unintended consequences: {1}</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182331(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalWarning</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>Implement ISerializable correctly</Name>
+   <Description>If a type is assignable to ISerializable, it should implement GetObjectData. For unsealed types, the GetObjectData method should be callable and overridable by derived types.</Description>
+   <Resolution Name="Default">Add an implementation of GetObjectData to type {0}.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Rethrow to preserve stack details</Name>
+   <Description>Use the IL rethrow instruction to preserve original stack details when re-raising a caught exception.</Description>
+   <Resolution Name="Default">{0} rethrows a caught exception and specifies it explicitly as an argument. Use 'throw' without an argument instead, in order to preserve the stack location where the exception was initially raised.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="Review SQL queries for security vulnerabilities" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>Review SQL queries for security vulnerabilities</Name>
+   <Description>A SQL command string built from user input is vulnerable to SQL injection attacks. Microsoft SQL Server and other database servers support stored procedures and parameterized SQL queries, which reduce the risk of injection attacks.</Description>
+   <Resolution Name="WithNonLiterals">The query string passed to {0} in {1} could contain the following variables {2}. If any of these variables could come from user input, consider using a stored procedure or a parameterized SQL query instead of building the query with string concatenations.</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Category</String>
+  <String Key="Certainty">Certainty</String>
+  <String Key="CollapseAll">Collapse All</String>
+  <String Key="CheckId">Check Id</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">error(s)</String>
+  <String Key="ExpandAll">Expand All</String>
+  <String Key="Help">Help</String>
+  <String Key="Line">Line</String>
+  <String Key="Messages">message(s)</String>
+  <String Key="LocationNotStoredInPdb">[Location not stored in Pdb]</String>
+  <String Key="Project">Project</String>
+  <String Key="Resolution">Resolution</String>
+  <String Key="Rule">Rule</String>
+  <String Key="RuleFile">Rule File</String>
+  <String Key="RuleDescription">Rule Description</String>
+  <String Key="Source">Source</String>
+  <String Key="Status">Status</String>
+  <String Key="Target">Target</String>
+  <String Key="Warning">Warning</String>
+  <String Key="Warnings">warning(s)</String>
+  <String Key="ReportTitle">Code Analysis Report</String>
+ </Localized>
+</FxCopReport>

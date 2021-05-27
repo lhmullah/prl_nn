@@ -1,0 +1,41 @@
+﻿@model PayrollWeb.ViewModels.IncomeTaxParameter
+
+@using (Html.BeginForm("Index", "IncomeTax", FormMethod.Post, new { @class = "form-inline" })) 
+{
+    @Html.ValidationSummary(true)
+    
+    <fieldset>
+        <legend>Choose Search Criteria</legend>
+    
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                @Html.LabelFor(model => model.fiscal_year_id)
+            </div>
+            <div class="span8" style="float: left;">
+                @Html.DropDownListFor(model => model.fiscal_year_id, new SelectList(@ViewBag.AllFiscalYears, "id", "fiscal_year"), "---- Select ----")<br />
+             <br />
+            </div>
+        </div>
+    
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                @Html.LabelFor(model => model.gender)
+            </div>
+            <div class="span8" style="float: left;">
+                @Html.DropDownListFor(model=>model.gender,new SelectList(PayrollWeb.Models.EnumToSelectItemList.GetEnumSelectList<PayrollWeb.ViewModels.Genders>(),"Text","Text"))<br />
+            </div>
+        </div>
+        
+        <div class="row-fluid" style="margin: 12px;">
+            <div class="span2">
+                
+            </div>
+            <div class="span8" style="float: left;">
+                <input class="btn btn-success" id="btnSearch" type="submit" value="Search"/>
+                <br />
+            </div>
+                
+        </div>
+       
+    </fieldset>
+}

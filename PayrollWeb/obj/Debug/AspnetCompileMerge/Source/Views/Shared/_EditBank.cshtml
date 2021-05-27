@@ -1,0 +1,20 @@
+﻿@model PayrollWeb.ViewModels.Bank
+
+
+ <fieldset>
+        <legend>Bank Info</legend>
+        <table>
+            <tr>
+                <td>@Html.HiddenFor(x=>x.id)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(x=>x.bank_name)</td>
+                <td>@Html.EditorFor(x => x.bank_name)</td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(x=>x.bank_code)</td>
+                <td>@Html.EditorFor(x => x.bank_code)   </td>
+            </tr>
+        </table>
+    </fieldset>
+ 

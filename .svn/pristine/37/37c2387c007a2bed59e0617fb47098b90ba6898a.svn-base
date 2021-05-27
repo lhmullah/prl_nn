@@ -1,0 +1,301 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportPayslip
+
+@{
+    ViewBag.Title = "PaySlip";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+Payslip
+}
+
+@using (Html.BeginForm("PaySlip", "Report", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee Search</legend>
+        <table>
+            <tr>
+                <td style="width: 50%"></td>
+                <td>
+                    <table style="border-collapse: separate; border-spacing: 3px; width: 100%">
+                        <tr>
+                            <td>
+                                @Html.Label("Search employee", new { style = "width:120px" })
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <label for="EmpNo" style="width: 150px">Or put employee no.</label>
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td>
+                                <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                @Html.Label("Year")
+                            </td>
+                            <td style="width: 15px"></td>
+                            <td colspan="5">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:120px" })
+                                        </td>
+                                        <td style="width: 30px"></td>
+                                        <td>
+                                            @Html.Label("Month")
+                                        </td>
+                                        <td style="width: 30px"></td>
+                                        <td>
+                                            @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:120px" })
+                                        </td>
+                                        <td style="width: 120px"></td>
+                                        <td>
+                                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                                            <input type="hidden" name="empid" id="empid" />
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 50%"></td>
+            </tr>
+        </table>
+
+    </fieldset>
+}
+
+@*<table style="width: 100%; background-color: silver">
+    <tr>
+        <td style="width: 50%"></td>
+        <td>
+            <table>
+                <tr>
+                    <td>
+                        @Html.Label("Payslip for the month of", new { style = "width:160px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center">
+                        @Html.DisplayFor(m => m.MonthName),
+                            @Html.DisplayFor(x => x.Year, new SelectList(@ViewBag.Years))
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td style="width: 50%"></td>
+    </tr>
+</table>
+<br />
+<div id="ps" style="width: 100%">
+    @using (Html.BeginForm("", "Report", FormMethod.Post, new { @class = "form-search" }))
+    {
+        <table style="border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <td style="padding-left: 40px">
+                    @Html.Label("Name")
+                </td>
+                <td style="width: 40px"></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.empName)
+                </td>
+                <td style="width: 80px"></td>
+                <td>
+                    @Html.Label("Employee No")
+                </td>
+                <td style="width: 40px"></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.empNo)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 40px">
+                    <label>Designation</label>
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.designation)
+                </td>
+                <td></td>
+                <td>
+                    <label>Department</label>
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.department)
+                </td>
+
+            </tr>
+            <tr>
+                <td style="padding-left: 40px">
+                    <label>Division</label>
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.division)
+                </td>
+                <td></td>
+                <td>
+                    <label>Grade</label>
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.grade)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 40px">
+                    @Html.Label("Basic Salary")
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.basicSalary)
+                </td>
+                <td></td>
+                <td>
+                    @Html.Label("Payment Mode")
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.paymentMode)
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left: 40px">
+                    @Html.Label("Bank Name")
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.bank)
+                </td>
+                <td></td>
+                <td>
+                    @Html.Label("Account Number")
+                </td>
+                <td></td>
+                <td style="font-weight:bolder">
+                    @Html.DisplayFor(model => model.accNo)
+                </td>
+            </tr>
+        </table>
+        <br />
+        <table style="width: 100%">
+            <tr>
+                <td style="width: 50%"></td>
+                <td>
+                    <table style="width: 500px">
+                        <tr>
+                            <td style="vertical-align: top">
+                                @Html.Partial("_PaySlipAllowance", (List<AllowanceDeduction>)@ViewBag.Allowance)
+                            </td>
+                            <td style="width: 40px"></td>
+                            <td style="vertical-align: top">
+                                @Html.Partial("_PaySlipDeduction", (List<AllowanceDeduction>)@ViewBag.Deduction)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: bottom">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @Html.Label("Total Allowance", new { style = "width:180px" })
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.totalEarnings)
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td></td>
+                            <td style="vertical-align: bottom">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            @Html.Label("Total Deduction")
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(model => model.totalDeduction)
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" style="height: 10px"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                <table>
+                                    <tr>
+                                        <td style="width: 50%"></td>
+                                        <td style="text-align: center">
+                                            <table>
+                                                <tr style="background-color:silver">
+                                                    <td>
+                                                        @Html.Label("Net Pay", new { style = "width:100px" })
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(model => model.netPay)
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td style="width: 50%"></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 50%"></td>
+            </tr>
+        </table>
+            
+    }
+</div>*@
+
+@section PageSpecificJs
+{
+    
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+
+    @* <script type="text/javascript">
+        var empNo = $('#empNo').val();
+        if (typeof (empNo) === 'undefined') {
+            $('#ps').hide();
+        }
+        else{
+            $('#ps').show();
+        }
+    </script>*@
+}

@@ -1,0 +1,108 @@
+﻿@using PayrollWeb.ViewModels
+@{
+    ViewBag.Title = "DisburseSalary";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Salary Disburse
+}
+<br style="clear: both;"/>
+    
+    @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+    <div class="row-fluid" style="margin: 10px;">
+        <div class="span3">
+            Select Process Year
+        </div>
+        <div class="span8">
+            @Html.DropDownList("Year", new SelectList(@ViewBag.Years), "---Select Year---")
+            
+        </div>
+    </div>
+    <div class="row-fluid"  style="margin: 10px;">
+        <div class="span3">
+            Select Process Month
+        </div>
+        <div class="span8">
+            @Html.DropDownList("Month", new SelectList(@ViewBag.Months,"Value","Key"), "---Select Month---") 
+        </div>
+    </div>
+    <div class="row-fluid"  style="margin: 10px;">
+        <div class="span3">
+            &nbsp;
+        </div>
+        <div class="span8">
+            <button id="btnDisburse" type="button" class="btn btn-primary">Get Batch</button>
+        </div>
+    </div>
+
+    <div class="row-fluid"  style="margin: 10px;">
+        <div class="span3">
+            &nbsp;
+        </div>
+        <div class="span8" id="dynCont">
+           &nbsp;
+        </div>
+    </div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+
+        $(function () {
+            $('#btnDisburse').on("click", function (e) {
+                e.preventDefault();
+                $.get('@Url.Action("GetUndisbursedBatch","Salary")', { 'y': $('#Year').val(), 'm': $('#Month').val() }, function(rdata) {
+
+                    if (rdata.isError == 'true') {
+
+                    } else {
+
+                        if (rdata.procList.length > 0) {
+                            var dul = $('<ul>').attr('class','nav nav-tabs nav-stacked');
+                            for (var i = 0; i < rdata.procList.length; i++) {
+                                var dil = $('<li>');
+                                var ds = $('<span>');
+                                ds.appendTo(dil);
+                                ds.html(rdata.procList[i].batch_no);
+                                var da = $('<a>');
+                                var dhref = '@Url.Action("Disburse","Salary")' + '?d=' + rdata.procList[i].id;
+                                da.attr('href', dhref);
+                                da.attr('style', 'margin-left:5px;');
+                                da.attr('class', 'btn');
+                                da.html('Disburse');
+                                da.appendTo(ds);
+                                dil.appendTo(dul);
+                            }
+
+                            dul.appendTo($('#dynCont'));
+                        }
+                    }
+
+                });
+            });
+        });
+
+    </script>
+}

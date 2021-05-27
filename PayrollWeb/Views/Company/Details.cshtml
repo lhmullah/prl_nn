@@ -1,0 +1,91 @@
+﻿@model PayrollWeb.ViewModels.Company
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Company Details
+}
+
+@Html.MvcSiteMap().SiteMapPath()
+
+<table style="border-collapse: separate; border-spacing: 5px;">
+    <tr>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.name)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.name)
+        </td>
+        <td style="width: 120px"></td>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.address)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.address)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.primary_phone)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.primary_phone)
+        </td>
+        <td style="width: 120px"></td>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.secondary_phone)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.secondary_phone)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.email)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.email)
+        </td>
+        <td style="width: 120px"></td>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.web)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.web)
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.description)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            @Html.DisplayFor(model => model.description)
+        </td>
+        <td style="width: 120px"></td>
+        <td style="text-align:right">
+            @Html.DisplayNameFor(model => model.logo)
+        </td>
+        <td style="width: 30px"></td>
+        <td style=" text-align:left; font-weight: bolder">
+            <img src="@Url.Content("~/Images/CompanyLogo/" + Model.logo)" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="7" style="height: 20px"></td>
+    </tr>
+    <tr>
+        <td colspan="7" style="text-align: right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </td>
+    </tr>
+</table>

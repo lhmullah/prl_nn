@@ -1,0 +1,129 @@
+﻿@using PayrollWeb.ViewModels
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_LandingLayout.cshtml";
+}
+
+@section PageBanner
+{
+    Payroll System
+}
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (!res.IsSuccessful)
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+<div class="span12">
+    
+    <div class="span4 text-left">
+        <div class="thumbnail">
+            <h4>Employee Info</h4>
+            <br/>
+            
+            <div style="text-align: left;padding-left: 10px;">
+                <span class="badge">1</span>  Number of active employee : <span id="tae">0</span> <br/>
+                <span class="badge badge-success">2</span>  Number of new employee : <span id="tne">0</span> <br/>
+                <span class="badge badge-info">3</span> Number of salary will be reviewed : <span id="tre"></span> <br/>
+            </div>               
+            <br/>
+            <div class="btn-toolbar">
+                <div class="btn-group toolTipgroup">
+                    <a data-original-title="send email" data-placement="right" href="#" class="btn"><i class="icon-envelope"></i></a>
+                    <a data-original-title="do you like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-up"></i></a>
+                    <a data-original-title="dont like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-down"></i></a>
+                    <a data-original-title="share" data-placement="top" href="#" class="btn"><i class="icon-link"></i></a>
+                    <a data-original-title="browse" data-placement="left" href="portfolio.html" class="btn"><i class="icon-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="thumbnail">
+            <h4>Payroll Info</h4><br/>
+           <div style="text-align: left; padding-left: 10px;">
+                <span class="badge">1</span>  Last salary processed : <span id="spm">0</span> <br/>
+                <span class="badge badge-success">2</span>  Processed for number of employee : <span id="spe">0</span> <br/>
+                <span class="badge badge-info">3</span> Total tax collected : <span id="spt">0</span> <br/>
+            </div>               
+            <br/>
+            <div class="btn-toolbar">
+                <div class="btn-group toolTipgroup">
+                    <a data-original-title="send email" data-placement="right" href="#" class="btn"><i class="icon-envelope"></i></a>
+                    <a data-original-title="do you like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-up"></i></a>
+                    <a data-original-title="dont like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-down"></i></a>
+                    <a data-original-title="share" data-placement="top" href="#" class="btn"><i class="icon-link"></i></a>
+                    <a data-original-title="browse" data-placement="left" href="portfolio.html" class="btn"><i class="icon-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="span4">
+        <div class="thumbnail">
+            <h4>Miscellaneous Info</h4>
+            <br/>
+           <div style="text-align: left;padding-left: 10px;">
+                <span class="badge">1</span>  Number of employee in LWP : <span id="noLwp">0</span> <br/>
+                <span class="badge badge-success">2</span>  Number of employee will be discontinued : <span id="noDiscon">0</span> <br/>
+                <span class="badge badge-info">3</span> Number of children allowance : <span id="noChildAlw">0</span> <br/>
+            </div>               
+            <br/>
+            <div class="btn-toolbar">
+                <div class="btn-group toolTipgroup">
+                    <a data-original-title="send email" data-placement="right" href="#" class="btn"><i class="icon-envelope"></i></a>
+                    <a data-original-title="do you like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-up"></i></a>
+                    <a data-original-title="dont like?" data-placement="top" href="#" class="btn"><i class="icon-thumbs-down"></i></a>
+                    <a data-original-title="share" data-placement="top" href="#" class="btn"><i class="icon-link"></i></a>
+                    <a data-original-title="browse" data-placement="left" href="portfolio.html" class="btn"><i class="icon-globe"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+
+        $.get('@Url.Action("TotalEmployeeStatusSummary","Home")', function(rdata) {
+
+            if (rdata !== null) {
+
+                $('#tae').text(rdata.totalActive);
+                $('#tne').text(rdata.totalNew);
+                $('#tre').text(rdata.totalReview);
+            }
+        });
+
+        $.get('@Url.Action("OverallPayrollStatus","Home")', function (rdata) {
+
+            if (rdata !== null) {
+
+                $('#spm').text(rdata.processMonth);
+                $('#spe').text(rdata.totalEmployee);
+                $('#spt').text(rdata.totalTax);
+            }
+        });
+        $.get('@Url.Action("MiscellaneousInfo","Home")', function (rdata) {
+
+            if (rdata !== null) {
+
+                $('#noLwp').text(rdata.lwpCount);
+                $('#noDiscon').text(rdata.discontinueCount);
+                $('#noChildAlw').text(rdata.childAlwCount);
+            }
+        });
+
+
+    });
+
+</script>

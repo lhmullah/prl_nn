@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{522F9637-541F-4776-BAEA-CA4CAF0A65FC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.gpit.Model</RootNamespace>
+    <AssemblyName>com.gpit.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="prl_allowance_configuration.cs" />
+    <Compile Include="prl_allowance_head.cs" />
+    <Compile Include="prl_allowance_name.cs" />
+    <Compile Include="prl_arrear_configuration.cs" />
+    <Compile Include="prl_bank.cs" />
+    <Compile Include="prl_bank_branch.cs" />
+    <Compile Include="prl_bonus_configuration.cs" />
+    <Compile Include="prl_bonus_hold.cs" />
+    <Compile Include="prl_bonus_name.cs" />
+    <Compile Include="prl_bonus_process.cs" />
+    <Compile Include="prl_bonus_process_detail.cs" />
+    <Compile Include="prl_company.cs" />
+    <Compile Include="prl_deduction_configuration.cs" />
+    <Compile Include="prl_deduction_head.cs" />
+    <Compile Include="prl_deduction_name.cs" />
+    <Compile Include="prl_department.cs" />
+    <Compile Include="prl_designation.cs" />
+    <Compile Include="prl_division.cs" />
+    <Compile Include="prl_employee.cs" />
+    <Compile Include="prl_employee_children_allowance.cs" />
+    <Compile Include="prl_employee_details.cs" />
+    <Compile Include="prl_employee_discontinue.cs" />
+    <Compile Include="prl_employee_free_car.cs" />
+    <Compile Include="prl_employee_individual_allowance.cs" />
+    <Compile Include="prl_employee_individual_deduction.cs" />
+    <Compile Include="prl_employee_leave_without_pay.cs" />
+    <Compile Include="prl_employee_settlement.cs" />
+    <Compile Include="prl_employee_settlement_allowance.cs" />
+    <Compile Include="prl_employee_settlement_deduction.cs" />
+    <Compile Include="prl_employee_settlement_detail.cs" />
+    <Compile Include="prl_employee_settlement_over_time.cs" />
+    <Compile Include="prl_employee_tax_process.cs" />
+    <Compile Include="prl_employee_tax_process_detail.cs" />
+    <Compile Include="prl_employee_tax_slab.cs" />
+    <Compile Include="prl_fiscal_year.cs" />
+    <Compile Include="prl_grade.cs" />
+    <Compile Include="prl_income_tax_adjustment.cs" />
+    <Compile Include="prl_income_tax_challan.cs" />
+    <Compile Include="prl_income_tax_parameter.cs" />
+    <Compile Include="prl_income_tax_parameter_details.cs" />
+    <Compile Include="prl_income_tax_refund.cs" />
+    <Compile Include="prl_leave_without_pay_settings.cs" />
+    <Compile Include="prl_location.cs" />
+    <Compile Include="prl_menu.cs" />
+    <Compile Include="prl_month_end.cs" />
+    <Compile Include="prl_over_time.cs" />
+    <Compile Include="prl_over_time_amount.cs" />
+    <Compile Include="prl_over_time_configuration.cs" />
+    <Compile Include="prl_religion.cs" />
+    <Compile Include="prl_role_privilege.cs" />
+    <Compile Include="prl_salary_allowances.cs" />
+    <Compile Include="prl_salary_deductions.cs" />
+    <Compile Include="prl_salary_hold.cs" />
+    <Compile Include="prl_salary_process.cs" />
+    <Compile Include="prl_salary_process_detail.cs" />
+    <Compile Include="prl_salary_review.cs" />
+    <Compile Include="prl_sub_menu.cs" />
+    <Compile Include="prl_upload_allowance.cs" />
+    <Compile Include="prl_upload_bonus.cs" />
+    <Compile Include="prl_upload_deduction.cs" />
+    <Compile Include="prl_upload_time_card_entry.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

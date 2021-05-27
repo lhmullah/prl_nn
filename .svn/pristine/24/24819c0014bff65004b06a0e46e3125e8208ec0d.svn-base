@@ -1,0 +1,173 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.BonusHold
+
+@{
+    ViewBag.Title = "HoldBonus";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Bonus Hold
+}
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        var map = {};
+        $("#aa").typeahead({
+            source: function (query, process) {
+                var objects = [];
+                $.getJSON('@Url.Action("GetEmployeeSeach","HoldBonus")', { query: query }, function (data) {
+                    $.each(data, function (i, object) {
+                        map[object.name+' '+object.id] = object;
+                        objects.push(object.name+' '+object.id);
+                    });
+                    process(objects);
+                });
+            },
+            updater: function(item) {
+                $('#empid').val(map[item].id);
+                return item;
+            }
+        });
+
+    </script>
+}
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+@using (Html.BeginForm("HoldBonus", "Bonus", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td >   
+                @Html.LabelFor(model => model.bonus_name_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.bonus_name_id, new SelectList(@ViewBag.BonusNames, "id", "name", @ViewBag.SelectedIndex), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.bonus_name_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td >
+                
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                @Html.LabelFor(model => model.month)
+            </td>
+            <td >
+                @*@Html.DropDownListFor(m => m.BonusMonth , new SelectList(Model.BonusMonth , "Key", "Value"), "---- Select ----")*@
+                @*@Html.ValidationMessageFor(model => model.month)*@
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.year)
+            </td>
+            <td>
+                @*@Html.DropDownListFor(m => m.BonusYear , new SelectList(Model.BonusYear , "Key", "Value"), "---- Select ----")
+                @Html.ValidationMessageFor(model => model.BonusYear)*@
+            </td>
+        </tr>
+        
+        
+        <tr>
+            <td> @Html.LabelFor(model => model.year)</td>
+            <td >
+                @Html.DropDownListFor(model => model.year, new SelectList(EnumToSelectItemList.GetEnumSelectList<ConfirmedEmployee>(), "Text", "Text"))
+            </td>
+            <td style="width: 10px;"></td>
+            <td> @Html.LabelFor(model => model.year)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model => model.year, new SelectList(EnumToSelectItemList.GetEnumSelectList<IsTaxable>(), "Text", "Text"))
+            </td>
+        </tr>
+        <tr>
+            
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.year)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model => model.year, new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(), "Text", "Text"))
+            </td>
+        </tr>
+        <tr>
+            <td style="color:green">
+                Applied As:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.year)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.year)<br/>
+                @Html.ValidationMessageFor(model => model.year)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.year)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.year)<br/>
+                @Html.ValidationMessageFor(model => model.year)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.year)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.year)<br/>
+                @Html.ValidationMessageFor(model => model.year)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.year)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.year)<br/>
+                @Html.ValidationMessageFor(model => model.year)
+            </td>
+        </tr>
+        
+    </table>
+
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+   
+}
+

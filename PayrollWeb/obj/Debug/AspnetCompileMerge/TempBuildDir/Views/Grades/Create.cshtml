@@ -1,0 +1,33 @@
+﻿@model PayrollWeb.ViewModels.Grade
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Create Grade
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.grade)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.grade)
+        @Html.ValidationMessageFor(model => model.grade)
+    </div>
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

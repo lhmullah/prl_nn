@@ -1,0 +1,49 @@
+﻿@model PayrollWeb.ViewModels.AllowanceName
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Allowance Edit
+}
+
+
+@using (Html.BeginForm("Edit","AllowanceName")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.allowance_head_id)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(x=>x.allowance_head_id,new SelectList(@ViewBag.AllAllowanceHead,"id","name",@Model.allowance_head_id))
+             @Html.ValidationMessageFor(model => model.allowance_head_id)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.allowance_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.allowance_name)
+            @Html.ValidationMessageFor(model => model.allowance_name)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.gl_code)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.gl_code)
+            @Html.ValidationMessageFor(model => model.gl_code)
+        </div>
+        <p>
+            <input class="btn btn-success" type="submit" value="Edit" />
+        </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

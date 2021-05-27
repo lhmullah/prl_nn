@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<mvcSiteMap xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0"
+            xsi:schemaLocation="http://mvcsitemap.codeplex.com/schemas/MvcSiteMap-File-4.0 MvcSiteMapSchema.xsd">
+
+  
+  
+  <mvcSiteMapNode title="Home"   controller="Home" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb"  clickable="true" action="Index">
+
+    <mvcSiteMapNode title="Setup" action="Index" controller="Setup" doNotShow="true">
+      <mvcSiteMapNode title="Setup" action="Index" controller="Setup" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" key="Setup"></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Employee" action="Index" controller="Employee" doNotShow="true">
+      <mvcSiteMapNode title="Employee" controller="Employee" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Allowance" action="AllowanceMain" controller="Allowance" doNotShow="true">
+      <mvcSiteMapNode title="Allowance" controller="Allowance" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Deduction" action="DeductionMain" controller="Deduction" doNotShow="true">
+      <mvcSiteMapNode title="Deduction" controller="Deduction" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Salary" action="Index" controller="Salary" doNotShow="true">
+      <mvcSiteMapNode title="Salary" controller="Salary" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Bonus" action="BonusMain" controller="Bonus" doNotShow="true">
+      <mvcSiteMapNode title="Bonus" controller="Bonus" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Income Tax" action="Index" controller="IncomeTax" doNotShow="true">
+      <mvcSiteMapNode title="Income Tax" controller="IncomeTax" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Settlement" controller="Settlement" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    
+    <mvcSiteMapNode title="Report" action="Payslip" controller="Report" doNotShow="true">
+      <mvcSiteMapNode title="Report" controller="Report" action="Payslip" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+
+    <mvcSiteMapNode title="User Management" action="Index" controller="Authentication" doNotShow="true">
+      <mvcSiteMapNode title="User Management" controller="Authentication" action="Index" dynamicNodeProvider="PayrollWeb.Models.PayrollMenuProvider, PayrollWeb" ></mvcSiteMapNode>
+    </mvcSiteMapNode>
+    
+  </mvcSiteMapNode>
+
+</mvcSiteMap>

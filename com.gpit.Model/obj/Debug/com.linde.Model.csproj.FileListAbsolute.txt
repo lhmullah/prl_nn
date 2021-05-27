@@ -1,0 +1,18 @@
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\Rakib\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache
+D:\Rakib\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\Rakib\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.gpit.Model.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\com.gpit.Model\obj\Debug\com.linde.Model.csprojResolveAssemblyReference.cache

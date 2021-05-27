@@ -1,0 +1,74 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportBankAdvice
+
+@{
+    ViewBag.Title = "SalaryBankAdvice";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Salary Bank Advice
+}
+
+@section PageSpecificJsHeader
+{
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css" />
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css" />
+}
+
+@using (@Html.BeginForm("SalaryBankAdvice", "Salary", FormMethod.Post, new { target = "_blank" }))
+{
+    <br />
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Select Any Date")
+            </td>
+            <td style="width: 15px"></td>
+            <td>
+                @Html.EditorFor(model => model.SelectDate)<br />
+                @Html.ValidationMessageFor(model => model.SelectDate)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="5">
+                <table>
+                    <tr>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnPreview" name="sButton" value="View Report" style="width: 150px" />
+                        </td>
+                       @*<td style="width: 15px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="To Excel" style="width: 80px" />
+                        </td>*@
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+}
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/TableTools.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/dataTables.bootstrap.js"></script>
+    <style type="text/css">
+        .row_selected { color: red; }
+    </style>
+
+    <script type="text/javascript">
+        $('#SelectDate').datepicker({ dateFormat: 'yy-mm-dd' });
+    </script>
+}
+

@@ -1,0 +1,43 @@
+﻿@model PayrollWeb.ViewModels.Bank
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+Edit Bank
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.id)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.bank_name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.bank_name)
+        @Html.ValidationMessageFor(model => model.bank_name)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.bank_code)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.bank_code)
+        @Html.ValidationMessageFor(model => model.bank_code)
+    </div>
+
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" />
+    </p>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

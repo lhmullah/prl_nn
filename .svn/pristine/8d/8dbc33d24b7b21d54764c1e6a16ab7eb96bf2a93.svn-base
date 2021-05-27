@@ -1,0 +1,142 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeFreeCar
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Employee Free Car
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("Create", "FreeCar", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee Search</legend>
+        <table style="border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <td>
+                    @Html.Label("Search employee")
+                </td>
+                <td style="width: 15px"></td>
+                <td colspan="3">
+                    <input type="text"  autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+                    <input type="hidden" name="empid" id="empid"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="EmpNo">Or Employee No.</label>
+                </td>
+                <td></td>
+                <td style="padding-left:5px">
+                    <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                </td>
+                <td style="width: 30px"></td>
+                <td>
+                    <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                    <input type="hidden" name="empid" id="empid"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+<p>asd</p>
+@using (Html.BeginForm("Create","FreeCar",FormMethod.Post)) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.start_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.start_date)
+                @Html.ValidationMessageFor(model => model.start_date)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.is_projected)
+            </td>
+            <td>
+                @Html.DropDownListFor(model=>model.is_projected,new SelectList(PayrollWeb.Models.EnumToSelectItemList.GetEnumSelectList<IsProjected>(),"Text","Text"))
+            </td>
+        </tr>
+    </table>
+        
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" name="sButton" />
+        <input type="hidden" name="empid" id="eid"/>
+    </p>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Deduction")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+    </script>
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#start_date').datepicker();
+
+    </script>
+
+}

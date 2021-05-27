@@ -1,0 +1,59 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.EmployeeYearlyInvestment
+
+@{
+    ViewBag.Title = "YearlyInvestmentSheet";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+   Yearly Investment Report
+}
+@section PageSpecificJsHeader
+{   
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css"/>
+}
+
+
+@using (@Html.BeginForm("YearlyInvestmentSheet", "IncomeTax", FormMethod.Post, new { target = "_blank" }))
+{
+    <br />
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.fiscal_year_id)
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+                @Html.DropDownListFor(model => model.fiscal_year_id, new SelectList(@ViewBag.FiscalYear, "id", "fiscal_year", ViewBag.fsYearId), " ------ Select ------ ", new { disabled = "disabled", style = "width:220px" })
+         @Html.HiddenFor(model => model.fiscal_year_id, new {@Value = @ViewBag.fsYearId })
+         <br/> @Html.ValidationMessageFor(model => model.fiscal_year_id)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="5">
+                <table>
+                    <tr>
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="Download" style="width: 80px" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+}
+
+
+

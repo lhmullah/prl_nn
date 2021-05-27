@@ -1,0 +1,42 @@
+﻿@using System.Web.UI.WebControls
+@using Microsoft.Ajax.Utilities
+
+
+
+@{
+    int count = 1;
+}
+<fieldset>
+    <legend>Uploaded data status</legend>
+
+    <div class="form-actions">
+        <p>Click "Save" to commit valid data to database</p>
+        <button id="btnSaveUpload" class="btn btn-primary">Save</button>
+        <button id="btnCancelUpload" data-dismiss="modal" aria-hidden="true"  class="btn">Cancel</button>
+    </div>
+
+    @if (@ViewBag.Errors != null)
+    {
+        if(@ViewBag.Errors.Count > 0)
+        {
+            
+            <div class="alert alert-error">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <ul class="unstyled">
+                    @for (int i=0,j=1; i< @ViewBag.Errors.Count; i++,j++)
+                    {
+                        <li>
+                            <span class="badge badge-important">@j</span> @ViewBag.Errors[@i]
+                            
+                        </li>
+                    }
+                </ul>
+            </div>
+        }
+    }
+</fieldset>
+
+<script type="text/javascript">
+   
+            
+</script>

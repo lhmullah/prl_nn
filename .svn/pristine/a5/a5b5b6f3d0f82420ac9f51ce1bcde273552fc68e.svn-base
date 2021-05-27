@@ -1,0 +1,203 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.SalaryReview
+
+@{
+    ViewBag.Title = "EditSalaryReview";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Edit Salary Review Information
+}
+
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("EditSalaryReview", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td style="width: 40%"></td>
+            <td>
+                <table style="border-collapse: separate; border-spacing: 3px; width:100%">
+                    <tr>
+                        <td>
+                            @Html.Label("Search employee")
+                        </td>
+                        <td style="width: 15px"></td>
+                        <td colspan="3">
+                            <input type="text" autocomplete="off" data-provide="typeahead" id="aa" style="width: 300px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            <label for="EmpNo" style="width: 140px">Or put employee no.</label>
+                        </td>
+                        <td></td>
+                        <td>
+                            <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                        </td>
+                        <td style="width: 115px"></td>
+                        <td>
+                            <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                            <input type="hidden" name="empid" id="empid" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width: 60%"></td>
+        </tr>
+    </table>
+}
+@Html.Partial("_EmpInfoForSalaryReview",(Employee)@ViewBag.Employee)
+@using (Html.BeginForm("EditSalaryReview", "Employee", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.HiddenFor(model=>model.emp_id)
+    @Html.HiddenFor(model=>model.id)
+    <table style=" width:100%" >
+        <tr>
+            <td style="width:400px">
+                <table>
+                    <tr>
+                        <td>
+                            <table style=" border-collapse: separate; border-spacing:3px;">
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.current_basic)
+                                    </td>
+                                    <td style="width:10px"></td>
+                                    <td>
+                                        @Html.TextBoxFor(model => model.current_basic, new {@readonly = "readonly" })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.new_basic)
+                                    </td>
+                                    <td style="width:10px"></td>
+                                    <td>
+                                        @Html.EditorFor(model => model.new_basic)
+                                        <br />@Html.ValidationMessageFor(model => model.new_basic)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.effective_from)
+                                    </td>
+                                    <td style="width:10px"></td>
+                                    <td>
+                                        @Html.EditorFor(model => model.effective_from)
+                                        <br />@Html.ValidationMessageFor(model => model.effective_from)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.LabelFor(model => model.increment_reason)
+                                    </td>
+                                    <td style="width:10px"></td>
+                                    <td>
+                                        @Html.DropDownListFor(model => model.increment_reason, new List<SelectListItem>
+                                                                {
+                                                                new SelectListItem{ Text="Joining", Value = "Joining" }, 
+                                                                new SelectListItem{ Text="Promotion", Value = "Promotion" },
+                                                                new SelectListItem{ Text="Confirmation", Value = "Confirmation" },
+                                                                new SelectListItem{ Text="Annual Increment", Value = "Annual Increment" },
+                                                                new SelectListItem{ Text="Salary Review", Value = "Salary Review" },
+                                                                new SelectListItem{ Text="Other", Value = "Other" }
+                                                                })
+                                    </td>
+                                </tr>
+                                
+                            </table>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td style="text-align:right; padding-right:6px">
+                            <table style="width:100%">
+                                <tr>
+                                    <td style="width:150px"></td>
+                                    <td>
+                                        @Html.ActionLink("Back to List", "Index")
+                                    </td>
+                                    <td>
+                                        <input class="btn btn-success" type="submit" name="sButton" value="Update" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td style="width:15px"></td>
+            <td style="width:400px; height:100%; padding-top:7px;padding-bottom:7px">
+                <table style="border-color:Background; border-style:solid; border-width:thin; text-align:left;  height:100%; width:100%;">
+                    <tr>
+                        <td >
+                            <div style="height:158px; width:100%; vertical-align:top; text-align:center; overflow-y:scroll;">
+                                @Html.Partial("_SalaryReviewList",(List<SalaryReview>)@ViewBag.SalReview)
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+    
+}
+
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+    <script type="text/javascript">
+        $('#effective_from').datepicker();
+
+        $('#btnSave').on('click', function () {
+            return confirm('Are you sure you want to save this confirmation info?');
+        });
+
+    </script>
+}
+

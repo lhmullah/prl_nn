@@ -1,0 +1,30 @@
+﻿@using PayrollWeb.ViewModels
+@model List<PayrollWeb.ViewModels.SubMenu>
+
+@{
+    ViewBag.Title = "DeductionMain";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Deduction Home Page
+}
+
+<br style="clear: both;"/>
+
+ <fieldset>
+    <legend></legend>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th> This is Deduction Home page. From here any one can add Deduction Head. Any one can enter Deduction Name. Also Deduction Configuration is done under this Deduction Menu. </th>
+            </tr>
+        </thead>
+            <tr>
+                <td>
+                    
+                </td>
+              </tr>
+    </table>
+</fieldset>

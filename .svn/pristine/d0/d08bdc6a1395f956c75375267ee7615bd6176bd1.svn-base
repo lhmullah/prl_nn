@@ -1,0 +1,145 @@
+﻿@using PayrollWeb.ViewModels
+
+@{
+    ViewBag.Title = "UploadAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Upload Allowance
+}
+
+<div class="" style="float:right;">
+    <a class="btn btn-primary" href="@Url.Action("SaveUploadedData")"> <i class="icon-plus"></i> Save Upload </a>
+</div>
+
+<br style="clear: both;"/>
+ @{
+        if(TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+            if (res.HasPartialError)
+            {
+                <div id="notifyUserPartialError" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+                    <div>
+                        <ul>
+                            @foreach (var m in res.Messages)
+                            {
+                                <li>@m</li>
+                            }
+                        </ul>    
+                    </div>
+                </div> 
+            }
+            
+        }
+  }
+
+<div id="dynCont">
+    
+</div>
+
+@section PageSpecificJs
+{
+    @Scripts.Render("~/fujs")
+    <script type="text/javascript">
+
+        $(function () {
+            defaultLoad();
+        });
+        function defaultLoad() {
+            $.get('@Url.Action("UploadForm")', function (rdata) {
+                $("#dynCont").html(rdata);
+                bindUploadFunc();
+                prepareForm();
+            });
+        }
+        function prepareForm() {
+            var $frm = $('#dynCont').find('form');
+            if ($frm != null && $frm !="undefined") {
+                $frm.unbind();
+                $frm.data('validator', null);
+                $.validator.unobtrusive.parse(document);
+            }
+        }
+        function loadData() {
+            $.get('@Url.Action("LoadUploadedData","Allowance")', function (rdata) {
+                $("#dynCont").html(rdata);
+                prepareForm();
+                $("#Paging ul a").click(function (e) {
+                    e.preventDefault();
+                    pageLoadData(this);
+                    return false;
+                });
+            });
+        }
+        function pageLoadData(el) {
+            var atr = $(el).attr('href');
+            if(atr!=null && atr!='undefined')
+            $.get(atr, function (rdata) {
+                $("#dynCont").html(rdata);
+                prepareForm();
+                $("#Paging ul a").click(function (e) {
+                    e.preventDefault();
+                    pageLoadData(this);
+                    return false;
+                });
+            });
+        }
+
+
+        function bindUploadFunc() {
+            $('#fileupload').fileupload({
+                dataType: "json",
+                url: '@Url.Action("UploadAllowance","Allowance")',
+                limitConcurrentUploads: 1,
+                sequentialUploads: true,
+                progressInterval: 100,
+                maxChunkSize: 10000,
+                add: function (e, data) {
+                    $('#filelistholder').removeClass('hide');
+                    data.context = $('<div />').text(data.files[0].name).appendTo('#filelistholder');
+                   // $('<button />').text('Remove').appendTo('#filelistholder > div');
+                    $('</div><div class="progress"><div class="bar" style="width:0%"></div></div>').appendTo(data.context);
+                    $('#btnUploadAll').click(function () {
+                        var l = $("#fileupload").valid();
+                        if (l) {
+                            data.submit();
+                        }
+                        else {
+                            return;
+                        }
+                    });
+                },
+                done: function (e, data) {
+                    data.context.text(data.files[0].name + '... Completed');
+                    $('</div><div class="progress"><div class="bar" style="width:100%"></div></div>').appendTo(data.context);
+                    loadData();
+                },
+                progress: function (e, data) {
+                    var progress = parseInt(data.loaded / data.total * 100, 10);
+                    data.context.find('.bar').css('width', progress + '%');
+                }
+            });
+        }
+ </script>
+
+    
+}
+

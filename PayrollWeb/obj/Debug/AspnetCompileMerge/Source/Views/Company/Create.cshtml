@@ -1,0 +1,107 @@
+﻿@model PayrollWeb.ViewModels.Company
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Create Company
+}
+
+
+@using (Html.BeginForm("Create", "Company", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.name)
+        </div>
+        <div class="span4 offset1">
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.description)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.description)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.address)
+        </div>
+        <div class="span3">
+            @Html.TextAreaFor(model => model.address)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.primary_phone)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.primary_phone)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.secondary_phone)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.primary_phone)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.email)
+        </div>
+        <div class="span4 offset1">
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.web)
+        </div>
+        <div class="span3">
+            @Html.EditorFor(model => model.web)
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="span2">
+            @Html.LabelFor(model => model.logo)
+        </div>
+        <div class="span3">
+            <input type="file" name="Logo" id="Logo" />
+        </div>
+    </div>
+    <br />
+    <div class="row-fluid">
+        <div class="span2">
+            
+        </div>
+        <div class="span3">
+            <table>
+                <tr>
+                    <td>
+                        <input class="btn btn-success" type="submit" value="Create" />
+                    </td>
+                    <td style="width:20px"></td>
+                    <td>
+                        @Html.ActionLink("Back to List", "Index")
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+}

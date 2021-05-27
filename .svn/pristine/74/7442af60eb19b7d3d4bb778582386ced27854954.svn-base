@@ -1,0 +1,133 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ChildrenAllowance
+@{
+    ViewBag.Title = "SubmitChildrenAllowance";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Children Allowance
+}
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+@using (Html.BeginForm("SubmitChildrenAllowance", "Allowance", FormMethod.Post, new { @class = "form-search" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee Search</legend>
+        <table style="border-collapse: separate; border-spacing: 3px;">
+            <tr>
+                <td>
+                    @Html.Label("Search employee")
+                </td>
+                <td style="width: 15px"></td>
+                <td colspan="3">
+                    <input type="text" class="typeahead input-medium search-query" autocomplete="off" data-provide="typeahead" id="aa" style="width: 220px" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="EmpNo">Or Employee No.</label>
+                </td>
+                <td></td>
+                <td style="padding-left:5px">
+                    <input type="text" id="Emp_No" name="Emp_No" style="width: 100px" />
+                </td>
+                <td style="width: 30px"></td>
+                <td>
+                    <input class="btn btn-success" type="submit" name="sButton" value="Search" />
+                    <input type="hidden" name="empid" id="empid"/>
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+}
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+<br />
+
+@using (Html.BeginForm("SubmitChildrenAllowance", "Allowance", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <table>
+        <tr>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+            <td>
+                @Html.HiddenFor(model => model.emp_id)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.no_of_children)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.no_of_children)
+                @Html.ValidationMessageFor(model => model.no_of_children)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.amount)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.amount)
+                @Html.ValidationMessageFor(model => model.amount)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.effective_from)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.effective_from)
+                @Html.ValidationMessageFor(model => model.effective_from)
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input class="btn btn-success" type="submit" value="Save" name="sButton" />
+        <input type="hidden" name="empid" id="eid"/>
+    </p>
+    
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ChildrenAllowance")
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#effective_from').datepicker();
+    </script>
+
+}

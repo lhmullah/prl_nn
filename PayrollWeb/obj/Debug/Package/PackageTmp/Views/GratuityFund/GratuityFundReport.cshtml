@@ -1,0 +1,70 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportGratuityFund
+
+@{
+    ViewBag.Title = "GratuityFundReport";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Gratuity Fund Report
+}
+<div id="empdata" style="width: 100%">
+    @using (Html.BeginForm("GratuityFundReport", "GratuityFund", FormMethod.Post, new { target = "_blank" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+                        <table style="border-collapse: separate; border-spacing: 3px">
+                            <tr>
+                                <td style="width: 125px">
+                                    @Html.Label("Search employee")
+                                </td>
+                                <td style="width: 15px"></td>
+                                <td>
+                                    <input type="text" placeholder="Write Employee ID or Name and then Select" autocomplete="off" data-provide="typeahead" id="aa" style="width: 290px" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"></td>
+                                <td colspan="5">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <input class="btn btn-success" style="width: 120px" type="submit" name="sButton" value="Download" />
+                                                <input type="hidden" name="empid" id="empid" />
+                                            </td>
+                                            <td style="width: 30px"></td>
+                                            <td></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td colspan="2"></td>
+                            </tr>
+                        </table>
+    }
+</div>
+
+@section PageSpecificJs
+{
+
+    <link href="~/Content/examples.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSearch", "Employee")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q }
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+
+    </script>
+}

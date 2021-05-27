@@ -1,0 +1,76 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportMonthlyAllowance
+@{
+    ViewBag.Title = "MonthlyAllowanceReport";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+ Worker Monthly Allowances
+}
+
+@using (Html.BeginForm("MonthlyAllowanceReport", "Salary", FormMethod.Post, new { target = "_blank" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Worker Pay Details</legend>
+        <table style="border-collapse: separate; border-spacing: 3px">
+                <tr>
+                    <td>
+                        @Html.Label("Year")
+                    </td>
+                    <td style="width: 30px"></td>
+                    <td>
+                        @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:185px" })
+                    </td>
+                    <td style="width: 60px"></td>
+                    <td>
+                        @Html.Label("Month")
+                    </td>
+                    <td style="width: 30px"></td>
+                    <td>
+                        @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:185px" })
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2"></td>
+                    <td colspan="5">
+                        <table>
+                            <tr>
+                                <td>     
+                                  @*<input class="btn btn-success" type="submit" name="sButton" value="View Report" style="width: 150px" />
+                                    <input type="hidden" name="empid" id="empid" />*@
+                                    <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="To Excel" style="width: 150px" />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+        </table>
+    </fieldset>
+}
+
+@section PageSpecificJs
+{
+    
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+
+
+    </script>
+
+@*   <script type="text/javascript">
+        var empNo = $('#empNo').val();
+        if (typeof (empNo) === 'undefined') {
+            $('#ps').hide();
+        }
+        else{
+            $('#ps').show();
+        }
+    </script>*@
+}

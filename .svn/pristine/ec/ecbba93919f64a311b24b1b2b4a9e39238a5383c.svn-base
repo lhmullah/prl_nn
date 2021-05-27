@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "IndividualDeduction";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+   Individual Deduction Configuration
+}
+
+@using (Html.BeginForm("GetEmployeeDeductions", "Deduction", FormMethod.Post, new { @class = "form-search" }))
+{
+ 
+    <input type="text"  autocomplete="off"  data-provide="typeahead" id="aa"/>
+    <input type="hidden" name="empid" id="empid"/>
+    <input class="btn btn-success" type="submit" value="Search"/>
+}
+
+@section PageSpecificJs
+{
+    <link href="~/Content/examples.css" rel="stylesheet" />   
+    <script type="text/javascript" src="~/Scripts/typeahead.js"></script>
+    <script type="text/javascript" src="~/Scripts/hogan-2.0.0.min.js"></script>
+    <script type="text/javascript">
+        var q = '@Url.Action("GetEmployeeSeach","Deduction")';
+        q = q + '?query=%QUERY';
+        $("#aa").typeahead({
+            name: 'SearchEmployeeData',
+            limit: 10,
+            valueKey: 'name',
+            engine: Hogan,
+            remote: { url: q}
+        }).on("typeahead:selected", function ($e, datum) {
+            var id = 0;
+            id = datum['id'];
+            $('#empid').val(id);
+        });
+            
+
+    </script>
+}
+

@@ -1,0 +1,22 @@
+﻿@model List<PayrollWeb.ViewModels.SalaryReview>
+<table class="table table-striped">
+    <tr>
+        <th>Basic Salary</th>
+        <th>Effictive From</th>
+        <th>Reason</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="text-align:right">
+            @Html.DisplayFor(modelItem => item.new_basic)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.effective_from,"{0:MMMM dd, yyyy}")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.increment_reason)
+        </td>
+    </tr>
+}
+</table>

@@ -1,0 +1,51 @@
+﻿@model PayrollWeb.ViewModels.UserRoleModel
+
+@{
+    ViewBag.Title = "UserRole";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Assign user to a role
+}
+@using (Html.BeginForm("UserRole", "Authentication", FormMethod.Post, new { @class = "form-search", @id = "frmId" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <br />
+    <table style="border-collapse: separate; border-spacing: 3px; width:100%">
+        <tr>
+            <td>
+                @Html.Label("Select User")
+            </td>
+            <td style="width:15px"></td>
+            <td>
+                @Html.DropDownListFor(x=>x.User,new SelectList(@ViewBag.Users,"UserName","UserName"),"--- Select User ---")
+                <br />@Html.ValidationMessageFor(x=>x.User)
+            </td>
+            <td style="width:30px"></td>
+            <td>
+                @Html.Label("Currently assigned in")
+            </td>
+            <td style="width:15px"></td>
+            <td>
+                @Html.TextBox("RoleN",(string)ViewBag.UserInR,new {@readonly = "readonly" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Select Role")
+            </td>
+            <td style="width:15px"></td>
+            <td>
+                @Html.DropDownListFor(x=>x.Role,new SelectList(@ViewBag.Roles),"--- Select Role ---")
+                <br />@Html.ValidationMessageFor(x=>x.Role)
+            </td>
+            <td colspan="3"></td>
+            <td style="text-align:right; padding-right:38px">
+                <input class="btn btn-success" type="submit" value="Update"  onclick="Confirm(this); return false;" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,94 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ChangePasswordModel
+
+@{
+    ViewBag.Title = "ChangePassword";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Change Password
+}
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+
+<p>
+    New passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length and alphanewmeric with a special character.
+</p>
+<fieldset>
+    <legend></legend>
+</fieldset>
+@using (Html.BeginForm("ChangePassword", "Authentication", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <table style=" border-collapse: separate; border-spacing:7px;">
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.OldPassword)
+            </td>
+            <td style="width:30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.OldPassword)
+            </td>
+            <td style="color:red; font-size:20px; font-weight:bolder">**</td>
+            <td style="width:20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.OldPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.NewPassword)
+            </td>
+            <td style="width:30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.NewPassword)
+            </td>
+            <td style="color:red; font-size:20px; font-weight:bolder">**</td>
+            <td style="width:20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.NewPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(m => m.ConfirmPassword)
+            </td>
+            <td style="width:30px"></td>
+            <td>
+                @Html.TextBoxFor(m => m.ConfirmPassword)
+            </td>
+            <td style="color:red; font-size:20px; font-weight:bolder">**</td>
+            <td style="width:20px"></td>
+            <td>
+                @Html.ValidationMessageFor(m => m.ConfirmPassword)
+            </td>
+        </tr>
+        <tr><td style="height:15px" colspan="6"></td></tr>
+        <tr>
+            <td colspan="6">
+                <input type="submit" class="btn btn-success" value="Change Password" />
+            </td>
+        </tr>
+    </table>
+}
+

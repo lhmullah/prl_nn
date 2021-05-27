@@ -1,0 +1,122 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.BonusProcess
+
+@{
+    ViewBag.Title = "UndoBonusProcess";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Rollback Bonus Process
+}
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+
+@using (Html.BeginForm("UndoBonusProcess", "Bonus", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.bonus_name_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.bonus_name_id, new SelectList(@ViewBag.BonusNames, "id", "name"), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.bonus_name_id) 
+            </td>
+            <td style="width: 10px;"></td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.religion_id)
+            </td>
+            <td >
+                @Html.DropDownListFor(model => model.religion_id, new SelectList(@ViewBag.Religions, "id", "name"), "---- ALL ----")<br />
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.process_date)</td>
+            <td colspan="4">
+                @Html.EditorFor(model => model.process_date)<br />
+                @Html.ValidationMessageFor(model => model.process_date)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.festival_date)</td>
+            <td colspan="4">
+                @Html.EditorFor(model => model.festival_date)<br />
+                @Html.ValidationMessageFor(model => model.festival_date)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.is_pay_with_salary)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model=>model.is_pay_with_salary,new SelectList(EnumToSelectItemList.GetEnumSelectList<IsPayWithSalary>(),"Text","Text"))
+            </td>
+        </tr>
+    </table>
+
+     <p>
+        <input class="btn btn-success" type="submit" value="Rollback Process" onclick = "UndoBonus(this); return false;" />
+    </p>
+   
+}
+
+<div id="dltBonus" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to rollback bonus?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltBonus" class="btn btn-primary">Rollback</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#process_date,#festival_date').datepicker();
+    </script>
+
+    <script type="text/javascript">
+        function UndoBonus(el) {
+            $('#dltBonus').modal('show');
+
+            $('#btnDltBonus').click(function () {
+                $('#dltBonus').modal('hide');
+                var test = $(el).attr('href');
+                document.forms[0].submit();
+            });
+        }
+    </script>
+
+}
+

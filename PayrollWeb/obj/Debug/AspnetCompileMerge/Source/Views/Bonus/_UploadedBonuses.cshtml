@@ -1,0 +1,47 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<PayrollWeb.ViewModels.BonusUploadData>
+
+<table class="table table-striped table-bordered table-condensed">
+    <tr>
+        <th colspan="3" style="text-align: center;">
+           
+        </th>
+        
+    </tr>
+    <tr>
+        <th>
+            Employee ID
+        </th>
+        <th>
+            Amount 
+        </th>
+        <th>
+            Bonus Name
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.emp_id)
+                @Html.Hidden("BonusUploadData.emp_id",item.emp_id)
+            </td>
+            <td>
+                <a href="#" id="AllowanceUploadData.@item.id" data-name="amount" data-type="text"  data-pk="@item.id" data-url="@Url.Action("UpdateRecord","Allowance")" data-title="Enter Amount">@item.amount</a>
+                @Html.Hidden("BonusUploadData.amount",item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prl_bonus_name.name)
+                @Html.Hidden("BonusUploadData.bonus_name_id",item.prl_bonus_name.id)
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id='Paging' style="text-align:center">
+        Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+        of @Model.PageCount
+
+        @Html.PagedListPager(Model, page => Url.Action("EditBonusDataPaging","Bonus", new {did=@ViewBag.did,dt=@ViewBag.dt,page }))
+</div>

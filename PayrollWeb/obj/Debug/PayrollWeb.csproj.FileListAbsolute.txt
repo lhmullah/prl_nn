@@ -1,0 +1,919 @@
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\App.config
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Jace.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Web.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebActivator.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebGrease.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.xml
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\App.config
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Jace.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Web.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\WebActivator.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\WebGrease.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.xml
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+D:\Rakib\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\App.config
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Jace.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Web.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\WebActivator.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\WebGrease.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.xml
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+C:\Users\Administrator\Desktop\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\App.config
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Jace.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Web.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebActivator.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\WebGrease.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.xml
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+D:\My PC Back up\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+D:\1. Lukman_Official\Project_bProperty\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\NewSalarySheetReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\App.config
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\NewSalarySheetReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Jace.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\MySql.Web.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\WebActivator.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\WebGrease.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\AutoMapper.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\EPPlus.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\EntityFramework.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\System.Spatial.xml
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+G:\Imran\Project-bProperty-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\App.config
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\CashSalaryReport.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EntityFramework.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EPPlus.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Jace.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Data.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Web.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Spatial.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebActivator.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebGrease.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EPPlus.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EntityFramework.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Spatial.xml
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb
+D:\1. Lukman_Official\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.csprojResolveAssemblyReference.cache
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\RdlCompile.cache
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\RdlCompile.compiled
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\App.config
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdviceForGS.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\BankAdvice.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlip.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\LoanSummary.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\IncomeTaxReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\Tax108Report.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseSalarySheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmpWiseTaxSheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\AITSheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\Copy of Tax108Report.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\AggregateSalarySheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\VarianceAnlysisReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PreviousMonthSalaryTotal.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\CurrentMonthSalaryTotal.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\EmployeeYearlyInvestmentReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalarySheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCard.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\MonthlyAllowanceReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildAllowance.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\PaySlipChildDeduction.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardConstantHead.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TaxCardIncomeHead.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\SalaryChange.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Views\Report\RDLC\TRASheetReport.rdlc
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll.CodeAnalysisLog.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PayrollWeb.dll.lastcodeanalysissucceeded
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Antlr3.Runtime.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.Net4.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.gpit.Model.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.linde.DataContext.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EntityFramework.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EPPlus.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ICSharpCode.SharpZipLib.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Jace.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.OData.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.Common.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.DataVisualization.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.ReportViewer.WinForms.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.SqlServer.Types.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MvcSiteMapProvider.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Data.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Data.Entity.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\MySql.Web.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Newtonsoft.Json.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OOXML.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OpenXml4Net.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\NPOI.OpenXmlFormats.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.Mvc.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Spatial.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Helpers.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.OData.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Mvc.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Optimization.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Razor.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebActivator.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebActivatorEx.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\WebGrease.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.linde.DataContext.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\com.gpit.Model.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Antlr3.Runtime.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\AutoMapper.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EPPlus.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Newtonsoft.Json.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Common.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.pdb
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Ninject.Web.Mvc.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\PagedList.Mvc.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Optimization.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\EntityFramework.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Net.Http.Formatting.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Helpers.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.WebHost.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Mvc.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Razor.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Deployment.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.WebPages.Razor.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Web.Http.OData.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.Edm.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\Microsoft.Data.OData.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\System.Spatial.xml
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\de\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\es\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\fr\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\it\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ja\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ko\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\ru\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hans\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\bin\zh-Hant\System.Spatial.resources.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.dll
+D:\1. Lukman_Official\1.Projects\Novo Nordisk\Project_NovoNordisk\Project-NovoNordisk-Payroll\PayrollWeb\obj\Debug\PayrollWeb.pdb

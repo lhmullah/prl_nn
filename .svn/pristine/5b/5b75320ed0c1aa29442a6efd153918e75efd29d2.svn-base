@@ -1,0 +1,190 @@
+﻿@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.Employee
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+Edit Employee Information
+}
+
+
+@using (Html.BeginForm("Edit", "Employee", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+
+    @Html.HiddenFor(model => model.id)
+
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td style="font-weight: bolder">
+                @Html.LabelFor(model => model.emp_no)
+            </td>
+            <td colspan="3">
+                @Html.TextBoxFor(model => model.emp_no, new { @readonly = "readonly" })
+            </td>
+            <td>
+                @Html.LabelFor(model => model.name)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.name)
+                <br />
+                @Html.ValidationMessageFor(model => model.name)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.joining_date)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.joining_date)
+                <br />
+                @Html.ValidationMessageFor(model => model.joining_date)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.LabelFor(model => model.company_id)
+            </td>
+            <td>
+                @Html.DropDownListFor(x => x.company_id, new SelectList(@ViewBag.Companies, "id", "name"), "--- Select Company ---")
+                <br />
+                @Html.ValidationMessageFor(model => model.company_id)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.father_name)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.father_name)
+            </td>
+            <td colspan="2"></td>
+            <td>
+                @Html.LabelFor(model => model.mother_name)
+            </td>
+            <td colspan="2">
+                @Html.EditorFor(model => model.mother_name)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.present_address)
+            </td>
+            <td>
+                @Html.TextAreaFor(model => model.present_address)
+            </td>
+            <td colspan="2"></td>
+            <td>
+                @Html.LabelFor(model => model.permanent_address)
+            </td>
+            <td colspan="2">
+                @Html.TextAreaFor(model => model.permanent_address)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.phone)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.phone)
+            </td>
+            <td colspan="2"></td>
+            <td>
+                @Html.LabelFor(model => model.email)
+            </td>
+            <td colspan="2">
+                @Html.EditorFor(model => model.email)
+                <br />
+                @Html.ValidationMessageFor(model => model.email)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.religion_id)
+            </td>
+            <td colspan="6">
+                <table>
+                    <tr>
+                        <td>
+                            @Html.DropDownListFor(x => x.religion_id, new SelectList(@ViewBag.Religions, "id", "name"), new { style = "width:130px" })
+                        </td>
+                        <td style="width: 37px"></td>
+                        <td>
+                            @Html.LabelFor(model => model.gender)
+                        </td>
+                        <td style="width: 5px"></td>
+                        <td>
+                            @Html.DropDownListFor(model => model.gender, new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(), "Text", "Text"), new { style = "width:130px" })
+                        </td>
+                        <td style="width: 37px"></td>
+                        <td>
+                            @Html.LabelFor(model => model.marital_status)
+                        </td>
+                        <td style="width: 5px"></td>
+                        <td>
+                            @Html.DropDownListFor(model => model.marital_status, new SelectList(EnumToSelectItemList.GetEnumSelectList<MaritalStatus>(), "Text", "Text"), new { style = "width:125px" })
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.dob)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.dob)
+                <br />
+                @Html.ValidationMessageFor(model => model.dob)
+            </td>
+            <td style="color: red; font-size: 20px; font-weight: bolder">**</td>
+            <td></td>
+            <td>
+                @Html.LabelFor(model => model.tin)
+            </td>
+            <td colspan="2">
+                @Html.EditorFor(model => model.tin)
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table style="border-collapse: separate; border-spacing: 3px; text-align: right">
+        <tr>
+            <td style="width: 541px"></td>
+            <td>
+                @Html.ActionLink("Back to List", "Index")
+            </td>
+            <td style="width: 26px"></td>
+            <td>
+                <input class="btn btn-success" type="submit" value="Next" />
+            </td>
+            <td style="width: 2px"></td>
+        </tr>
+    </table>
+    @Html.HiddenFor(model => model.prl_employee_details[0].id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].designation_id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].department_id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].division_id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].emp_status)
+    @Html.HiddenFor(model => model.prl_employee_details[0].contract_start_date)
+    @Html.HiddenFor(model => model.prl_employee_details[0].contract_end_date)
+    @Html.HiddenFor(model => model.prl_employee_details[0].grade_id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].basic_salary)
+    @Html.HiddenFor(model => model.prl_employee_details[0].posting_location_id)
+    @Html.HiddenFor(model => model.prl_employee_details[0].posting_date)
+}
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        $('#joining_date,#dob').datepicker();
+    </script>
+}

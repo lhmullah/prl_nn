@@ -1,0 +1,62 @@
+﻿@using PayrollWeb.ViewModels
+@model IEnumerable<PayrollWeb.ViewModels.IncomeTaxParameter>
+@using PayrollWeb.Models
+
+
+<fieldset>
+    <legend>Income Tax Slab</legend>
+
+    <table class="table table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fiscal_year_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.assessment_year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.slab_mininum_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.slab_maximum_amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.slab_percentage)
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+        @foreach ( var taxParam in Model)
+            {
+              <tr>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.prl_fiscal_year.fiscal_year)
+
+                  </td>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.assessment_year)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.gender)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.slab_mininum_amount)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.slab_maximum_amount)
+                  </td>
+                  <td>
+                      @Html.DisplayFor(x=> taxParam.slab_percentage)
+                  </td>
+                  <td>
+                      @Html.ActionLink("Edit","Edit","IncomeTax",new{id = taxParam.id},null)
+                      @Html.ActionLink("Delete", "Delete", "IncomeTax", new { id = taxParam.id }, new { onclick = "DeleteTaxParameter(this);return false;" })
+                  </td>
+              </tr>
+           }
+    </table>
+</fieldset>

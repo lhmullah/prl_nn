@@ -1,0 +1,306 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.Certificates
+
+@{
+    ViewBag.Title = "Taxreturn";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+    Reports
+}
+
+@section PageSpecificJsHeader
+{   
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+@*    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css"/>*@
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap3-editable/css/bootstrap-editable.css"/>
+}
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (PayrollWeb.ViewModels.OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+        <div id="notifyUser" class="alert alert-success">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div>    
+        }
+        else
+        {
+        <div id="notifyUser2" class="alert alert-error">
+            <button data-dismiss="alert" class="close" type="button">×</button>
+            <div>@res.Message </div>
+        </div> 
+        }
+    }
+}
+<legend> Tax Return Acknowledge</legend>
+<fieldset>
+@using (Html.BeginForm("TRADownload", "Report", FormMethod.Post))
+{
+            <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Income Year")
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+               @Html.DropDownListFor(model => model.fiscalYr_id, new SelectList(ViewBag.loadIncomeYear,"id","fiscal_year"), "---- Select ----", new { id = "selectYr" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+               <input class="btn btn-success" type="submit" style="margin-bottom: 10px;" value="Download in Excel"  id="btnExcel" name="btn"/> 
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+               
+            </td>
+        </tr>
+       <tr>
+            <td>
+              @Html.Label("For Employee")
+           </td>
+           <td style="width: 10px"></td>
+           <td style = "width:185px">
+                <label class="radio">
+                    @Html.RadioButton("empGroup","all",true)
+                    All
+                </label>
+                <label class="radio">
+                    @Html.RadioButton("empGroup","selected")
+                    Selected Only
+                </label>
+                @Html.HiddenFor(m=>m.SelectedEmployeesOnly)
+             </td>
+           <td style="width: 20px"></td>
+            <td>
+           <input class="btn btn-primary" style="margin-bottom: 10px;" type="submit" value="Certificate Download" id="btnCertificateDownload" name="btn"/>
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+               
+            </td>
+        </tr>
+    </table>
+    <input class="btn btn-primary" style="float: right;" type="submit" value="Approved All" id="btnApprovedAll" name="btn"/> 
+
+}    
+    <table class="table" id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Amount</th>
+                <th>Is Approved?</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        
+        </tbody>
+        
+    </table>
+</fieldset>
+
+    <div id="mdlSelectEmp" class="modal hide fade">
+    <div class="modal-body" >
+        <table id="empSearch" cellpadding="0" cellspacing="0" border="0" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Employee Id</th><th>Name</th><th>Email</th>
+                </tr>
+            </thead>
+        </table>   
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" class="close" data-dismiss="modal" aria-hidden="true">Complete</a>
+        @*<a href="#" class="btn btn-primary">Save changes</a>*@
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+   @*<script type="text/javascript" charset="utf-8" src="~/Scripts/jquery-2.0.3.min.js"></script>*@
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/media/js/jquery.dataTables.min.js"></script>
+@*    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/ZeroClipboard.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/extras/TableTools/media/js/TableTools.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="~/Scripts/DataTables-1.9.4/dataTables.bootstrap.js"></script>*@
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Content/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    <style type="text/css">
+        .row_selected { color: red; }
+    </style>
+
+    <script type="text/javascript">
+
+        var oTable;
+        var selected = new Array();
+        $(function () {
+            $('#empGroup[value^=selected]').on("click", function () {
+                $('#mdlSelectEmp').modal('show');
+                loadSearch();
+                $("#opts :input").attr("disabled", true);
+            });
+            $('#empGroup[value^=all]').on("click", function () {
+                selected = new Array();
+                $("#opts :input").attr("disabled", false);
+            });
+
+            oTable = $('#empSearch').dataTable({
+                "bProcessing": true,
+                "bServerSide": true,
+                "bLengthChange": false,
+                "iDisplayLength": 30,
+                "sServerMethod": "POST",
+                "sPaginationType": "full_numbers",
+                "sDom": 'T<"clear">lfrtip',
+                "oTableTools": { "sRowSelect": "multi" },
+                "sAjaxSource": '@Url.Action("GetEmployeesForTRA")',
+            "aoColumns": [{ "sName": "Employee Id" }, { "sName": "Name" }, { "sName": "Email" }],
+            "fnServerData": function (sSource, aoData, fnCallback) {
+                $.ajax({
+                    "dataType": 'json',
+                    "type": "POST",
+                    "url": '@Url.Action("GetEmployeesForTRA")',
+                    //"data": { collection: aoData, val: $('#selectYr').val() },
+                    "data": aoData,
+                    "success": fnCallback
+                });
+            },
+            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                $('#empSearch tbody > tr').each(function () {
+                    if (jQuery.inArray(aData[0], selected) != -1) {
+                        $(this).addClass('row_selected');
+                    }
+                });
+                return nRow;
+            },
+            "fnDrawCallback": function (oSettings) {
+                $('#empSearch tbody > tr').each(function () {
+                    var iPos = oTable.fnGetPosition(this);
+                    if (iPos != null) {
+                        var aData = oTable.fnGetData(iPos);
+                        if (jQuery.inArray(aData[0], selected) != -1)
+                            $(this).addClass('row_selected');
+                    }
+                    $(this).click(function () {
+                        iPos = oTable.fnGetPosition(this);
+                        aData = oTable.fnGetData(iPos);
+                        var iId = aData[0];
+                        var is_in_array = jQuery.inArray(iId, selected);
+                        if (is_in_array == -1) {
+                            selected[selected.length] = iId;
+                        } else {
+                            selected = jQuery.grep(selected, function (value) {
+                                return value != iId;
+                            });
+                        }
+                        if ($(this).hasClass('row_selected')) {
+                            $(this).removeClass('row_selected');
+                        } else {
+                            $(this).addClass('row_selected');
+                        }
+                    });
+                });
+            }
+        });
+    });
+    function loadSearch() {
+        oTable.fnDraw();
+    }
+
+    $('#btnCertificateDownload').on('click', function (e) {
+
+        $('#SelectedEmployeesOnly').val(selected);
+    })
+
+    //$("#btnExcel").click(function () {
+
+    //    var selectYr = $('#selectYr').val();
+    //    $.get('/Report/AITDownload/?selectYr=' + selectYr,
+    //     function (res) {
+    //         console.log(res);
+    //         alert(res);
+    //     }).fail(function (err) {
+    //         console.log(err);
+    //         alert("error");
+    //     });
+
+    //})
+
+    $("#selectYr").change(function () {
+        //
+        $('#myTable tbody').empty()
+        var selectYr = $('#selectYr').val();
+        $.ajax({
+            type: "GET",
+            contentType: 'application/json',
+            datatype: 'json',
+            url: "/Report/GetTRACertificateInfo/?selectYr=" + selectYr,
+            success: function (response) {
+                SubmitEnable()
+                LoadTable(response);
+            },
+            error: function () {
+                //alert("No data found")
+                SubmitDisable()
+            }
+        })
+    })
+
+    function LoadTable(dataObj) {
+        var data = JSON.parse(dataObj);
+        if (dataObj.length > 0) {
+
+            $.each(data, function (index, item) {
+                console.log(item);
+                var td1 = "<td>" + item.Emp_ID + "</td>";
+                var td2 = "<td>" + item.Name + "</td>";
+                //var td4 = "<td>" + item.No_of_Cars + "</td>";
+                var td3 = "<td><a href='#' id='CertificateUploadData." + item.ID + "' data-name='amount' data-type='text' data-pk='" + item.ID + "' data-url='/Report/UpdateRecord' data-title='Enter Amount' class='editable editable-click'>" + item.Amount + "</a><input id='CertificateUploadData_amount' name='CertificateUploadData.amount' type='hidden' value=" + item.Amount + "></td>"
+
+                var td4 = "<td><a href='#' id='CertificateApproval." + item.ID + "' data-name='status' data-type='text' data-pk='" + item.ID + "' data-url='/Report/UpdateApproval' data-title='Write Yes or No' class='editable editable-click'>" + item.Is_Appropved + "</a><input id='CertificateUploadData_YesNo' name='CertificateApproval.status' type='hidden' value=" + item.Is_Appropved + "></td>"
+
+                //var td4 = "<td>" + item.Is_Appropved + "</td>";
+
+                var tr1 = "<tr>" + td1 + td2 + td3 + td4 + "</tr>";
+                $("#myTable tbody").append(tr1);
+
+                $('a[id^=CertificateUploadData]').editable({
+                    success: function (response, newValue) {
+                        if (response.status == 'error')
+                            return response.msg;
+                    }
+                });
+
+                $('a[id^=CertificateApproval]').editable({
+                    success: function (response, newValue) {
+                        if (response.status == 'error')
+                            return response.msg;
+                    }
+                });
+
+            })
+        }
+    }
+
+    function SubmitDisable() {
+        $('#btnExcel').attr('disabled', true);
+        $('#btnCertificateDownload').attr('disabled', true);
+    }
+    function SubmitEnable() {
+        $('#btnExcel').attr('disabled', false);
+        $('#btnCertificateDownload').attr('disabled', false);
+    }
+</script>
+
+}
+
+
+

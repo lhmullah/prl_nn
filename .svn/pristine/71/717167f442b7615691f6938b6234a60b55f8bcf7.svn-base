@@ -1,0 +1,87 @@
+﻿@using PayrollWeb.ViewModels
+@model List<PayrollWeb.ViewModels.Division>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Division
+}
+
+<div class="" style="float: right; margin-bottom: 10px;">
+    <a class="btn btn-primary" href="@Url.Action("Create")"><i class="icon-plus"></i>Create New </a>
+</div>
+<br style="clear: both;" />
+
+@{
+    if (TempData.ContainsKey("msg"))
+    {
+        var res = (OperationResult)TempData["msg"];
+        if (res.IsSuccessful)
+        {
+            <div id="notifyUser" class="alert alert-success">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div>    
+        }
+        else
+        {
+            <div id="notifyUser2" class="alert alert-error">
+                <button data-dismiss="alert" class="close" type="button">×</button>
+                <div>@res.Message </div>
+            </div> 
+        }
+    }
+}
+
+
+<table class="table table-striped table-condensed">
+    <tr>
+        <th>Serial No. </th>
+        <th>Division Name</th>
+        <th>Action</th>
+    </tr>
+    @for (int i = 0, j = 1; i < Model.Count(); i++, j++)
+    {
+        <tr>
+            <td>
+                @Html.Label(j.ToString())
+            </td>
+            <td>
+                @Html.DisplayFor(detp => Model[i].name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", "Division", new { id = Model[i].id }, null)
+                @Html.ActionLink("Delete", "Delete", "Division", new { id = Model[i].id }, new { onclick = "DeleteDivision(this);return false;" })
+            </td>
+        </tr>
+    }
+</table>
+
+<div id="dltDiv" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+        <p>Are you sure you want to delete this division?</p>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+        <button id="btnDltDiv" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteDivision(el) {
+            $('#dltDiv').modal('show');
+
+            $('#btnDltDiv').click(function () {
+                $('#dltDiv').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}

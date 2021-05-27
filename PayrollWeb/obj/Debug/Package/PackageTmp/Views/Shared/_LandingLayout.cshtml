@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - @PayrollWeb.AppConstants.Application.Name</title>
+    <link href="~/favicon.ico" rel="@PayrollWeb.AppConstants.Application.Name" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    @Styles.Render("~/payrollcss")
+    @Styles.Render("~/payroll_themecss")
+    @Styles.Render("~/fileuploadcss")
+
+    @Scripts.Render("~/bundles/payrolljs")
+    @Scripts.Render("~/bundles/payroll_themejs")
+
+    @RenderSection("PageSpecificJsHeader", false)
+</head>
+<body>
+    <!-- Header Starts ================================================ -->
+    @if (Request.IsAuthenticated)
+    {
+        <section id="headerSection">
+            <div class="container">
+                <div class="navbar">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <div class="brand-logo">
+                            <a class="brand" href="@Url.Action("Index", "Home")">
+                                <img style="" src="@PayrollWeb.AppConstants.Application.Logo" alt="logo" title="logo">
+                            </a>
+                        </div>
+                        <div id="mMenu" class="nav-collapse collapse">
+                            @Html.Partial("_Menu")
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+
+    <!--Header Ends==================================CreateDepartment.cshtml============== -->
+    <!-- Page banner start-->
+    <section id="bannerSection" style="background: url(../themes/images/banner/portfolio.png) no-repeat center center #000;">
+        <div class="container">
+            <h1 id="pageTitle">
+                <small>@RenderSection("PageBanner", false)</small>
+                <span class="pull-right toolTipgroup">
+                    @if (Request.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                        <a href="~/Home/Index" data-placement="top" data-original-title="Home">
+                            <img style="width: 45px" src="~/themes/images/home.png" alt="Home">
+                        </a>
+
+                        <a href="~/Authentication/Index" data-placement="top" data-original-title="Payroll User">
+                            <img style="width: 45px" src="~/themes/images/prluser.png" alt="Payroll User">
+                        </a>
+
+                        <a href="~/Authentication/ChangePassword" data-placement="top" data-original-title="Change password">
+                            <img style="width: 45px" src="~/themes/images/prlchange_password.png" alt="Change Password">
+                        </a>
+
+                        <a href="~/Authentication/LogOff" data-placement="top" data-original-title="Log out">
+                            <img style="width: 45px" src="~/themes/images/prllogout.png" alt="Log Out">
+                        </a>
+                        
+                        }
+                        else
+                        {
+                        <a href="~/Home/Index" data-placement="top" data-original-title="Home">
+                            <img style="width: 45px" src="~/themes/images/home.png" alt="Home">
+                        </a>
+                        
+                        <a href="~/Authentication/ChangePassword" data-placement="top" data-original-title="Change password">
+                            <img style="width: 45px" src="~/themes/images/prlchange_password.png" alt="Change Password">
+                        </a>
+
+                        <a href="~/Authentication/LogOff" data-placement="top" data-original-title="Log out">
+                            <img style="width: 45px" src="~/themes/images/prllogout.png" alt="Log Out">
+                        </a>
+                        }
+                    }
+                </span>
+            </h1>
+            @if (Request.IsAuthenticated)
+            {
+                <div class="user-info">
+                    @User.Identity.Name, @Membership.GetUser(@User.Identity.Name).LastLoginDate.ToString("MMM d, yyy  h:mm tt")
+                </div>
+            }
+        </div>
+    </section>
+    <!-- Page banner end -->
+    <!--Body Starts================================================ -->
+    @if (Request.IsAuthenticated)
+    {
+     <section id="bodySection">
+        <div class="container">
+            <div class="row-fluid">
+                @RenderBody()
+            </div>
+            <br />
+        </div>
+    </section>
+    }
+    else
+    {
+        <hgroup class="title">
+            <h2 style="font-weight: bold; color: red; text-align: center; font-family:Roboto"> Warning: You are not logged in...!! </h2>
+            <h3 class="error"; style="text-align:center; font-family:Roboto">Please <a style="color: blue; text-decoration: underline" href="~/">click here</a> to login</h3>
+        </hgroup>  
+    }
+    
+    <!--Body End================================================ -->
+    <!-- Footer
+    ================================================== -->
+    <section id="footerSection">
+        <div class="container">
+            <footer class="footer well well-small" style="text-align: center">
+                <p style="padding: 0px; margin: 0px;">Copyright &copy; @DateTime.Now.Year  <a href="https://www.novonordisk.com">Novo Nordisk Pharma (Pvt.) Ltd</a>  All Rights Reserved. &nbsp; &nbsp; &nbsp; | &nbsp; &nbsp; &nbsp;Developed & Maintained By <b style="color: maroon"><a href="http://www.recombd.com">ReCom Consulting Ltd.</a></b> </p>
+            </footer>
+        </div>
+        <!-- /container -->
+    </section>
+
+    <a href="#" class="btn" style="position: fixed; bottom: 38px; right: 10px; display: none;" id="toTop"><i class="icon-arrow-up"></i>Go to top</a>
+    <!-- Javascript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="~/themes/js/bootstrap-tooltip.js"></script>
+    <script src="~/themes/js/bootstrap-popover.js"></script>
+    <script src="~/themes/js/business_ltd_1.0.js"></script>
+    @RenderSection("PageSpecificJs", false)
+
+</body>
+</html>

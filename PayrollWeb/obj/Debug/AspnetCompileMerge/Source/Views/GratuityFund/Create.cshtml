@@ -1,0 +1,66 @@
+﻿@model PayrollWeb.ViewModels.GratuityFundParameter
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Add GF parameter
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.service_length_from)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(model => model.service_length_from, new List<SelectListItem> { 
+               new SelectListItem {Text= "6 Months", Value = "6.0"},
+               new SelectListItem {Text= "1 Year", Value= "12.0"},
+               new SelectListItem {Text= "2 Years", Value= "24.0"},
+               new SelectListItem {Text= "3 Years", Value= "36.0"},
+               new SelectListItem {Text= "4 Years", Value= "48.0"},
+               new SelectListItem {Text= "5 Years", Value= "60.0"},
+               new SelectListItem {Text= "6 Years", Value= "72.0"},
+               new SelectListItem {Text= "7 Years", Value= "84.0"},
+               new SelectListItem {Text= "8 Years", Value= "96.0"},
+               new SelectListItem {Text= "9 Years", Value= "108.0"},
+               new SelectListItem {Text= "10 Years", Value= "120.0"},
+               }, "------ Please Select ------")
+                <br />
+        @Html.ValidationMessageFor(model => model.service_length_from)
+    </div>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.service_length_to)
+    </div>
+    <div class="editor-field">
+                @Html.DropDownListFor(model => model.service_length_to, new List<SelectListItem> { 
+               new SelectListItem {Text= "05 Years", Value= "60.0"},
+               new SelectListItem {Text= "10 Years", Value= "120.0"},
+               new SelectListItem {Text= "15 Years", Value= "180.0"},
+               new SelectListItem {Text= "25 Years", Value= "300.0"},
+               new SelectListItem {Text= "Above..", Value= "1200.0"},
+               }, "------ Please Select ------")
+                <br />
+        @Html.ValidationMessageFor(model => model.service_length_to)
+    </div>
+    
+    <div class="editor-label">
+        @Html.LabelFor(model => model.number_of_basic)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.number_of_basic)
+        @Html.ValidationMessageFor(model => model.number_of_basic)
+    </div>
+    <p>
+        <input type="submit" class="btn btn-success" value="Create" />
+    </p>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

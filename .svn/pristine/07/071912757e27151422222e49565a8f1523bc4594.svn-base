@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "IndividualDeduction";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@using PayrollWeb.ViewModels
+@model IEnumerable<PayrollWeb.ViewModels.EmployeeIndividualDeduction>
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+@Html.Partial("_EmployeeInfoMinView",(Employee)@ViewBag.Employee)
+
+<div class="row-fluid" style="padding-top:10px;padding-bottom: 10px;">
+    <div class="span2" style="float: right;">
+         @Html.ActionLink("Add Deduction", "EmployeeDeductionDetails",new {edi = "0",empid=@ViewBag.EmpId},new{@class="btn btn-primary"})
+    </div>
+</div>
+
+<table class="table table-condensed">
+    
+    <tr>
+        <th>Deduction Name</th>
+        <th>Flat Amount</th>
+        <th>Percentange Amount</th>
+        <th>Effective From</th>
+        <th>Effective To</th>
+    </tr>
+    @foreach (var eid in @Model)
+    {
+        <tr>
+
+            <td> @eid.prl_deduction_name.deduction_name </td>
+            <td> @eid.flat_amount </td>
+            <td> @eid.percentage </td>
+            <td> @eid.effective_from </td>
+            <td> @eid.effective_to </td>
+            <td>
+                @Html.ActionLink("Edit", "EmployeeDeductionDetails",new {edi = @eid.id,empid=@eid.emp_id})
+              @*  @Html.ActionLink("Delete", "DeleteEmployeeDeduction",new {id = @eid.id,empid=@eid.emp_id})*@
+                 @Html.ActionLink("Delete","DeleteEmployeeDeduction","Deduction",new{id = @eid.id,empid=@eid.emp_id}, new { onclick = "DeleteDeduction(this);return false;" })
+            </td>
+        </tr>    
+    }
+    
+</table>
+
+<div id="dltDeduct" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-body">
+    <p>Are you sure you want to delete this deduction?</p>
+    </div>
+    <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button id="btnDltDeduct" class="btn btn-primary">Delete</button>
+    </div>
+</div>
+@section PageSpecificJs
+{
+    <script type="text/javascript">
+        function DeleteDeduction(el)
+        {
+            $('#dltDeduct').modal('show');
+
+            $('#btnDltDeduct').click(function () {
+               $('#dltDeduct').modal('hide');
+                var test = $(el).attr('href');
+                document.location.href = test;
+            });
+        }
+    </script>
+}
+ 

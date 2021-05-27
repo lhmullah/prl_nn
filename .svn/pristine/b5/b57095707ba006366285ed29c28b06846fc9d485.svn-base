@@ -1,0 +1,84 @@
+﻿@model PayrollWeb.ViewModels.IncomeTaxParameter
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Income Tax Parameter Edit
+}
+
+@using (Html.BeginForm("Edit","IncomeTax")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.fiscal_year_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.fiscal_year_id, new SelectList(@ViewBag.AllFiscalYears, "id", "fiscal_year"), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.fiscal_year_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                 @Html.LabelFor(model => model.assessment_year)
+            </td>
+            <td>
+                @Html.EditorFor(model =>model.assessment_year)<br />
+                @Html.ValidationMessageFor(model => model.assessment_year)
+            </td>
+            
+        </tr>
+        <tr >
+            <td style="color:green">
+                Slab Depands on Type:
+            </td>
+            <td ></td>
+            <td ></td>
+            <td ></td>
+        </tr>
+        <tr>
+            <td> 
+                @Html.LabelFor(model=>model.gender)
+            </td>
+            <td >
+                @Html.DropDownListFor(model=>model.gender,new SelectList(PayrollWeb.Models.EnumToSelectItemList.GetEnumSelectList<PayrollWeb.ViewModels.Genders>(),"Text","Text"))<br />
+                @Html.ValidationMessageFor(model => model.gender)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.slab_mininum_amount)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_mininum_amount)<br />
+                @Html.ValidationMessageFor(model => model.slab_mininum_amount)
+            </td>
+            <td style="width: 10px;"></td>
+            <td> @Html.LabelFor(model=>model.slab_maximum_amount)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_maximum_amount)<br />
+                @Html.ValidationMessageFor(model => model.slab_maximum_amount)
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model=>model.slab_percentage)</td>
+            <td >
+                @Html.EditorFor(model => model.slab_percentage)<br />
+                @Html.ValidationMessageFor(model => model.slab_percentage)
+            </td>
+        </tr>
+       
+    </table>
+     <p>
+        <input class="btn btn-success" type="submit" value="Update" />
+    </p>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

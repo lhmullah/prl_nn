@@ -1,0 +1,30 @@
+﻿@model PayrollWeb.ViewModels.Designation
+
+@{
+    ViewBag.Title = "CreateDesignation";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+@section PageBanner
+{
+Create Designation
+}
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.name)
+        @Html.ValidationMessageFor(model => model.name)
+    </div>
+
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

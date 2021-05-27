@@ -1,0 +1,12 @@
+﻿@model System.Collections.Generic.List<PayrollWeb.ViewModels.SubMenu>
+    
+<ul id="inMenu" class="nav nav-tabs nav-stacked">
+        @foreach (var item in Model)
+        {
+            <li>@Html.ActionLink(@item.sub_menu,@item.view_name,@item.controller_name)</li>
+        }
+    </ul>
+
+
+
+ 

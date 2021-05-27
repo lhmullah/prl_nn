@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{377E69AB-BE8E-424A-83D2-6C10DDDF096B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>com.gpit.DataContext</RootNamespace>
+    <AssemblyName>com.gpit.DataContext</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySQL.Data.Entities.6.7.4.1\lib\net45\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseContext.cs" />
+    <Compile Include="Mapping\prl_allowance_configurationMap.cs" />
+    <Compile Include="Mapping\prl_allowance_headMap.cs" />
+    <Compile Include="Mapping\prl_allowance_nameMap.cs" />
+    <Compile Include="Mapping\prl_arrear_configurationMap.cs" />
+    <Compile Include="Mapping\prl_bankMap.cs" />
+    <Compile Include="Mapping\prl_bank_branchMap.cs" />
+    <Compile Include="Mapping\prl_bonus_configurationMap.cs" />
+    <Compile Include="Mapping\prl_bonus_holdMap.cs" />
+    <Compile Include="Mapping\prl_bonus_nameMap.cs" />
+    <Compile Include="Mapping\prl_bonus_processMap.cs" />
+    <Compile Include="Mapping\prl_bonus_process_detailMap.cs" />
+    <Compile Include="Mapping\prl_companyMap.cs" />
+    <Compile Include="Mapping\prl_deduction_configurationMap.cs" />
+    <Compile Include="Mapping\prl_deduction_headMap.cs" />
+    <Compile Include="Mapping\prl_deduction_nameMap.cs" />
+    <Compile Include="Mapping\prl_departmentMap.cs" />
+    <Compile Include="Mapping\prl_designationMap.cs" />
+    <Compile Include="Mapping\prl_divisionMap.cs" />
+    <Compile Include="Mapping\prl_employeeMap.cs" />
+    <Compile Include="Mapping\prl_employee_children_allowanceMap.cs" />
+    <Compile Include="Mapping\prl_employee_detailsMap.cs" />
+    <Compile Include="Mapping\prl_employee_discontinueMap.cs" />
+    <Compile Include="Mapping\prl_employee_free_carMap.cs" />
+    <Compile Include="Mapping\prl_employee_individual_allowanceMap.cs" />
+    <Compile Include="Mapping\prl_employee_individual_deductionMap.cs" />
+    <Compile Include="Mapping\prl_employee_leave_without_payMap.cs" />
+    <Compile Include="Mapping\prl_employee_settlementMap.cs" />
+    <Compile Include="Mapping\prl_employee_settlement_allowanceMap.cs" />
+    <Compile Include="Mapping\prl_employee_settlement_deductionMap.cs" />
+    <Compile Include="Mapping\prl_employee_settlement_detailMap.cs" />
+    <Compile Include="Mapping\prl_employee_settlement_over_timeMap.cs" />
+    <Compile Include="Mapping\prl_employee_tax_processMap.cs" />
+    <Compile Include="Mapping\prl_employee_tax_process_detailMap.cs" />
+    <Compile Include="Mapping\prl_employee_tax_slabMap.cs" />
+    <Compile Include="Mapping\prl_fiscal_yearMap.cs" />
+    <Compile Include="Mapping\prl_gradeMap.cs" />
+    <Compile Include="Mapping\prl_income_tax_adjustmentMap.cs" />
+    <Compile Include="Mapping\prl_income_tax_challanMap.cs" />
+    <Compile Include="Mapping\prl_income_tax_parameterMap.cs" />
+    <Compile Include="Mapping\prl_income_tax_parameter_detailsMap.cs" />
+    <Compile Include="Mapping\prl_income_tax_refundMap.cs" />
+    <Compile Include="Mapping\prl_leave_without_pay_settingsMap.cs" />
+    <Compile Include="Mapping\prl_locationMap.cs" />
+    <Compile Include="Mapping\prl_menuMap.cs" />
+    <Compile Include="Mapping\prl_month_endMap.cs" />
+    <Compile Include="Mapping\prl_over_timeMap.cs" />
+    <Compile Include="Mapping\prl_over_time_amountMap.cs" />
+    <Compile Include="Mapping\prl_over_time_configurationMap.cs" />
+    <Compile Include="Mapping\prl_religionMap.cs" />
+    <Compile Include="Mapping\prl_role_privilegeMap.cs" />
+    <Compile Include="Mapping\prl_salary_allowancesMap.cs" />
+    <Compile Include="Mapping\prl_salary_deductionsMap.cs" />
+    <Compile Include="Mapping\prl_salary_holdMap.cs" />
+    <Compile Include="Mapping\prl_salary_processMap.cs" />
+    <Compile Include="Mapping\prl_salary_process_detailMap.cs" />
+    <Compile Include="Mapping\prl_salary_reviewMap.cs" />
+    <Compile Include="Mapping\prl_sub_menuMap.cs" />
+    <Compile Include="Mapping\prl_upload_allowanceMap.cs" />
+    <Compile Include="Mapping\prl_upload_bonusMap.cs" />
+    <Compile Include="Mapping\prl_upload_deductionMap.cs" />
+    <Compile Include="Mapping\prl_upload_time_card_entryMap.cs" />
+    <Compile Include="payroll_systemContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\com.gpit.Model\com.gpit.Model.csproj">
+      <Project>{522f9637-541f-4776-baea-ca4caf0a65fc}</Project>
+      <Name>com.gpit.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

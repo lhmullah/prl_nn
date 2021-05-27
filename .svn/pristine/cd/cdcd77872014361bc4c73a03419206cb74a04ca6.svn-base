@@ -1,0 +1,199 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using PayrollWeb.Models
+@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.BonusConfiguration
+
+@{
+    ViewBag.Title = "ConfigureBonus";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+   Bonus Configuration
+}
+
+
+<br style="clear: both;"/>
+    @{
+        if (TempData.ContainsKey("msg"))
+        {
+            var res = (OperationResult)TempData["msg"];
+            if (res.IsSuccessful)
+            {
+                <div id="notifyUser" class="alert alert-success">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div>    
+            }
+            else
+            {
+                <div id="notifyUser" class="alert alert-error">
+			    <button data-dismiss="alert" class="close" type="button">×</button>
+			    <div>@res.Message </div>
+                </div> 
+            }
+        }
+    }
+
+@using (Html.BeginForm("ConfigureBonus", "Bonus", FormMethod.Post, new { @class = "form-inline" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.id)
+    
+        <table class="table">
+        <tr>
+            <td >   
+                @Html.LabelFor(model => model.bonus_name_id)
+            </td>
+            <td>
+               @Html.DropDownListFor(model => model.bonus_name_id, new SelectList(@ViewBag.BonusNames, "id", "name", @ViewBag.SelectedIndex), "---- Select ----")<br />
+               @Html.ValidationMessageFor(model => model.bonus_name_id) 
+            </td>
+            <td style="width: 10px;"></td>
+            <td >
+                @Html.LabelFor(model => model.effective_from)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.effective_from)
+                @Html.ValidationMessageFor(model => model.effective_from)
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                @Html.LabelFor(model => model.is_festival)
+                
+            </td>
+            <td >
+                @Html.DropDownListFor(model => model.is_festival, new SelectList(EnumToSelectItemList.GetEnumSelectList<IsFestival>(), "Text", "Text"))
+                @Html.ValidationMessageFor(model => model.is_festival)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.effective_to)
+            </td>
+            <td>
+                @Html.EditorFor(model => model.effective_to)<br />
+                @Html.ValidationMessageFor(model => model.effective_to)
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label> Grades </label><br />
+                @Html.ValidationMessageFor(model => model.Grades)
+            </td>
+            <td colspan="4">
+                <ul style="margin-left: 0;">
+                    @foreach (var g in Model.Grades)
+                    {
+                        <li style="display: inline;">
+                            @Html.Hidden("Grades.Index", g.id)
+                            @Html.Hidden(string.Format("Grades[{0}].id", @g.id), @g.id)
+                            @Html.Hidden(string.Format("Grades[{0}].grade", @g.id), @g.grade)
+                            @Html.Hidden(string.Format("Grades[{0}].IsSelected", @g.IsSelected), @g.grade)
+                            @Html.CheckBox(string.Format("Grades[{0}].IsSelected", @g.id), @g.IsSelected, new { @style = "padding-right:5px;" })  @Html.Label(@g.grade, new { @style = "padding-right:20px;" }) 
+                        </li>
+                    }
+               </ul>
+            </td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.confirmed_emp)</td>
+            <td >
+                @Html.DropDownListFor(model => model.confirmed_emp, new SelectList(EnumToSelectItemList.GetEnumSelectList<ConfirmedEmployee>(), "Text", "Text"))
+            </td>
+            <td style="width: 10px;"></td>
+            <td> @Html.LabelFor(model => model.is_taxable)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model => model.is_taxable, new SelectList(EnumToSelectItemList.GetEnumSelectList<IsTaxable>(), "Text", "Text"))
+            </td>
+        </tr>
+        <tr>
+            
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(model => model.gender_dependant)</td>
+            <td colspan="4">
+                @Html.DropDownListFor(model => model.gender_dependant, new SelectList(EnumToSelectItemList.GetEnumSelectList<Genders>(), "Text", "Text"))
+            </td>
+        </tr>
+        <tr>
+            <td style="color:green">
+                Applied As:
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(model => model.flat_amount)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.flat_amount)<br/>
+                @Html.ValidationMessageFor(model => model.flat_amount)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.percentage_of_basic)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.percentage_of_basic)<br/>
+                @Html.ValidationMessageFor(model => model.percentage_of_basic)
+            </td>
+        </tr>
+       @* <tr>
+            <td>
+                @Html.LabelFor(model => model.number_of_basic)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.number_of_basic)<br/>
+                @Html.ValidationMessageFor(model => model.number_of_basic)
+            </td>
+            <td style="width: 10px;"></td>
+            <td>
+                @Html.LabelFor(model => model.basic_of_days)
+            </td>
+            <td>
+                @Html.TextBoxFor(model => model.basic_of_days)<br/>
+                @Html.ValidationMessageFor(model => model.basic_of_days)
+            </td>
+        </tr>*@
+        
+    </table>
+
+    <p>
+        <input class="btn btn-success" type="submit" value="Create" />
+    </p>
+   
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ConfigureBonus")
+</div>
+
+@section PageSpecificJs
+{
+    <script type="text/javascript" src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+        $('#effective_from,#effective_to').datepicker();
+
+
+        $('#percentage_of_basic').on("click", function () {
+            $('#flat_amount').val('');
+        });
+
+        $('#flat_amount').on("click", function () {
+            $('#percentage_of_basic').val('');
+        });
+
+        $('#bonus_name_id').change(function () {
+            var ks = $('#bonus_name_id option:selected').val();
+            var test = '@Url.Action("ConfigureBonus", "Bonus", new { bonusId = "PLACEHOLDER" })';
+            var myUrl = test.replace('PLACEHOLDER', ks);
+            document.location.href = myUrl;
+        });
+
+    </script>
+
+}
+

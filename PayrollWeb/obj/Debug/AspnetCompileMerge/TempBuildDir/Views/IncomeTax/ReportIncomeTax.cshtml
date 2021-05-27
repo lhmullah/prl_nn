@@ -1,0 +1,65 @@
+﻿@using PayrollWeb.ViewModels
+@model PayrollWeb.ViewModels.ReportIncomeTax
+
+@{
+    ViewBag.Title = "ReportIncomeTax";
+    Layout = "~/Views/Shared/_LayoutDetailsPage.cshtml";
+}
+
+@section PageBanner
+{
+    Income Tax Report
+}
+@section PageSpecificJsHeader
+{   
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.core.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/themes/base/jquery.ui.all.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/media/css/jquery.dataTables.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Content/DataTables-1.9.4/extras/TableTools/media/css/TableTools_JUI.css"/>
+    <link type="text/css" rel="stylesheet" href="~/Scripts/DataTables-1.9.4/jquery.dataTables.bootstrap.css"/>
+}
+
+
+@using (@Html.BeginForm("ReportIncomeTax", "IncomeTax", FormMethod.Post, new { target = "_blank" }))
+{
+    <br />
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    
+    <table style="border-collapse: separate; border-spacing: 3px;">
+        <tr>
+            <td>
+                @Html.Label("Year")
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+                @Html.DropDownListFor(x => x.Year, new SelectList(@ViewBag.Years), new { style = "width:185px" })
+            </td>
+            <td style="width: 20px"></td>
+            <td>
+                @Html.Label("Month")
+            </td>
+            <td style="width: 10px"></td>
+            <td>
+                @Html.DropDownListFor(m => m.Month, new SelectList(@ViewBag.Months, "Value", "Key"), new { style = "width:185px" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2"></td>
+            <td colspan="5">
+                <table>
+                    <tr>
+
+                        <td>
+                            <input class="btn btn-success" type="submit" id="btnSave" name="sButton" value="To Excel" style="width: 80px" />
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td colspan="2"></td>
+        </tr>
+    </table>
+}
+
+
